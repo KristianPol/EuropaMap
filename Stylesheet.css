@@ -18,3 +18,9 @@ body{
     height: 5px;
     border-width: 0;
 }
+.CountryData{
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    font-family:"Copperplate Gothic Light", Calibri;
+}
