@@ -2,7 +2,7 @@
     color: white;
     text-align: center;
     font-weight:bold;
-    font-family:"Copperplate Gothic Light", Calibri;
+    font-family: Calibri;
 }
 .MapofEurope{
     image-resolution: normal;
@@ -22,7 +22,7 @@ body{
     color: white;
     text-align: left;
     font-weight: bold;
-    font-family:"Copperplate Gothic Light", Calibri;
+    font-family: Calibri;
 }
 .CountryImages{
     width: 25%;
