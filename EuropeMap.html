@@ -1,0 +1,465 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Stylesheet.css">
+    <meta charset="UTF-8">
+    <title>Map of Europe</title>
+    <style>
+        .map-container {
+            position: relative;
+            width: fit-content;
+        }
+        
+        .MapofEurope {
+            width: 100%; 
+            height: auto;
+        }
+        .dotAlbania{
+            position: absolute;
+            top: 83%;
+            left: 63%;
+            width: 10px;
+            height: 10px;
+            background-color: grey;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .dotMacedonia {
+            position: absolute;
+            top: 80%; 
+            left: 67%;
+            width: 10px;
+            height: 10px;
+            background-color: grey;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .dotNorway{
+            position: absolute;
+            top: 33%;
+            left: 44%;
+            width: 10px;
+            height: 10px;
+            background-color: grey;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .dotAndorra{
+            position: absolute;
+            top: 79%;
+            left: 26%;
+            width: 10px;
+            height: 10px;
+            background-color: grey;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .dotAustria{
+            position: absolute;
+            top: 64%;
+            left: 55%;
+            width: 10px;
+            height: 10px;
+            background-color: grey;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .dot:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+<h1 class="Title">
+    Map of Europe
+</h1>
+<p class="Title">
+    Please click on any of the following dots on the map to see more info about that country
+</p>
+<div class="map-container">
+    <img class="MapofEurope" src="Blank_map_of_Europe_cropped.svg.png" alt="Map of Europe">
+    <a href="#Macedonia" class="dotMacedonia" title="North Macedonia"></a>
+    <a href="#Norway" class="dotNorway" title="Norway"></a>
+    <a href="#Albania" class="dotAlbania" title="Albania"></a>
+    <a href="#Andorra" class="dotAndorra" title="Andorra"></a>
+    <a href="#Austria" class="dotAustria" title="Austria"></a>
+</div>
+<hr>
+<div class="CountryData">
+    <p id="Albania">
+        Albania (Shqipëria)<br>
+        Land area: 28,748 km²<br>
+        Population: 2,832,000<br>
+        Capital: Tirana<br>
+        Languages spoken: Albanian
+    </p>
+    <hr>
+    <p id="Andorra">
+        Andorra (Principat d'Andorra)<br>
+        Land area: 470 km²<br>
+        Population: 80,088<br>
+        Capital: Andorra la Vella<br>
+        Languages spoken: Catalan, Spanish, Portuguese, French
+    </p>
+    <hr>
+    <p id="Austria">
+        Austria (Österreich)<br>
+        Land area: 83,878 km²<br>
+        Population: 9,159,993<br>
+        Capital: Vienna (Wien)<br>
+        Languages spoken: German
+    </p>
+    <hr>
+    <p id="Belarus">
+        Belarus (Беларусь)<br>
+        Land area: 207,600 km²<br>
+        Population: 9,178,000<br>
+        Capital: Minsk<br>
+        Languages spoken: Belarusian, Russian
+    </p>
+    <hr>
+    <p id="Belgium">
+        Belgium (België/Belgique/Belgien)<br>
+        Land area: 30,689 km²<br>
+        Population: 11,764,760<br>
+        Capital: Brussels<br>
+        Languages spoken: Dutch, French, German
+    </p>
+    <hr>
+    <p id="BosniaHerzegovina">
+        Bosnia and Herzegovina (Bosna i Hercegovina)<br>
+        Land area: 51,197 km²<br>
+        Population: 3,301,000<br>
+        Capital: Sarajevo<br>
+        Languages spoken: Bosnian, Croatian, Serbian
+    </p>
+    <hr>
+    <p id="Bulgaria">
+        Bulgaria (България)<br>
+        Land area: 110,879 km²<br>
+        Population: 6,758,000<br>
+        Capital: Sofia<br>
+        Languages spoken: Bulgarian, Turkish
+    </p>
+    <hr>
+    <p id="Croatia">
+        Croatia (Hrvatska)<br>
+        Land area: 56,594 km²<br>
+        Population: 3,875,320<br>
+        Capital: Zagreb<br>
+        Languages spoken: Croatian, Serbian
+    </p>
+    <hr>
+    <p id="CzechRepublic">
+        Czech Republic (Česká republika)<br>
+        Land area: 78,870 km²<br>
+        Population: 10,870,000<br>
+        Capital: Prague<br>
+        Languages spoken: Czech
+    </p>
+    <hr>
+    <p id="Denmark">
+        Denmark (Danmark)<br>
+        Land area: 42,933 km²<br>
+        Population: 5,970,000<br>
+        Capital: Copenhagen<br>
+        Languages spoken: Danish
+    </p>
+    <hr>
+    <p id="Estonia">
+        Estonia (Eesti)<br>
+        Land area: 45,227 km²<br>
+        Population: 1,360,550 (2024)<br>
+        Capital: Tallinn<br>
+        Languages spoken: Estonian, Russian
+    </p>
+    <hr>
+    <p id="Finland">
+        Finland (Suomi)<br>
+        Land area: 338,424 km²<br>
+        Population: 5,603,851<br>
+        Capital: Helsinki<br>
+        Languages spoken: Finnish, Swedish
+    </p>
+    <hr>
+    <p id="France">
+        France (République Française)<br>
+        Land area: 551 695 km²<br>
+        Population: 67,813,396 (2024)<br>
+        Capital: Paris<br>
+        Languages spoken: French, Arabic
+    </p>
+    <hr>
+    <p id="Germany">
+        Germany (Deutschland)<br>
+        Land area: 357,596 km²<br>
+        Population: 83,252,500 (2024)<br>
+        Capital: Berlin<br>
+        Languages spoken: German, Turkish
+    </p>
+    <hr>
+    <p id="Greece">
+        Greece (Ελλάδα)<br>
+        Land area: 131,957 km²<br>
+        Population: 10,500,000<br>
+        Capital: Athens<br>
+        Languages spoken: Greek
+    </p>
+    <hr>
+
+    <p id="Hungary">
+        Hungary (Magyarország)<br>
+        Land area: 93,030 km²<br>
+        Population: 9,600,000<br>
+        Capital: Budapest<br>
+        Languages spoken: Hungarian
+    </p>
+    <hr>
+
+    <p id="Iceland">
+        Iceland (Ísland)<br>
+        Land area: 103,000 km²<br>
+        Population: 366,000<br>
+        Capital: Reykjavik<br>
+        Languages spoken: Icelandic
+    </p>
+    <hr>
+
+    <p id="Ireland">
+        Ireland (Éire)<br>
+        Land area: 70,273 km²<br>
+        Population: 5,000,000<br>
+        Capital: Dublin<br>
+        Languages spoken: Irish, English
+    </p>
+    <hr>
+
+    <p id="Italy">
+        Italy (Italia)<br>
+        Land area: 301,340 km²<br>
+        Population: 60,000,000<br>
+        Capital: Rome<br>
+        Languages spoken: Italian
+    </p>
+    <hr>
+
+    <p id="Kosovo">
+        Kosovo (Kosova)<br>
+        Land area: 10,887 km²<br>
+        Population: 1,800,000<br>
+        Capital: Pristina<br>
+        Languages spoken: Albanian, Serbian
+    </p>
+    <hr>
+
+    <p id="Latvia">
+        Latvia (Latvija)<br>
+        Land area: 64,589 km²<br>
+        Population: 1,900,000<br>
+        Capital: Riga<br>
+        Languages spoken: Latvian
+    </p>
+    <hr>
+
+    <p id="Liechtenstein">
+        Liechtenstein<br>
+        Land area: 160 km²<br>
+        Population: 39,000<br>
+        Capital: Vaduz<br>
+        Languages spoken: German
+    </p>
+    <hr>
+
+    <p id="Lithuania">
+        Lithuania (Lietuva)<br>
+        Land area: 65,300 km²<br>
+        Population: 2,700,000<br>
+        Capital: Vilnius<br>
+        Languages spoken: Lithuanian
+    </p>
+    <hr>
+
+    <p id="Luxembourg">
+        Luxembourg (Lëtzebuerg)<br>
+        Land area: 2,586 km²<br>
+        Population: 634,000<br>
+        Capital: Luxembourg City<br>
+        Languages spoken: Luxembourgish, French, German
+    </p>
+    <hr>
+
+    <p id="Malta">
+        Malta<br>
+        Land area: 316 km²<br>
+        Population: 514,000<br>
+        Capital: Valletta<br>
+        Languages spoken: Maltese, English
+    </p>
+    <hr>
+
+    <p id="Moldova">
+        Moldova (Republica Moldova)<br>
+        Land area: 33,846 km²<br>
+        Population: 2,600,000<br>
+        Capital: Chișinău<br>
+        Languages spoken: Romanian
+    </p>
+    <hr>
+
+    <p id="Monaco">
+        Monaco<br>
+        Land area: 2.02 km²<br>
+        Population: 39,000<br>
+        Capital: Monaco<br>
+        Languages spoken: French
+    </p>
+    <hr>
+
+    <p id="Montenegro">
+        Montenegro (Crna Gora)<br>
+        Land area: 13,812 km²<br>
+        Population: 620,000<br>
+        Capital: Podgorica<br>
+        Languages spoken: Montenegrin
+    </p>
+    <hr>
+
+    <p id="Netherlands">
+        Netherlands (Nederland)<br>
+        Land area: 41,543 km²<br>
+        Population: 17,400,000<br>
+        Capital: Amsterdam<br>
+        Languages spoken: Dutch
+    </p>
+    <hr>
+    <p id="Macedonia">
+        North Macedonia (Северна Македонија)<br>
+        Land area: 25,713 km²<br>
+        Population: 1,812,000<br>
+        Capital: Skopje<br>
+        Languages spoken: Macedonian<br>
+        <img class="CountryImages" src="Flag_of_North_Macedonia.svg.png" alt="" width="Macedonia Flag">
+        <img class="CountryImages" src="north-macedonia.jpg" alt="Macedonia">
+    </p>
+    <hr>
+    <p id="Norway">
+        Norway (Kongeriket Noreg)<br>
+        Land area: 385,207 km²<br>
+        Population: 5,520,000<br>
+        Capital: Oslo<br>
+        Languages spoken: Norwegian, Sami
+    </p>
+    <hr>
+    <p id="Poland">
+        Poland (Polska)<br>
+        Land area: 322,575 km²<br>
+        Population: 36,690,000<br>
+        Capital: Warsaw<br>
+        Languages spoken: Polish
+    </p>
+    <hr>
+    <p id="Portugal">
+        Portugal (Portugal)<br>
+        Land area: 92,090 km²<br>
+        Population: 10,270,000<br>
+        Capital: Lisbon<br>
+        Languages spoken: Portuguese
+    </p>
+    <hr>
+    <p id="Romania">
+        Romania (România)<br>
+        Land area: 238,397 km²<br>
+        Population: 19,410,000<br>
+        Capital: Bucharest<br>
+        Languages spoken: Romanian
+    </p>
+    <hr>
+    <p id="Russia">
+        Russia (Россия)<br>
+        Land area: 17,098,242 km²<br>
+        Population: 146,171,000<br>
+        Capital: Moscow<br>
+        Languages spoken: Russian
+    </p>
+    <hr>
+    <p id="SanMarino">
+        San Marino (Repubblica di San Marino)<br>
+        Land area: 61 km²<br>
+        Population: 34,000<br>
+        Capital: San Marino<br>
+        Languages spoken: Italian
+    </p>
+    <hr>
+    <p id="Serbia">
+        Serbia (Србија)<br>
+        Land area: 88,361 km²<br>
+        Population: 6,834,000<br>
+        Capital: Belgrade<br>
+        Languages spoken: Serbian
+    </p>
+    <hr>
+    <p id="Slovakia">
+        Slovakia (Slovensko)<br>
+        Land area: 49,035 km²<br>
+        Population: 5,460,000<br>
+        Capital: Bratislava<br>
+        Languages spoken: Slovak
+    </p>
+    <hr>
+    <p id="Slovenia">
+        Slovenia (Slovenija)<br>
+        Land area: 20,273 km²<br>
+        Population: 2,102,000<br>
+        Capital: Ljubljana<br>
+        Languages spoken: Slovene
+    </p>
+    <hr>
+    <p id="Spain">
+        Spain (España)<br>
+        Land area: 505,992 km²<br>
+        Population: 47,450,000<br>
+        Capital: Madrid<br>
+        Languages spoken: Spanish
+    </p>
+    <hr>
+    <p id="Sweden">
+        Sweden (Sverige)<br>
+        Land area: 450,295 km²<br>
+        Population: 10,330,000<br>
+        Capital: Stockholm<br>
+        Languages spoken: Swedish
+    </p>
+    <hr>
+    <p id="Switzerland">
+        Switzerland (Schweiz/Suisse/Svizzera/Svizra)<br>
+        Land area: 41,290 km²<br>
+        Population: 8,637,000<br>
+        Capital: Bern<br>
+        Languages spoken: German, French, Italian, Romansh
+    </p>
+    <hr>
+    <p id="UnitedKingdom">
+        United Kingdom (UK)<br>
+        Land area: 243,610 km²<br>
+        Population: 67,220,000<br>
+        Capital: London<br>
+        Languages spoken: English
+    </p>
+    <hr>
+    <p id="Ukraine">
+        Ukraine (Україна)<br>
+        Land area: 603,628 km²<br>
+        Population: 39,700,000<br>
+        Capital: Kyiv<br>
+        Languages spoken: Ukrainian
+    </p>
+    <hr>
+</div>
+</body>
+</html>
