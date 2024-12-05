@@ -3,6 +3,7 @@
     text-align: center;
     font-weight:bold;
     font-family: Calibri;
+    font-size: 75px;
 }
 .MapofEurope{
     image-resolution: normal;
@@ -28,3 +29,16 @@ body{
     width: 25%;
     height: 25%;
 }
+@media (max-width: 768px) {
+    .MapofEurope {
+        width: 100%;
+    }
+    .CountryImages {
+        width: 50%;
+        height: auto;
+    }
+}
+html{
+    scroll-behavior:smooth;
+}
+
