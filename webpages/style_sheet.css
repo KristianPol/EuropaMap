@@ -18,8 +18,9 @@
     margin-left: auto;
 }
 body{
-    background-color: #00004B;
     margin: 0;
+    background: linear-gradient(to bottom, #00004B, #000022);
+    color: white;
 }
 .Separatorline{
     height: 5px;
@@ -30,6 +31,8 @@ body{
     text-align: left;
     font-weight: bold;
     font-family: Calibri;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 15px;
 }
 .CountryImages{
     width: 25%;
@@ -47,5 +50,17 @@ body{
 html{
     scroll-behavior:smooth;
 }
+.Info{
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    font-family: Calibri;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 15px;
 
-
+}
+.Info:target {
+    background-color: rgba(255, 255, 0, 0.3);
+    border: 2px solid gold;
+    padding: 10px;
+}
