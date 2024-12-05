@@ -4,14 +4,11 @@
     font-size: xx-large;
     font-weight:bold;
     font-family: Calibri;
-<<<<<<< HEAD
     font-size: 75px;
-=======
     background-color: darkblue;
     margin: 0;
     height: 100px;
     line-height: 100px;
->>>>>>> 52af1b91dc765ea83e28ef5f6a230b8ccb806747
 }
 .MapofEurope{
     image-resolution: normal;
@@ -37,7 +34,6 @@ body{
 .CountryImages{
     width: 25%;
     height: 25%;
-<<<<<<< HEAD
 }
 @media (max-width: 768px) {
     .MapofEurope {
@@ -52,7 +48,4 @@ html{
     scroll-behavior:smooth;
 }
 
-=======
-    float: right;
-}
->>>>>>> 52af1b91dc765ea83e28ef5f6a230b8ccb806747
+
