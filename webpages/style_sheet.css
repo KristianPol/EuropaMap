@@ -5,7 +5,7 @@
     font-weight:bold;
     font-family: Calibri;
     font-size: 75px;
-    background-color: darkblue;
+    background-color: #1b5577;
     margin: 0;
     height: 100px;
     line-height: 100px;
@@ -19,7 +19,7 @@
 }
 body{
     margin: 0;
-    background: linear-gradient(to bottom, #00004B, #000022);
+    background: linear-gradient(to bottom, #1b5577, #1b5565);
     color: white;
 }
 .Separatorline{
