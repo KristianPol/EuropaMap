@@ -5,7 +5,7 @@
     font-weight:bold;
     font-family: Calibri;
     font-size: 75px;
-    background-color: #1b5577;
+    background: #1b5577;
     margin: 0;
     height: 100px;
     line-height: 100px;
@@ -19,19 +19,17 @@
 }
 body{
     margin: 0;
-    background: linear-gradient(to bottom, #1b5577, #1b5565);
-    color: white;
+    background: rgb(red, green, blue);
+    color: black;
 }
 .Separatorline{
     height: 5px;
     border-width: 0;
 }
 .CountryData{
-    color: white;
     text-align: left;
     font-weight: bold;
     font-family: Calibri;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     padding: 15px;
 }
 .CountryImages{
@@ -51,7 +49,6 @@ html{
     scroll-behavior:smooth;
 }
 .Info{
-    color: white;
     text-align: left;
     font-weight: bold;
     font-family: Calibri;
@@ -60,4 +57,7 @@ html{
     background-color: rgba(016, 044, 084, 0.3);
     border: 2px solid rgba(016, 044, 050, 0.3);
     padding: 10px;
+}
+.map-container{
+    background-color: #1b5577;
 }
