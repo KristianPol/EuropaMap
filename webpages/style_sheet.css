@@ -61,3 +61,13 @@ html{
 .map-container{
     background-color: #1b5577;
 }
+.StarterInfo{
+    color: white;
+    text-align: left;
+    font-size: xx-large;
+    font-weight:bold;
+    font-family: Calibri;
+    font-size: 15px;
+    background: #1b5577;
+    padding: 15px;
+}
