@@ -119,3 +119,16 @@ button:active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
 }
+
+.side-button {
+    position: fixed;
+    top: 50%; 
+    right: 10px; 
+    transform: translateY(-50%); 
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px; 
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}

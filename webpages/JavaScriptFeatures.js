@@ -1,11 +1,3 @@
-
-let topButton = document.getElementById("topButton");
-window.onscroll = function() {
-    scrollFunction();
-};
-
-
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0; 
-}
+document.getElementById("scrollToTopButton").addEventListener("click", function () {
+    window.scrollTo(0, 0);  
+});
