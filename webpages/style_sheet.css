@@ -121,14 +121,22 @@ button:active {
 }
 
 .side-button {
-    position: fixed;
+   background-color: #abff67;
+   color: #000000;
+   position: fixed;
     top: 50%; 
     right: 10px; 
     transform: translateY(-50%); 
     border: none;
-    padding: 10px 15px;
+    padding: 15px 20px;
     border-radius: 5px; 
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.07em;
     transition: background-color 0.3s ease;
+}
+
+.side-button:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.05);
 }
