@@ -41,7 +41,7 @@ The website will include the following features:
 Project Description: Brochacho-Task
 Overview
 
-TaskMaster Pro is a web-based productivity application designed to help users efficiently manage tasks using three core features:
+Brochacho-Task is a web-based productivity application designed to help users efficiently manage tasks using three core features:
 
 1. Eisenhower Matrix – Categorize tasks by urgency/importance.
 
@@ -56,7 +56,7 @@ Technical Implementation
 
     Frontend: HTML, CSS, JavaScript
 
-    Backend: Firebase (or local storage)
+    Backend: local storage
 
     Responsive Design: Works across devices
 
@@ -66,4 +66,4 @@ Future Enhancements
 
     Customizable reminders
 
-TaskMaster Pro aims to simplify productivity through structured task management.
+Brochacho-Task aims to simplify productivity through structured task management.
