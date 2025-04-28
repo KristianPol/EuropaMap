@@ -3,83 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Andorra</title>
+    <title>Discover Andorra</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #D0103A, #0018A8, #FCDD09);
+            background: linear-gradient(90deg, #0061B2, #F3C10A, #D7A000);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        h1, h2 {
-            color: #D0103A;
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #0061B2;
+            border-bottom: 2px solid #F3C10A;
+            padding-bottom: 8px;
+            margin-top: 30px;
             text-align: center;
         }
         p {
-            line-height: 1.6;
             text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #F3C10A;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
         a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #D0103A;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #0061B2;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #0018A8;
+            background-color: #F3C10A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Andorra</h1>
+        <h1>Discover Andorra</h1>
     </header>
 
     <div class="container">
         <h2>About Andorra</h2>
-        <p>Andorra, officially known as the Principality of Andorra, is a small, landlocked country in the Pyrenees Mountains between France and Spain. Known for its stunning mountain landscapes, ski resorts, and tax-free shopping, Andorra is a popular destination for outdoor enthusiasts and tourists alike. The capital city, Andorra la Vella, is the highest capital city in Europe and offers a mix of modern amenities and historic charm.</p>
+        <p>Andorra, a small principality nestled in the Pyrenees mountains between France and Spain, is famous for its stunning alpine scenery, charming medieval towns, and tax-free shopping. Despite its small size, Andorra is a vibrant country with a rich history and a unique blend of Catalan and French influences. Its capital, Andorra la Vella, is the highest capital city in Europe.</p>
+        <p>Did you know? Andorra is known for having one of the lowest unemployment rates in Europe, and it’s a top destination for ski enthusiasts in the winter months!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Andorra is located in the eastern Pyrenees Mountains and is characterized by its rugged terrain, high peaks, and narrow valleys. The country is known for its natural beauty, including lush forests, alpine meadows, and crystal-clear rivers. Despite its small size, Andorra offers a variety of outdoor activities, from skiing and snowboarding in the winter to hiking and mountain biking in the summer.</p>
+    <h2>Geography</h2>
+    <p>Andorra’s geography is characterized by steep mountains, valleys, and scenic vistas:</p>
+    <ul>
+        <li>The Pyrenees Mountains offer fantastic skiing opportunities in the winter and hiking trails in the summer</li>
+        <li>The Madriu-Perafita-Claror Valley, a UNESCO World Heritage site, is a protected natural area with scenic landscapes</li>
+        <li>The Vallnord and Grandvalira ski resorts, known for their world-class slopes and views</li>
+        <li>The Ordino Arcalís Valley, a popular area for outdoor sports throughout the year</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Andorra has a unique culture influenced by its Catalan heritage, as well as its proximity to France and Spain. The official language is Catalan, and the country is known for its traditional festivals, music, and dance. Andorran cuisine is a blend of Catalan, French, and Spanish flavors, with dishes like Trinxat (potato and cabbage dish) and Escudella (meat and vegetable stew) being popular staples.</p>
+    <h2>Culture</h2>
+    <p>Andorran culture is a mix of Catalan, Spanish, and French influences, reflected in its language, food, and traditions:</p>
+    <ul>
+        <li>The official language is Catalan, although Spanish, French, and Portuguese are widely spoken</li>
+        <li>Famous for its music festivals, such as the Andorra la Vella International Music Festival</li>
+        <li>Andorran cuisine includes traditional Catalan dishes like trinxat (potato and cabbage dish) and escudella (meat and vegetable stew)</li>
+        <li>The country celebrates unique cultural events, like the traditional Andorran folk dances during festivals</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Andorra is a popular tourist destination, offering a mix of natural beauty, outdoor activities, and cultural experiences. Popular attractions include the Grandvalira and Vallnord ski resorts, the historic Sant Joan de Caselles Church, the Caldea Spa Complex, and the scenic Madriu-Perafita-Claror Valley (a UNESCO World Heritage Site). Visitors can enjoy skiing, hiking, shopping, and exploring Andorra's rich history and culture.</p>
-        
-        <a href="../webpages/index.html" title="Andorra">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Andorra offers a wide range of activities and attractions:</p>
+    <ul>
+        <li>The ski resorts of Grandvalira and Vallnord, perfect for skiing and snowboarding</li>
+        <li>The Romanesque churches, including Sant Joan de Caselles and Santa Coloma, showcasing the country’s medieval heritage</li>
+        <li>The Caldea Spa, a large spa complex offering thermal baths and wellness treatments</li>
+        <li>The charming village of Ordino, with its picturesque streets and traditional alpine architecture</li>
+        <li>Shopping in Andorra la Vella, known for its duty-free stores</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
