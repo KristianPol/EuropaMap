@@ -3,62 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Poland</title>
+    <title>Discover Poland</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background-color: #dc143c; 
-            color: white;
-            padding: 20px;
+            background: linear-gradient(90deg, #DC143C, #FFFFFF);
+            color: #fff;
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-        h1{
-            color:#f0f0f0
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
-
         h2 {
-            color: #dc143c;
+            color: #DC143C;
+            border-bottom: 2px solid #FFFFFF;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #DC143C;
             margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #DC143C;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        a:hover {
+            background-color: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Poland</h1>
+        <h1>Discover Poland</h1>
     </header>
 
     <div class="container">
         <h2>About Poland</h2>
-        <p>Poland is a Central European country known for its rich history, vibrant culture, and picturesque landscapes. The capital city, Warsaw, is a dynamic metropolis blending modern and historic architecture.</p>
+        <p>Poland, located in Central Europe, is a country of rich history, resilient spirit, and stunning natural landscapes. From medieval old towns to modern cities, Poland offers a deep connection to its past and a vibrant future.</p>
+        <p>Did you know? Poland is home to 17 UNESCO World Heritage Sites, including the historic centers of Kraków and Warsaw!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Poland shares borders with Germany, the Czech Republic, Slovakia, Ukraine, Belarus, Lithuania, and Russia (Kaliningrad Oblast). The country features diverse landscapes, from the Baltic Sea coastline in the north to the Tatra Mountains in the south.</p>
+    <h2>Geography</h2>
+    <p>Poland’s landscapes are wonderfully diverse:</p>
+    <ul>
+        <li>The Tatra Mountains along the southern border</li>
+        <li>Masurian Lake District, perfect for water sports and relaxation</li>
+        <li>The Baltic Sea coastline with sandy beaches</li>
+        <li>Białowieża Forest, one of Europe's last primeval forests</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Poland has a deep cultural heritage, famous for its music, literature, and traditions. It is the birthplace of composers such as Frédéric Chopin and Nobel Prize-winning authors like Wisława Szymborska. The country celebrates many unique festivals, including traditional folk events and national holidays.</p>
+    <h2>Culture</h2>
+    <p>Poland has a proud and rich cultural heritage:</p>
+    <ul>
+        <li>Traditional folk dances like the Polonaise and Mazurka</li>
+        <li>World-famous composers like Frédéric Chopin</li>
+        <li>Traditional dishes such as pierogi, bigos, and żurek</li>
+        <li>Festivals like Wianki and St. John's Night celebrations</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Tourists are drawn to Poland for its historic cities, medieval castles, and natural beauty. Popular destinations include Kraków’s Old Town, the Auschwitz-Birkenau Memorial, the Białowieża Forest, and the Masurian Lakes.</p>
-        <a href="../webpages/index.html" title="Poland">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Top places to visit in Poland include:</p>
+    <ul>
+        <li>Wawel Castle and Old Town Kraków</li>
+        <li>Warsaw’s Royal Castle and vibrant old town</li>
+        <li>Auschwitz-Birkenau Memorial and Museum</li>
+        <li>Gdańsk's picturesque waterfront and historical center</li>
+        <li>Zakopane and the Tatra Mountains for skiing and hiking</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
