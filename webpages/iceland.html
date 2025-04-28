@@ -3,59 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Iceland</title>
+    <title>Discover Iceland</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background-color: #005BB5;
+            background: linear-gradient(90deg, #0055A4, #00ADEF, #ffffff);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-        h1, h2 {
-            color: #D73B3E; 
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #0055A4;
+            border-bottom: 2px solid #00ADEF;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #00ADEF;
             margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #0055A4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        a:hover {
+            background-color: #00ADEF;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Iceland</h1>
+        <h1>Discover Iceland</h1>
     </header>
 
     <div class="container">
         <h2>About Iceland</h2>
-        <p>Iceland is a Nordic island country known for its stunning landscapes, including volcanoes, geysers, hot springs, and lava fields. The capital city, Reykjavik, runs on geothermal power and offers vibrant culture and history.</p>
+        <p>Iceland, known as the Land of Fire and Ice, is a Nordic island nation characterized by its dramatic landscapes of volcanoes, geysers, hot springs, and lava fields. Its capital, Reykjavik, runs on geothermal power and is home to a vibrant cultural scene and stunning architecture.</p>
+        <p>Did you know? Iceland is one of the most sparsely populated countries in Europe, and it's home to the largest glacier in Europe — Vatnajökull — as well as some of the world's most active volcanoes.</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Iceland is located in the North Atlantic Ocean and is known for its dramatic scenery, including glaciers, black sand beaches, and the Northern Lights.</p>
+    <h2>Geography</h2>
+    <p>Iceland’s natural wonders include:</p>
+    <ul>
+        <li>The Blue Lagoon - a famous geothermal spa</li>
+        <li>The Golden Circle - including Þingvellir National Park, Geysir, and Gullfoss waterfall</li>
+        <li>Vatnajökull Glacier and its stunning ice caves</li>
+        <li>Volcanic landscapes such as Eyjafjallajökull</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Iceland has a rich Viking heritage and a thriving modern culture. It is famous for its literature, music, and folklore. The country also has a strong tradition of geothermal bathing, with places like the Blue Lagoon.</p>
+    <h2>Culture</h2>
+    <p>Icelandic culture is deeply rooted in its history and natural environment:</p>
+    <ul>
+        <li>Strong traditions in storytelling and sagas</li>
+        <li>Vibrant music scene featuring artists like Björk and Sigur Rós</li>
+        <li>Unique cuisine including skyr, lamb, and seafood dishes</li>
+        <li>Celebrations like Þorrablót, a midwinter feast</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Iceland attracts visitors with its breathtaking natural wonders such as the Golden Circle, Jokulsarlon Glacier Lagoon, and the famous waterfalls like Gullfoss and Seljalandsfoss.</p>
-        
-        <a href="../webpages/index.html" title="Iceland">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Top attractions in Iceland include:</p>
+    <ul>
+        <li>Reykjavik’s Hallgrímskirkja Church</li>
+        <li>The Northern Lights (Aurora Borealis)</li>
+        <li>Jökulsárlón Glacier Lagoon</li>
+        <li>Snæfellsnes Peninsula – “Iceland in Miniature”</li>
+        <li>Whale watching tours from Húsavík</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>

@@ -3,59 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Portugal</title>
+    <title>Discover Portugal</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background-color: #006600;
+            background: linear-gradient(90deg, #006600, #ff0000, #ffffff);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-        h1, h2 {
-            color: #D73B3E; 
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #006600;
+            border-bottom: 2px solid #ff0000;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #ff0000;
             margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #006600;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        a:hover {
+            background-color: #ff0000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Portugal</h1>
+        <h1>Discover Portugal</h1>
     </header>
 
     <div class="container">
         <h2>About Portugal</h2>
-        <p>Portugal is a Southern European country on the Iberian Peninsula, bordering Spain. It is known for its rich maritime history, stunning coastline, and vibrant culture.</p>
+        <p>Portugal, located on the Iberian Peninsula, is a country of rich maritime heritage, charming historic cities, golden beaches, and vibrant culture. Its capital, Lisbon, is a colorful city known for its hills, trams, and soulful fado music.</p>
+        <p>Did you know? Portugal is the oldest country in Europe with the same defined borders, and it was once the world’s leading maritime power during the Age of Discoveries.</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Portugal features diverse landscapes, from the beautiful beaches of the Algarve to the rolling vineyards of the Douro Valley and the historic cities of Lisbon and Porto.</p>
+    <h2>Geography</h2>
+    <p>Portugal’s varied landscapes include:</p>
+    <ul>
+        <li>The Douro Valley - famous for its terraced vineyards</li>
+        <li>The Algarve - stunning coastline with golden beaches and cliffs</li>
+        <li>Serra da Estrela - the highest mountain range in mainland Portugal</li>
+        <li>The Azores and Madeira - beautiful Atlantic island groups</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Portugal has a rich cultural heritage, famous for its Fado music, delicious cuisine including pastéis de nata, and its historic explorers like Vasco da Gama.</p>
+    <h2>Culture</h2>
+    <p>Portugal’s traditions are rich and diverse:</p>
+    <ul>
+        <li>Fado music - recognized as UNESCO Intangible Cultural Heritage</li>
+        <li>Traditional tiles (azulejos) decorating buildings and streets</li>
+        <li>Delicious cuisine featuring bacalhau, pastel de nata, and hearty stews</li>
+        <li>Festivals like Festa de São João in Porto and Carnival in Madeira</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Portugal is a top travel destination, offering breathtaking sights such as the Tower of Belém, the Pena Palace in Sintra, and the scenic cliffs of Lagos.</p>
-        
-        <a href="../webpages/index.html" title="Portugal">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Top attractions in Portugal include:</p>
+    <ul>
+        <li>Belém Tower and Jerónimos Monastery in Lisbon</li>
+        <li>Historic city of Porto and its famous port wine cellars</li>
+        <li>Sintra’s fairy-tale palaces and castles</li>
+        <li>Óbidos - a beautiful medieval walled town</li>
+        <li>Madeira’s Laurisilva Forest, a UNESCO World Heritage Site</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
