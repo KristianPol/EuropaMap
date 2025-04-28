@@ -3,58 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Germany</title>
+    <title>Discover Germany</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background-color: #000000; 
+            background: linear-gradient(90deg, #000000, #DD0000, #FFCC00);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-        h1, h2 {
-            color: #dd0000;
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #DD0000;
+            border-bottom: 2px solid #FFCC00;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #FFCC00;
             margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #DD0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        a:hover {
+            background-color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Germany</h1>
+        <h1>Discover Germany</h1>
     </header>
 
     <div class="container">
         <h2>About Germany</h2>
-        <p>Germany is a country in Central Europe, known for its rich history, diverse culture, and technological advancements. The capital city is Berlin, which is a vibrant cultural and political hub. Germany is also famous for its contributions to philosophy, music, and science.</p>
+        <p>Germany, located in the heart of Europe, is known for its rich history, cutting-edge technology, and cultural heritage. From medieval castles to modern cities, Germany offers a fascinating blend of the old and new.</p>
+        <p>Did you know? Germany is home to the world-famous Oktoberfest, the Black Forest, and the invention of the automobile!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Germany is bordered by Denmark to the north, Poland and the Czech Republic to the east, Austria and Switzerland to the south, and France, Luxembourg, Belgium, and the Netherlands to the west. The country features a varied landscape, including forests, rivers, mountains, and coastal regions.</p>
+    <h2>Geography</h2>
+    <p>Germany’s landscapes are incredibly varied:</p>
+    <ul>
+        <li>The Bavarian Alps - perfect for hiking and skiing</li>
+        <li>The Rhine River Valley - dotted with vineyards and castles</li>
+        <li>The Black Forest - legendary for its dense woods and fairy tales</li>
+        <li>North Sea and Baltic Sea coastlines</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Germany has a rich cultural heritage, with influences from various historical periods and regions. The country is known for its classical music, with famous composers such as Ludwig van Beethoven, Johann Sebastian Bach, and Richard Wagner. Germany is also famous for its festivals, such as Oktoberfest, and its contributions to literature, art, and philosophy.</p>
+    <h2>Culture</h2>
+    <p>Germany's vibrant culture includes:</p>
+    <ul>
+        <li>Classical music by composers like Beethoven and Bach</li>
+        <li>World-renowned Christmas markets</li>
+        <li>Famous beer brewing traditions and festivals</li>
+        <li>Unique traditions like Karneval and Schützenfest</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Germany is a popular tourist destination, offering a mix of historic landmarks, natural beauty, and vibrant cities. Popular attractions include the Brandenburg Gate, Neuschwanstein Castle, the Black Forest, and the Rhine Valley. The country is also known for its Christmas markets and beer culture.</p>
-        <a href="../webpages/index.html" title="Germany">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Top attractions in Germany include:</p>
+    <ul>
+        <li>Brandenburg Gate and Berlin Wall remnants in Berlin</li>
+        <li>Neuschwanstein Castle - inspiration for Disney’s Sleeping Beauty Castle</li>
+        <li>The Cologne Cathedral - a UNESCO World Heritage Site</li>
+        <li>Romantic Road - scenic route through picturesque towns</li>
+        <li>Heidelberg’s historic old town and castle</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
