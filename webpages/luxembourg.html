@@ -3,85 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Luxembourg</title>
+    <title>Discover Luxembourg</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #00A1DE, #FFFFFF, #D63447);
+            background: linear-gradient(90deg, #1D428A, #E3E3E3, #F3F3F3);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        h1, h2 {
-            color: #D63447;
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #1D428A;
+            border-bottom: 2px solid #E3E3E3;
+            padding-bottom: 8px;
+            margin-top: 30px;
             text-align: center;
         }
         p {
-            line-height: 1.6;
             text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #1D428A;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
         a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #D63447;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #1D428A;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #FFFFFF;
-            color: #D63447;
-            border: 1px solid #D63447;
+            background-color: #003b5c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Luxembourg</h1>
+        <h1>Discover Luxembourg</h1>
     </header>
 
     <div class="container">
         <h2>About Luxembourg</h2>
-        <p>Luxembourg is a small yet wealthy country in Western Europe, known for its strong economy, medieval castles, and multicultural society. The capital, Luxembourg City, is a major financial hub with a blend of historical and modern architecture.</p>
+        <p>Luxembourg is a small, landlocked country located in Western Europe. Known for its historical landmarks, luxurious castles, and as a hub of European finance, Luxembourg blends ancient tradition with modern influence. Its capital, Luxembourg City, offers an exceptional view into Europe’s political and cultural heart.</p>
+        <p>Did you know? Luxembourg has the highest GDP per capita in the world!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Luxembourg is a landlocked country bordered by Belgium, France, and Germany. It features rolling hills, dense forests, and scenic river valleys, making it a picturesque destination.</p>
+    <h2>Geography</h2>
+    <p>Luxembourg is characterized by lush forests, rolling hills, and charming villages:</p>
+    <ul>
+        <li>The Ardennes Forest, with its stunning natural beauty and wildlife</li>
+        <li>The picturesque Moselle Valley, famous for vineyards and scenic rivers</li>
+        <li>Luxembourg City, built on a dramatic cliff with beautiful fortifications</li>
+        <li>The Mullerthal region, known as “Little Switzerland” for its unique rock formations</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Luxembourg has a rich cultural heritage influenced by its multilingual population and neighboring countries. It is known for its festivals, gastronomy, and a strong sense of European identity.</p>
+    <h2>Culture</h2>
+    <p>Luxembourg has a rich culture influenced by its European neighbors, offering a blend of French, German, and Luxembourgish traditions:</p>
+    <ul>
+        <li>Luxembourgish is the official language, although French and German are also widely spoken</li>
+        <li>Luxembourg is famous for its festivals, including the vibrant Schueberfouer</li>
+        <li>The Grand Ducal Palace, home to the Grand Duke, is a symbol of Luxembourg’s history</li>
+        <li>Traditional cuisine such as Judd mat Gaardebounen (smoked pork with beans) and Gromperekichelcher (fried potato cakes)</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Tourists visit Luxembourg for its UNESCO-listed old town, stunning castles like Vianden Castle, and nature parks such as Müllerthal, also known as "Little Switzerland." The country is also famous for its excellent cuisine and wines.</p>
-        
-        <a href="../webpages/index.html" title="Luxembourg">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Some of the must-see places in Luxembourg include:</p>
+    <ul>
+        <li>The historical Luxembourg City, with its UNESCO-listed old town</li>
+        <li>Vianden Castle, a fairy-tale fortress nestled in the Ardennes</li>
+        <li>The American Cementery Memorial, dedicated to U.S. soldiers from World War II</li>
+        <li>Mullerthal Trail, a hiker’s paradise in the “Little Switzerland” region</li>
+        <li>Clervaux Castle and its impressive photographic exhibitions</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
