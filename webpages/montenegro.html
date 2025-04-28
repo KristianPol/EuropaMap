@@ -3,83 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Montenegro</title>
+    <title>Discover Montenegro</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #C8102E, #FFD700);
+            background: linear-gradient(90deg, #9E2A2F, #D19D3A, #F1C40F);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        h1, h2 {
-            color: #C8102E;
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #9E2A2F;
+            border-bottom: 2px solid #D19D3A;
+            padding-bottom: 8px;
+            margin-top: 30px;
             text-align: center;
         }
         p {
-            line-height: 1.6;
             text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #D19D3A;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
         a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #C8102E;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #9E2A2F;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #FFD700;
+            background-color: #F1C40F;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Montenegro</h1>
+        <h1>Discover Montenegro</h1>
     </header>
 
     <div class="container">
         <h2>About Montenegro</h2>
-        <p>Montenegro, meaning "Black Mountain," is a small but breathtaking country in Southeastern Europe, located on the Balkan Peninsula. Known for its stunning Adriatic coastline, rugged mountains, and medieval villages, Montenegro is a hidden gem in Europe. The capital city is Podgorica, while the historic town of Kotor is a UNESCO World Heritage Site and a major tourist attraction.</p>
+        <p>Montenegro, a small but stunning country located in Southeastern Europe, is known for its dramatic landscapes of rugged mountains, medieval towns, and a beautiful Adriatic coastline. The capital, Podgorica, offers a modern contrast to the charming coastal city of Kotor, surrounded by steep cliffs and clear waters. Montenegro is also known for its rich cultural heritage and historical landmarks.</p>
+        <p>Did you know? Montenegro is home to the Bay of Kotor, one of the most beautiful bays in the world, often referred to as Europe’s southernmost fjord!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Montenegro is bordered by Croatia to the west, Bosnia and Herzegovina to the northwest, Serbia to the northeast, Kosovo to the east, and Albania to the southeast. The country boasts diverse landscapes, including the Adriatic Sea coastline, the Bay of Kotor, the Dinaric Alps, and Lake Skadar, the largest lake in Southern Europe. Montenegro's terrain is a mix of dramatic mountains, lush forests, and pristine beaches.</p>
+    <h2>Geography</h2>
+    <p>Montenegro’s geography is diverse and stunning, with its Adriatic coastline, mountains, and charming towns:</p>
+    <ul>
+        <li>The Bay of Kotor, a UNESCO World Heritage site, with its picturesque coastal towns</li>
+        <li>The Durmitor National Park, known for its rugged peaks, glacial lakes, and wildlife</li>
+        <li>The Lovćen Mountain, home to the famous mausoleum of Njegoš, a national symbol</li>
+        <li>The Skadar Lake, the largest lake in the Balkans, rich in biodiversity</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Montenegro has a rich cultural heritage influenced by its history as a crossroads of civilizations. The country is known for its Orthodox Christian traditions, medieval architecture, and vibrant festivals. Montenegrin culture is also reflected in its music, dance, and cuisine, which features Mediterranean and Balkan flavors. The country is home to numerous monasteries, fortresses, and historic towns.</p>
+    <h2>Culture</h2>
+    <p>Montenegrin culture blends Slavic, Mediterranean, and Ottoman influences, with vibrant traditions and celebrations:</p>
+    <ul>
+        <li>The traditional Montenegrin hospitality and family values</li>
+        <li>Rich folklore and music, often featuring the “guslar” (traditional epic poetry singers)</li>
+        <li>Montenegrin cuisine, including dishes like ćevapi (grilled minced meat) and crni rizot (black risotto with cuttlefish)</li>
+        <li>The celebration of religious and national holidays such as Vidovdan (St. Vitus Day) and the feast of Saint John</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Montenegro is a growing tourist destination, offering a mix of natural beauty, historic landmarks, and coastal charm. Popular attractions include the Bay of Kotor, Durmitor National Park, Sveti Stefan island, and the beaches of Budva. Visitors can enjoy activities such as hiking in the mountains, exploring medieval towns, and relaxing on the Adriatic coast. Montenegro is also known for its warm hospitality and delicious cuisine.</p>
-        
-        <a href="../webpages/index.html" title="Montenegro">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Some must-see destinations in Montenegro include:</p>
+    <ul>
+        <li>The Old Town of Kotor, a UNESCO World Heritage site, with its medieval architecture</li>
+        <li>Durmitor National Park, perfect for hiking, skiing, and nature exploration</li>
+        <li>The Budva Riviera, known for its sandy beaches and lively nightlife</li>
+        <li>Perast, a small, historic town near the Bay of Kotor, with beautiful churches and palaces</li>
+        <li>The Ostrog Monastery, an impressive religious site built into the cliffs</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
