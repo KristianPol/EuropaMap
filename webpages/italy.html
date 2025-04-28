@@ -3,83 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Italy</title>
+    <title>Discover Italy</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #009246, #CE2B37); /* Green to Red */
+            background: linear-gradient(90deg, #009246, #ffffff, #ce2b37);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        h1, h2 {
-            color: #CE2B37; /* Flag red */
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #009246;
+            border-bottom: 2px solid #ce2b37;
+            padding-bottom: 8px;
+            margin-top: 30px;
             text-align: center;
         }
         p {
-            line-height: 1.6;
             text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #ce2b37;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
         a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #009246; /* Flag green */
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #009246;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #CE2B37;
+            background-color: #ce2b37;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Italy</h1>
+        <h1>Discover Italy</h1>
     </header>
 
     <div class="container">
         <h2>About Italy</h2>
-        <p>Italy is a European country known for its rich history, iconic architecture, world-class cuisine, and stunning natural landscapes. From the Roman Empire to the Renaissance, Italy has played a central role in shaping Western civilization.</p>
+        <p>Italy, a country located in Southern Europe, is famous for its rich history, stunning architecture, beautiful landscapes, and delicious cuisine. It is home to the ancient Roman Empire and the Renaissance, with cities like Rome, Florence, and Venice offering a glimpse into the world’s greatest art, architecture, and culture. Whether it's the bustling streets of Milan or the tranquil beauty of the Amalfi Coast, Italy offers something for everyone.</p>
+        <p>Did you know? Italy is home to more UNESCO World Heritage Sites than any other country in the world!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Located in Southern Europe, Italy is a peninsula surrounded by the Mediterranean Sea. It shares borders with France, Switzerland, Austria, and Slovenia. It also includes the islands of Sicily and Sardinia, and features diverse geography from the Alps to coastal plains.</p>
+    <h2>Geography</h2>
+    <p>Italy is a land of great natural beauty, from its majestic mountain ranges to its stunning coastlines:</p>
+    <ul>
+        <li>The Alps – which form the northern border and are perfect for skiing and hiking</li>
+        <li>The Apennines – the mountain range running down the spine of the country</li>
+        <li>The Mediterranean Coast – with iconic destinations such as the Amalfi Coast and Cinque Terre</li>
+        <li>The Po Valley – Italy's largest river basin, home to fertile lands and rich agriculture</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Italian culture is renowned for its contributions to art, music, fashion, and cuisine. Cities like Rome, Florence, and Venice are home to some of the world's greatest masterpieces and historic sites. Italian traditions are deeply rooted in family, food, and festivals.</p>
+    <h2>Culture</h2>
+    <p>Italy’s culture is known for its significant contributions to art, fashion, food, and architecture:</p>
+    <ul>
+        <li>Italy is the birthplace of opera, and the country’s classical music heritage is world-renowned</li>
+        <li>Italian cuisine is a world favorite, featuring dishes like pasta, pizza, and gelato</li>
+        <li>Italy is the home of Renaissance art, with masterpieces by Michelangelo, Leonardo da Vinci, and Raphael</li>
+        <li>The Italian fashion industry is iconic, with luxury brands such as Gucci, Prada, and Dolce & Gabbana</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Italy attracts millions of tourists each year who visit landmarks such as the Colosseum, the Leaning Tower of Pisa, the canals of Venice, and the Vatican. Visitors also enjoy Italian food, vineyards in Tuscany, and the Amalfi Coast’s breathtaking scenery.</p>
-        
-        <a href="../webpages/index.html" title="Italy">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Italy is packed with iconic destinations and world-famous landmarks:</p>
+    <ul>
+        <li>The Colosseum in Rome, a marvel of ancient engineering and one of the most famous landmarks in the world</li>
+        <li>The canals of Venice, where you can take a romantic gondola ride through the city</li>
+        <li>The Leaning Tower of Pisa, one of the most recognizable monuments in the world</li>
+        <li>The Amalfi Coast, known for its stunning cliffside towns and crystal-clear waters</li>
+        <li>The Tuscan countryside, dotted with vineyards and charming medieval villages</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
