@@ -3,83 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Moldova</title>
+    <title>Discover Moldova</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #FFD700, #0033A0, #D00000);
+            background: linear-gradient(90deg, #004F9F, #F3B91C, #F44336);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        h1, h2 {
-            color: #D00000;
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #004F9F;
+            border-bottom: 2px solid #F3B91C;
+            padding-bottom: 8px;
+            margin-top: 30px;
             text-align: center;
         }
         p {
-            line-height: 1.6;
             text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #F3B91C;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
         a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #D00000;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #004F9F;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #0033A0;
+            background-color: #F44336;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Moldova</h1>
+        <h1>Discover Moldova</h1>
     </header>
 
     <div class="container">
         <h2>About Moldova</h2>
-        <p>Moldova is a small landlocked country in Eastern Europe, known for its rolling vineyards, rich cultural heritage, and hospitable people. The capital, Chișinău, is the country’s largest city and economic center.</p>
+        <p>Moldova, a landlocked country in Eastern Europe, is known for its rich cultural heritage, lush landscapes, and friendly people. Despite being one of the least known countries in Europe, Moldova is home to beautiful vineyards, ancient monasteries, and a fascinating history. The capital, Chișinău, is an energetic city with a mix of Soviet-era architecture and modern influences.</p>
+        <p>Did you know? Moldova is one of the world's largest wine producers, with an underground wine city in Cricova, where wine cellars stretch over 120 kilometers!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Moldova is characterized by its picturesque countryside, fertile plains, and scenic rivers, including the Dniester. It shares borders with Romania and Ukraine.</p>
+    <h2>Geography</h2>
+    <p>Moldova features varied landscapes, from rolling hills to beautiful vineyards:</p>
+    <ul>
+        <li>The rolling hills of the Codru region, which is home to the country’s most famous vineyards</li>
+        <li>The Dniester River, which forms the eastern border of the country</li>
+        <li>The Orheiul Vechi, an ancient complex of monasteries and caves carved into the rock</li>
+        <li>The southern part of the country, known for its fertile plains and agricultural richness</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Moldovan culture is influenced by Romanian, Russian, and Ottoman traditions. The country is famous for its folk music, dance, and winemaking, with some of the world's largest wine cellars.</p>
+    <h2>Culture</h2>
+    <p>Moldovan culture is deeply influenced by its historical ties to Romania and Russia, with a blend of traditional customs and modern-day influences:</p>
+    <ul>
+        <li>Rich folk traditions, including dance, music, and intricate folk costumes</li>
+        <li>The famous Moldovan wine-making tradition, dating back to the ancient Dacian times</li>
+        <li>Traditional cuisine, including dishes like mămăligă (cornmeal porridge), plăcinte (pastries), and sarmale (stuffed cabbage rolls)</li>
+        <li>The celebration of the holiday of "Mărțișor", welcoming the arrival of spring with colorful amulets</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Tourists visit Moldova for its excellent wines, the historic Orheiul Vechi Monastery, and charming villages. The country is also home to vibrant festivals celebrating its rich traditions.</p>
-        
-        <a href="../webpages/index.html" title="Moldova">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Some of Moldova's must-see destinations include:</p>
+    <ul>
+        <li>The Cricova Wine Cellars, one of the largest wine complexes in Europe</li>
+        <li>Orheiul Vechi, an archaeological and historical complex offering stunning views</li>
+        <li>The Stefan Cel Mare Park and Memorial Complex in Chișinău</li>
+        <li>The Capriana Monastery, one of the oldest monasteries in Moldova</li>
+        <li>The village of Butuceni, known for its traditional stone houses and guesthouses</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>

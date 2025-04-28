@@ -3,61 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Romania</title>
+    <title>Discover Romania</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background-color: #002B7F; /* Dark Blue */
+            background: linear-gradient(90deg, #0051A3, #F4C300, #D6005C);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-        h1{
-            color: yellow;
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         h2 {
-            color: #002B7F; /* Dark Blue */
+            color: #0051A3;
+            border-bottom: 2px solid #F4C300;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #F4C300;
             margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #0051A3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        a:hover {
+            background-color: #D6005C;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Romania</h1>
+        <h1>Discover Romania</h1>
     </header>
 
     <div class="container">
         <h2>About Romania</h2>
-        <p>Romania is a country in Eastern Europe, known for its medieval castles, scenic landscapes, and rich cultural heritage. The capital city is Bucharest, often called the "Little Paris" for its architecture and vibrant lifestyle.</p>
+        <p>Romania, located in the heart of Eastern Europe, is a country with a rich history, diverse landscapes, and a vibrant culture. Known for its picturesque castles, including the famous Bran Castle (often associated with the Dracula legend), Romania is a destination that offers much more, from bustling cities to tranquil rural villages and breathtaking natural beauty.</p>
+        <p>Did you know? Romania is home to the Transfagarasan Highway, one of the most beautiful and scenic roads in the world, as well as the ancient Dacian Fortresses, a UNESCO World Heritage site!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Romania is bordered by Ukraine to the north, Bulgaria to the south, Serbia to the southwest, Hungary to the west, and Moldova to the east. The country features the Carpathian Mountains, vast forests, and the Danube River, which flows into the Black Sea.</p>
+    <h2>Geography</h2>
+    <p>Romania boasts a variety of landscapes:</p>
+    <ul>
+        <li>The Carpathian Mountains, ideal for hiking, skiing, and nature lovers</li>
+        <li>The Danube River, which forms part of the country's southern border</li>
+        <li>The stunning Black Sea coast, with resorts like Mamaia and Constanța</li>
+        <li>The Danube Delta, one of Europe's largest and most biodiverse wetlands</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Romania has a deep cultural heritage influenced by its Latin roots, Byzantine traditions, and neighboring countries. The country is famous for its folklore, traditional music, and painted monasteries. Romanian cuisine is also well known, featuring dishes like sarmale, mici, and mămăligă.</p>
+    <h2>Culture</h2>
+    <p>Romanian culture is a blend of Latin, Slavic, Ottoman, and Hungarian influences, offering a rich tapestry of traditions and customs:</p>
+    <ul>
+        <li>The famous Romanian hospitality and the tradition of the "Mărțișor" festival, marking the arrival of spring</li>
+        <li>Folk music, with instruments like the pan flute and the violin, and lively dances such as the hora</li>
+        <li>Romanian cuisine, featuring dishes like sarmale (stuffed cabbage rolls), mici (grilled sausages), and a variety of cheeses</li>
+        <li>The vibrant traditions of Easter and Christmas, including intricate painted eggs and caroling</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Romania is a popular tourist destination with attractions such as Bran Castle (often associated with Dracula), the Transfagarasan Highway, the Danube Delta, and the medieval city of Sibiu. The country is also known for its stunning landscapes and warm hospitality.</p>
-        <a href="../webpages/index.html" title="Romania">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Must-visit attractions in Romania include:</p>
+    <ul>
+        <li>Bran Castle, famously associated with Dracula</li>
+        <li>The medieval town of Sibiu, with its stunning old town and cultural heritage</li>
+        <li>Peleș Castle in Sinaia, a neo-Renaissance gem</li>
+        <li>The Transfagarasan Highway, one of the world’s most scenic drives</li>
+        <li>The beautiful seaside city of Constanța and the Black Sea resorts</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
