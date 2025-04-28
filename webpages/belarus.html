@@ -3,85 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Belarus</title>
+    <title>Discover Belarus</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #D22730, #FFFFFF, #D22730);
+            background: linear-gradient(90deg, #D22730, #4AA657, #FFFFFF);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        h1, h2 {
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
             color: #D22730;
+            border-bottom: 2px solid #4AA657;
+            padding-bottom: 8px;
+            margin-top: 30px;
             text-align: center;
         }
         p {
-            line-height: 1.6;
             text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #4AA657;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
         a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
+            display: inline-block;
+            padding: 12px 25px;
             background-color: #D22730;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #FFFFFF;
-            color: #D22730;
-            border: 1px solid #D22730;
+            background-color: #4AA657;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Belarus</h1>
+        <h1>Discover Belarus</h1>
     </header>
 
     <div class="container">
         <h2>About Belarus</h2>
-        <p>Belarus is a landlocked country in Eastern Europe, known for its rich history, vast forests, and unique cultural heritage. The capital city, Minsk, is a vibrant hub of politics, culture, and history, with a mix of Soviet-era architecture and modern developments.</p>
+        <p>Belarus, located in Eastern Europe, is a land of vast forests, scenic lakes, and deep cultural roots. Known for its unspoiled nature and Soviet-era architecture, Belarus offers a unique glimpse into both past and present Europe. The capital, Minsk, is a modern city with grand boulevards and vibrant cultural life.</p>
+        <p>Did you know? About 40% of Belarus is covered by forests, and it is home to Europe's largest remaining primeval forest — the Białowieża Forest, a UNESCO World Heritage Site!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Belarus is characterized by its flat terrain, dense forests, and numerous rivers and lakes. It shares borders with Russia, Ukraine, Poland, Lithuania, and Latvia. The country is often referred to as the "Lungs of Europe" due to its extensive forest cover.</p>
+    <h2>Geography</h2>
+    <p>Belarus features serene natural landscapes:</p>
+    <ul>
+        <li>The Białowieża Forest, home to the rare European bison</li>
+        <li>Numerous lakes and rivers, including Lake Narach, the largest in the country</li>
+        <li>Rolling hills and fertile plains perfect for agriculture</li>
+        <li>National parks like Pripyatsky and Braslav Lakes</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Belarus has a rich cultural heritage, with traditions rooted in Slavic folklore, music, and dance. The country is known for its traditional festivals, such as Kupala Night, and its contributions to literature, including the works of famous writers like Francysk Skaryna.</p>
+    <h2>Culture</h2>
+    <p>Belarusian culture is a blend of tradition, resilience, and creativity:</p>
+    <ul>
+        <li>Rich folklore with traditional music, dance, and embroidery</li>
+        <li>Historic castles such as Mir Castle and Nesvizh Palace</li>
+        <li>Traditional dishes like draniki (potato pancakes) and machanka (pork stew)</li>
+        <li>Major festivals like Kupalle (summer solstice celebration)</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Belarus is a growing tourist destination, offering attractions such as the Mir Castle, the Nesvizh Palace, the Białowieża Forest (a UNESCO World Heritage Site), and the historic city of Brest. The country is also known for its hospitality and traditional cuisine.</p>
-        
-        <a href="../webpages/index.html" title="Belarus">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Top attractions in Belarus include:</p>
+    <ul>
+        <li>Minsk’s Independence Avenue and Victory Square</li>
+        <li>The medieval town of Polotsk, one of the oldest cities in Belarus</li>
+        <li>The Brest Hero-Fortress, commemorating WWII history</li>
+        <li>The open-air Museum of Folk Architecture and Rural Lifestyle near Minsk</li>
+        <li>Exploring the Braslav Lakes region for boating and nature watching</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
