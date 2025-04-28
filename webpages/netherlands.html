@@ -3,59 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Netherlands</title>
+    <title>Discover Netherlands</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background-color: #21468B;
+            background: linear-gradient(90deg, #21468B, #FFFFFF, #AE1C28);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-        h1, h2 {
-            color: #AE1C28; 
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #21468B;
+            border-bottom: 2px solid #AE1C28;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #21468B;
             margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #21468B;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        a:hover {
+            background-color: #AE1C28;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to the Netherlands</h1>
+        <h1>Discover Netherlands</h1>
     </header>
 
     <div class="container">
-        <h2>About the Netherlands</h2>
-        <p>The Netherlands, also known as Holland, is a country in Northwestern Europe known for its flat landscape, canals, windmills, and tulip fields. The capital city, Amsterdam, is famous for its historic architecture, museums, and vibrant culture.</p>
+        <h2>About Netherlands</h2>
+        <p>The Netherlands, located in Western Europe, is a country renowned for its flat landscape, extensive canal systems, colorful tulip fields, windmills, and vibrant cities. Amsterdam, its capital, is famous for its historic houses, artistic heritage, and lively culture.</p>
+        <p>Did you know? About a third of the Netherlands lies below sea level, protected by an intricate system of dikes and canals!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>The Netherlands is bordered by Germany to the east, Belgium to the south, and the North Sea to the northwest. Much of the country lies below sea level, protected by an extensive system of dikes and water management structures.</p>
+    <h2>Geography</h2>
+    <p>The Netherlands' unique geography includes:</p>
+    <ul>
+        <li>Extensive polders — land reclaimed from the sea</li>
+        <li>Iconic tulip fields, especially in the Keukenhof Gardens</li>
+        <li>Picturesque waterways and canals in cities like Amsterdam and Utrecht</li>
+        <li>Coastal dunes and the Wadden Sea islands</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>The Netherlands has a rich cultural heritage, with contributions in art, literature, and music. It is home to famous painters such as Rembrandt and Van Gogh. Dutch cuisine includes stroopwafels, cheese, and raw herring.</p>
+    <h2>Culture</h2>
+    <p>The Netherlands boasts a rich and open culture:</p>
+    <ul>
+        <li>Masterpieces from painters like Rembrandt and Van Gogh</li>
+        <li>Celebrations like King's Day (Koningsdag)</li>
+        <li>Traditional foods such as stroopwafels, herring, and cheese</li>
+        <li>A cycling culture with more bikes than people!</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>The Netherlands attracts millions of visitors each year, with popular attractions including the Anne Frank House, Keukenhof Gardens, Rijksmuseum, and the scenic canals of Amsterdam. The country is also known for its cycling-friendly infrastructure.</p>
-        
-        <a href="../webpages/index.html" title="Netherlands">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Top places and experiences to enjoy:</p>
+    <ul>
+        <li>Exploring the canals and museums of Amsterdam</li>
+        <li>Visiting the windmills at Kinderdijk (UNESCO site)</li>
+        <li>Seeing the vibrant tulip displays at Keukenhof</li>
+        <li>Touring the medieval city of Utrecht</li>
+        <li>Discovering Rotterdam’s modern architecture</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
