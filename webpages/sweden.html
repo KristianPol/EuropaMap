@@ -3,84 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Sweden</title>
+    <title>Discover Sweden</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #005BAC, #FECC02);
+            background: linear-gradient(90deg, #006AA7, #FECC00, #006AA7);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        h1, h2 {
-            color: #005BAC;
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #006AA7;
+            border-bottom: 2px solid #FECC00;
+            padding-bottom: 8px;
+            margin-top: 30px;
             text-align: center;
         }
         p {
-            line-height: 1.6;
             text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #006AA7;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
         a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #005BAC;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #006AA7;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #FECC02;
-            color: #005BAC;
+            background-color: #004B7C;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Sweden</h1>
+        <h1>Discover Sweden</h1>
     </header>
 
     <div class="container">
         <h2>About Sweden</h2>
-        <p>Sweden is a Scandinavian country in Northern Europe, known for its stunning natural landscapes, innovative design, and high quality of life. The capital city, Stockholm, is built on 14 islands and is famous for its historic architecture, museums, and vibrant culture.</p>
+        <p>Sweden, located in Northern Europe, is a country known for its beautiful landscapes, rich history, and high quality of life. Stockholm, the stylish capital built across 14 islands, is a hub of innovation, design, and cultural heritage. Sweden's balance between modernity and nature makes it a truly remarkable destination.</p>
+        <p>Did you know? Sweden has a right called "Allemansrätten," meaning everyone can roam freely through nature, respecting the environment and private property.</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Sweden is characterized by its vast forests, thousands of lakes, and a long coastline along the Baltic Sea. It shares borders with Norway, Finland, and is connected to Denmark by the Öresund Bridge.</p>
+    <h2>Geography</h2>
+    <p>Sweden’s natural beauty is incredibly diverse:</p>
+    <ul>
+        <li>The serene forests and lakes of central Sweden</li>
+        <li>The snowy peaks of Swedish Lapland</li>
+        <li>The picturesque islands of the Stockholm Archipelago</li>
+        <li>The dramatic cliffs and coastlines of Gotland</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Sweden has a rich cultural heritage, known for its contributions to music (like ABBA and Swedish House Mafia), literature (such as Astrid Lindgren), and design (IKEA and minimalist aesthetics). The country also celebrates traditional festivals like Midsummer and Lucia.</p>
+    <h2>Culture</h2>
+    <p>Swedish culture is progressive yet deeply rooted in tradition:</p>
+    <ul>
+        <li>Famous for fika — the cultural institution of a coffee break with pastries</li>
+        <li>Celebrations like Midsummer, with traditional flower crowns and dances</li>
+        <li>Delicious dishes such as meatballs, gravlax, and cinnamon buns</li>
+        <li>Strong traditions in design and music, from IKEA to ABBA</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Sweden is a popular tourist destination, offering attractions such as Stockholm's Gamla Stan (Old Town), the Icehotel in Jukkasjärvi, the Northern Lights in Swedish Lapland, and the picturesque archipelagoes along its coast.</p>
-        
-        <a href="../webpages/index.html" title="Sweden">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Top attractions and experiences in Sweden:</p>
+    <ul>
+        <li>Exploring Stockholm’s Gamla Stan (Old Town)</li>
+        <li>Seeing the Northern Lights in Abisko National Park</li>
+        <li>Visiting the medieval city of Visby on Gotland</li>
+        <li>Discovering the Icehotel in Jukkasjärvi</li>
+        <li>Hiking in the scenic Sarek National Park</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>

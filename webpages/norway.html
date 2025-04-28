@@ -3,83 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Norway</title>
+    <title>Discover Norway</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #00205B, #EF2B2D);
+            background: linear-gradient(90deg, #BA0C2F, #00205B, #FFFFFF);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        h1, h2 {
-            color: #00205B;
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #BA0C2F;
+            border-bottom: 2px solid #00205B;
+            padding-bottom: 8px;
+            margin-top: 30px;
             text-align: center;
         }
         p {
-            line-height: 1.6;
             text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #BA0C2F;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
         a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #00205B;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #BA0C2F;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #EF2B2D;
+            background-color: #00205B;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Norway</h1>
+        <h1>Discover Norway</h1>
     </header>
 
     <div class="container">
         <h2>About Norway</h2>
-        <p>Norway is a Scandinavian country in Northern Europe, known for its breathtaking fjords, rugged coastline, and stunning natural beauty. The capital city, Oslo, is a vibrant hub of culture, history, and modern design.</p>
+        <p>Norway, located in Northern Europe, is a country of stunning natural beauty, famous for its dramatic fjords, majestic mountains, and vibrant coastal towns. Oslo, the capital, blends modern architecture with deep-rooted Viking heritage, while offering a high standard of living and cultural richness.</p>
+        <p>Did you know? Norway is home to the world's longest road tunnel — the Lærdal Tunnel — stretching over 24 kilometers!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Norway is famous for its dramatic landscapes, including deep fjords, towering mountains, and Arctic tundra. It shares borders with Sweden, Finland, and Russia, and has a long coastline along the North Atlantic Ocean.</p>
+    <h2>Geography</h2>
+    <p>Norway’s landscapes are among the most breathtaking on Earth:</p>
+    <ul>
+        <li>Majestic fjords like Geirangerfjord and Nærøyfjord (both UNESCO World Heritage Sites)</li>
+        <li>The rugged peaks of the Lofoten Islands</li>
+        <li>The Arctic wilderness of Svalbard</li>
+        <li>Endless forests and lakes in the interior</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Norway has a rich cultural heritage, with traditions rooted in Viking history, folklore, and Sami indigenous culture. The country is also known for its contributions to art, literature (like Henrik Ibsen), and music (such as Edvard Grieg).</p>
+    <h2>Culture</h2>
+    <p>Norwegian culture is rich and nature-oriented:</p>
+    <ul>
+        <li>A strong maritime and Viking heritage</li>
+        <li>Celebrations like Constitution Day (May 17th)</li>
+        <li>Traditional dishes like rakfisk, brunost (brown cheese), and seafood specialties</li>
+        <li>Passion for skiing and outdoor activities in all seasons</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Norway is a top tourist destination, offering attractions such as the Geirangerfjord, the Northern Lights, the Lofoten Islands, and the scenic Flåm Railway. Outdoor activities like hiking, skiing, and fishing are also popular.</p>
-        
-        <a href="../webpages/index.html" title="Norway">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Must-see attractions in Norway:</p>
+    <ul>
+        <li>Oslo’s Opera House and Vigeland Sculpture Park</li>
+        <li>Bergen’s colorful Bryggen Wharf (UNESCO site)</li>
+        <li>The breathtaking Atlantic Ocean Road</li>
+        <li>Chasing the Northern Lights in Tromsø</li>
+        <li>Hiking to Trolltunga and Preikestolen (Pulpit Rock)</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
