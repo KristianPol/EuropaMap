@@ -34,3 +34,36 @@ The website will include the following features:
 ## Resources
 - We’ll use online tutorials for HTML and CSS (like W3Schools and Mozilla Developer Network).
 - We’ll look at some examples for how to implement a map with HTML/CSS.
+
+
+### Web Application
+
+Project Description: Brochacho-Task
+Overview
+
+Brochacho-Task is a web-based productivity application designed to help users efficiently manage tasks using three core features:
+
+1. Eisenhower Matrix – Categorize tasks by urgency/importance.
+
+2. Pomodoro Timer – Structured work/break intervals for focus.
+
+3. Task & Habit Manager – Track daily goals and progress.
+
+Purpose
+
+To provide students and professionals with an intuitive, all-in-one tool that combines proven productivity methods into a single platform.
+Technical Implementation
+
+    Frontend: HTML, CSS, JavaScript
+
+    Backend: local storage
+
+    Responsive Design: Works across devices
+
+Future Enhancements
+
+    Analytics dashboard
+
+    Customizable reminders
+
+Brochacho-Task aims to simplify productivity through structured task management.

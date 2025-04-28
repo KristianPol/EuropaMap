@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Europe Map</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+        
+        .btn-primary {
+            background-color: #4a6fa5;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #3a5a8f;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: #4a6fa5;
+            border: 2px solid #4a6fa5;
+        }
+        
+        .btn-outline:hover {
+            background-color: #4a6fa5;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .main-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 3rem 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+        }
+        
+        h1 {
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: #2a5298;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero {
+            margin-bottom: 3rem;
+        }
+        
+        .cta-button {
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Interactive Europe Map</h1>
+            <div class="nav-buttons">
+                <a href="about.html" class="btn btn-outline">About</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="main-content">
+            <div class="hero">
+                <h2>Discover Europe</h2>
+                <p>Explore the rich diversity of European countries through our interactive map experience.</p>
+            </div>
+            
+            <a href="index.html" class="btn btn-primary cta-button">Launch Interactive Map</a>
+            
+            <p>Learn about geography, history, and culture with just a click.</p>
+        </div>
+    </main>
+</body>
+</html>
