@@ -3,83 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Liechtenstein</title>
+    <title>Discover Liechtenstein</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #002b7f, #ce1126); /* Blue to Red */
+            background: linear-gradient(90deg, #005F8C, #FFD100);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        h1, h2 {
-            color: #ce1126; /* Flag red */
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #005F8C;
+            border-bottom: 2px solid #FFD100;
+            padding-bottom: 8px;
+            margin-top: 30px;
             text-align: center;
         }
         p {
-            line-height: 1.6;
             text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #FFD100;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
         a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #002b7f; /* Flag blue */
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #005F8C;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #ce1126;
+            background-color: #FFD100;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Liechtenstein</h1>
+        <h1>Discover Liechtenstein</h1>
     </header>
 
     <div class="container">
         <h2>About Liechtenstein</h2>
-        <p>Liechtenstein is a small, alpine country located between Switzerland and Austria. It is one of the world’s smallest and richest nations, known for its beautiful mountains, strong financial sector, and medieval heritage.</p>
+        <p>Liechtenstein, a tiny landlocked country located between Switzerland and Austria, is renowned for its stunning landscapes, picturesque villages, and a rich history dating back to the 12th century. Despite its small size, it has a high standard of living and is known for being a financial hub. Its capital, Vaduz, is home to the Prince's Palace and numerous cultural institutions.</p>
+        <p>Did you know? Liechtenstein is one of the world's wealthiest countries, and it is known for being the only country in the world that is entirely a member of the European Economic Area (EEA) but is not in the European Union!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>With a land area of just over 160 square kilometers, Liechtenstein is a landlocked principality nestled in the Alps. It features lush valleys, mountainous terrain, and the Rhine River marking its western border with Switzerland.</p>
+    <h2>Geography</h2>
+    <p>Liechtenstein’s landscape is characterized by dramatic mountains, beautiful valleys, and scenic views:</p>
+    <ul>
+        <li>The Swiss Alps, offering a wide range of outdoor activities such as skiing and hiking</li>
+        <li>The Rhine River, which forms the western border of the country and provides stunning views</li>
+        <li>The Vaduz Castle, which overlooks the capital city and is one of the country's most iconic landmarks</li>
+        <li>Numerous trails through the Alps, perfect for nature lovers and adventure seekers</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Liechtenstein has a rich cultural tradition influenced by its German-speaking heritage. It celebrates its national day on August 15 with festivals, fireworks, and an open reception at Vaduz Castle hosted by the royal family.</p>
+    <h2>Culture</h2>
+    <p>Liechtenstein’s culture reflects its unique position between Switzerland and Austria, with influences from both countries:</p>
+    <ul>
+        <li>The official language is German, but the dialect spoken is a unique form of Alemannic German</li>
+        <li>Liechtenstein is known for its rich cultural heritage, with various festivals and events throughout the year</li>
+        <li>The country’s cuisine is influenced by both Austrian and Swiss traditions, featuring dishes such as Käsknöpfle (cheese noodles) and Röteli (a type of cherry brandy)</li>
+        <li>The national holiday on August 15th is celebrated with traditional music, dances, and fireworks</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Popular tourist attractions include Vaduz Castle, the Gutenberg Castle in Balzers, scenic hiking trails, and museums like the Kunstmuseum. Visitors are drawn to the country’s peaceful charm, natural beauty, and clean environment.</p>
-        
-        <a href="../webpages/index.html" title="Liechtenstein">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Despite its small size, Liechtenstein is full of attractions for visitors:</p>
+    <ul>
+        <li>The Vaduz Castle, home to the royal family and a stunning place to visit</li>
+        <li>The Kunstmuseum Liechtenstein, an art museum showcasing contemporary art</li>
+        <li>The Liechtenstein National Museum, which offers insight into the country’s history and culture</li>
+        <li>The hiking trails of the Alps, offering breathtaking views and outdoor adventure</li>
+        <li>The historical village of Balzers, with its charming medieval architecture and St. Nicholas Chapel</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>

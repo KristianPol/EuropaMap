@@ -3,85 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Switzerland</title>
+    <title>Discover Switzerland</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #FF0000, #FFFFFF);
+            background: linear-gradient(90deg, #D52B1E, #FFFFFF, #D52B1E);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        h1, h2 {
-            color: #FF0000;
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #D52B1E;
+            border-bottom: 2px solid #008C45;
+            padding-bottom: 8px;
+            margin-top: 30px;
             text-align: center;
         }
         p {
-            line-height: 1.6;
             text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #008C45;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
         a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #FF0000;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #D52B1E;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #FFFFFF;
-            color: #FF0000;
-            border: 1px solid #FF0000;
+            background-color: #008C45;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Switzerland</h1>
+        <h1>Discover Switzerland</h1>
     </header>
 
     <div class="container">
         <h2>About Switzerland</h2>
-        <p>Switzerland is a landlocked country in Central Europe, known for its breathtaking alpine landscapes, strong economy, and high quality of life. The capital city, Bern, is known for its medieval old town, while Zurich and Geneva are global financial hubs.</p>
+        <p>Switzerland, known for its picturesque landscapes, is a landlocked country located in the heart of Europe. Surrounded by the Alps, Switzerland is famous for its stunning mountain views, crystal-clear lakes, and charming villages. The country is known for its neutrality, high standard of living, and efficiency. Zurich, Geneva, and Bern are just a few of the cities that boast rich culture and historical significance.</p>
+        <p>Did you know? Switzerland is home to four official languages: German, French, Italian, and Romansh, reflecting the country's diverse cultural heritage!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Switzerland is famous for its majestic Alps, picturesque lakes, and lush valleys. It shares borders with Germany, France, Italy, Austria, and Liechtenstein.</p>
+    <h2>Geography</h2>
+    <p>Switzerland’s diverse geography includes majestic mountains, serene lakes, and lush valleys:</p>
+    <ul>
+        <li>The Alps – famous for skiing, mountaineering, and hiking</li>
+        <li>Lake Geneva, the largest lake in Central Europe, shared with France</li>
+        <li>The Matterhorn, one of the most iconic mountains in the world</li>
+        <li>The Bernese Oberland, with scenic peaks and valleys perfect for nature lovers</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Switzerland has a diverse cultural heritage influenced by German, French, and Italian traditions. It is known for its precision engineering, chocolate, cheese, and world-famous neutrality.</p>
+    <h2>Culture</h2>
+    <p>Switzerland’s culture is shaped by a unique combination of German, French, Italian, and Romansh influences:</p>
+    <ul>
+        <li>The country is famous for its chocolate and cheese, with iconic products such as Swiss chocolate and fondue</li>
+        <li>Swiss watchmaking is world-renowned, with brands like Rolex and Patek Philippe</li>
+        <li>The annual Montreux Jazz Festival draws music lovers from all over the world</li>
+        <li>Traditional Swiss Alpine music, including the yodel, is an important part of the country’s heritage</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Tourists visit Switzerland for its stunning mountain resorts, including Zermatt and Interlaken, as well as historic cities and scenic train journeys like the Glacier Express.</p>
-        
-        <a href="../webpages/index.html" title="Switzerland">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Switzerland offers a variety of attractions for all kinds of travelers:</p>
+    <ul>
+        <li>The Matterhorn – one of the world’s most famous peaks, offering ski resorts and hiking routes</li>
+        <li>Lake Geneva – a stunning location with vineyards, luxury resorts, and historical landmarks</li>
+        <li>The Jungfraujoch, known as the "Top of Europe," which offers panoramic views of the Swiss Alps</li>
+        <li>The cities of Zurich, Geneva, and Lucerne, which offer a blend of modern culture and medieval charm</li>
+        <li>The Bernese Oberland, a region of natural beauty with traditional Swiss villages and outdoor activities</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
+
