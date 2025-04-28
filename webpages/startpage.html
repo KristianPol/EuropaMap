@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Europe Map</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Europe Map</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>
-<body>
-    <header>
-        <div class="d-flex align-items-center flex-column">
-            <h1>Interactive Europe Map</h1>
-            <div class="nav-buttons">
-                <a href="about.html" class="btn was-validated">About</a>
-            </div>
-        </div>
-    </header>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+  <header class="bg-primary text-white py-4 mb-4">
+    <div class="container text-center">
+      <h1 class="mb-3">Interactive Europe Map</h1>
+      <div class="nav-buttons">
+        <a href="about.html" class="btn btn-light btn-outline-primary">About</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container align-items-center border border-primary-subtle rounded p-4 w-100" style="max-width: 800px;">
+
+    <main class="container text-center flex-grow-1 d-flex flex-column justify-content-center align-items-center" style=" padding-bottom: 50px;">
+        <h2 class="mb-3">Discover Europe</h2>
+        <p class="lead mb-4">
+          Explore the rich diversity of European countries through our interactive map experience.
+        </p>
+        <a href="index.html" class="btn btn-primary btn-lg mb-4">Launch Interactive Map</a>
+        <p class="text-muted">Learn about geography, history, and culture with just a click.</p>
+    </main>
     
-    <main class="container">
-        <div class="main-content">
-            <div class="hero">
-                <h2>Discover Europe</h2>
-                <p>Explore the rich diversity of European countries through our interactive map experience.</p>
-            </div>
-            
-            <a href="index.html" class="btn btn-primary cta-button">Launch Interactive Map</a>
-            
-            <p>Learn about geography, history, and culture with just a click.</p>
-        </div>
+    <main class="container text-center flex-grow-1 d-flex flex-column justify-conten  t-center align-items-center">
+      <h2 class="mb-3">Brochacho task manager</h2>
+      <p class="lead mb-4">
+        Organize your time and remember all the tings you need to do efficiently with the combined efficiencies of an eisenhower matrix and a pomodoro timer.
+      </p>
+      <a href="brochacho.html" class="btn btn-primary btn-lg mb-4">Open the Brochacho task manager</a>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
 </body>
 </html>
