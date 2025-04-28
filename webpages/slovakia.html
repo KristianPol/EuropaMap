@@ -3,83 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Slovakia</title>
+    <title>Discover Slovakia</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #0033A0, #EE1C25);
+            background: linear-gradient(90deg, #0B4EA2, #FFFFFF, #EE1C25);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        h1, h2 {
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
             color: #EE1C25;
+            border-bottom: 2px solid #0B4EA2;
+            padding-bottom: 8px;
+            margin-top: 30px;
             text-align: center;
         }
         p {
-            line-height: 1.6;
             text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #0B4EA2;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
         a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #0033A0;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #EE1C25;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #EE1C25;
+            background-color: #0B4EA2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Slovakia</h1>
+        <h1>Discover Slovakia</h1>
     </header>
 
     <div class="container">
         <h2>About Slovakia</h2>
-        <p>Slovakia is a landlocked country in Central Europe known for its stunning landscapes, medieval castles, and rich folklore traditions. The capital city, Bratislava, offers a mix of historical charm and modern vibrancy.</p>
+        <p>Slovakia, located in the heart of Europe, is a land of majestic mountains, medieval castles, and vibrant folk traditions. With its rich history and welcoming people, Slovakia offers a unique blend of cultural and natural wonders.</p>
+        <p>Did you know? Slovakia is home to more than 6,000 caves and the highest number of castles and châteaux per capita in the world!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Slovakia features dramatic mountain ranges, including the High Tatras, picturesque valleys, and beautiful rivers such as the Danube and Váh. It shares borders with Austria, Czech Republic, Poland, Ukraine, and Hungary.</p>
+    <h2>Geography</h2>
+    <p>Slovakia's landscapes are truly breathtaking:</p>
+    <ul>
+        <li>The High Tatras — the smallest high mountain range in the world</li>
+        <li>Beautiful caves like Dobšinská Ice Cave (UNESCO)</li>
+        <li>The Danube River flowing along the southern border</li>
+        <li>Picturesque valleys and vineyards of southern Slovakia</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Slovakia has a strong cultural heritage, famous for its folk music, traditional crafts, and hearty cuisine. The country celebrates many festivals with colorful costumes and traditional dances.</p>
+    <h2>Culture</h2>
+    <p>Slovak culture is proud and lively:</p>
+    <ul>
+        <li>Traditional folk music with bagpipes and cimbalom</li>
+        <li>Colorful costumes and folklore festivals</li>
+        <li>Delicious cuisine including bryndzové halušky and kapustnica</li>
+        <li>Rich traditions of woodcraft, pottery, and embroidery</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Tourists visit Slovakia for its breathtaking nature, medieval castles like Spiš Castle, and historic sites in cities such as Košice and Bratislava. The country is also known for its ski resorts and natural thermal springs.</p>
-        
-        <a href="../webpages/index.html" title="Slovakia">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Top attractions in Slovakia include:</p>
+    <ul>
+        <li>Bratislava’s Old Town and Bratislava Castle</li>
+        <li>Spiš Castle (one of the largest castles in Europe)</li>
+        <li>Banská Štiavnica’s historic mining town (UNESCO)</li>
+        <li>Vlkolínec — a perfectly preserved folk village (UNESCO)</li>
+        <li>The Slovak Paradise National Park with scenic trails and ladders</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
