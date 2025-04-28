@@ -3,58 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About France</title>
+    <title>Discover France</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background-color: #0055A4;
+            background: linear-gradient(90deg, #0055A4, #ffffff, #EF4135);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-        h1, h2 {
-            color: #EF4135; 
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #0055A4;
+            border-bottom: 2px solid #EF4135;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #EF4135;
             margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #0055A4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        a:hover {
+            background-color: #EF4135;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to France</h1>
+        <h1>Discover France</h1>
     </header>
 
     <div class="container">
         <h2>About France</h2>
-        <p>France is a Western European country known for its rich history, culture, and world-renowned cuisine. The capital city, Paris, is home to famous landmarks such as the Eiffel Tower and the Louvre Museum.</p>
+        <p>France, known for its rich culture, historic landmarks, and world-renowned cuisine, is a country that has captivated visitors for centuries. From the romantic streets of Paris to the sun-soaked beaches of the French Riviera, France offers a diverse and unforgettable experience.</p>
+        <p>Did you know? France is the most visited country in the world and is home to 49 UNESCO World Heritage Sites, including Mont-Saint-Michel and the Palace of Versailles.</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>France shares borders with Belgium, Luxembourg, Germany, Switzerland, Italy, Spain, Andorra, and Monaco. The country boasts diverse landscapes, including the Alps, the Pyrenees, and beautiful coastal regions.</p>
+    <h2>Geography</h2>
+    <p>France’s diverse landscapes include:</p>
+    <ul>
+        <li>The Alps - home to Mont Blanc, Western Europe’s highest peak</li>
+        <li>The Loire Valley - known for its stunning châteaux and vineyards</li>
+        <li>The lavender fields of Provence</li>
+        <li>Atlantic beaches in Normandy and Brittany</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>France is a global center of art, fashion, and philosophy. It has influenced the world with its literature, music, and film. The country is also famous for its gastronomy, including wine, cheese, and pastries.</p>
+    <h2>Culture</h2>
+    <p>French culture is world-famous for:</p>
+    <ul>
+        <li>Haute cuisine and fine wines</li>
+        <li>Iconic art and museums like the Louvre</li>
+        <li>Fashion hubs like Paris, the "Capital of Fashion"</li>
+        <li>Traditional festivals such as Bastille Day and Cannes Film Festival</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>France is the most visited country in the world, offering iconic attractions like the Château de Versailles, Mont Saint-Michel, and the French Riviera. Visitors enjoy its charming villages, historic castles, and vibrant cities.</p>
-        <a href="../webpages/index.html" title="France">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Must-see places in France include:</p>
+    <ul>
+        <li>The Eiffel Tower and Notre-Dame Cathedral in Paris</li>
+        <li>Château de Chambord in the Loire Valley</li>
+        <li>The stunning cliffs of Étretat</li>
+        <li>Provence’s vibrant villages and vineyards</li>
+        <li>The glamorous beaches of Nice and Saint-Tropez</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
