@@ -3,85 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Denmark</title>
+    <title>Discover Denmark</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #C8102E, #FFFFFF);
+            background: linear-gradient(90deg, #C60C30, #006F91, #ffffff);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        h1, h2 {
-            color: #C8102E;
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #C60C30;
+            border-bottom: 2px solid #006F91;
+            padding-bottom: 8px;
+            margin-top: 30px;
             text-align: center;
         }
         p {
-            line-height: 1.6;
             text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #C60C30;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
         a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #C8102E;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #C60C30;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #FFFFFF;
-            color: #C8102E;
-            border: 1px solid #C8102E;
+            background-color: #004f71;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Denmark</h1>
+        <h1>Discover Denmark</h1>
     </header>
 
     <div class="container">
         <h2>About Denmark</h2>
-        <p>Denmark is a Scandinavian country known for its rich history, modern design, and high standard of living. The capital city, Copenhagen, is famous for its colorful waterfront, historic castles, and vibrant culture.</p>
+        <p>Denmark, a Scandinavian gem, is known for its modern cities, medieval castles, and Viking heritage. The capital, Copenhagen, combines the charm of its old town with cutting-edge design and innovation. Denmark is also famous for its high quality of life and progressive social systems.</p>
+        <p>Did you know? Denmark is the birthplace of LEGO, and the Danish people consistently rank among the happiest in the world!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Denmark consists of the Jutland Peninsula and over 400 islands, with a coastline stretching along the North and Baltic Seas. It shares a land border with Germany and is connected to Sweden via the Øresund Bridge.</p>
+    <h2>Geography</h2>
+    <p>Denmark’s geography is diverse, with flat landscapes, sandy beaches, and scenic coastal islands:</p>
+    <ul>
+        <li>The Jutland Peninsula, bordered by the North Sea and the Baltic Sea</li>
+        <li>The stunning island of Zealand, home to Copenhagen</li>
+        <li>The picturesque coastlines of the Danish Riviera</li>
+        <li>Hundested and Skagen, known for their sandy shores and fishing ports</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Danish culture is known for its emphasis on "hygge" (coziness), strong design traditions, and contributions to literature and philosophy. Denmark is also famous for its Viking heritage and monarchy.</p>
+    <h2>Culture</h2>
+    <p>Denmark has a rich cultural heritage, blending traditional practices with modern innovation:</p>
+    <ul>
+        <li>Denmark is home to the famous Danish design, including furniture, architecture, and fashion</li>
+        <li>The concept of “hygge,” representing coziness and well-being</li>
+        <li>Traditional Danish cuisine, such as smørrebrød (open-faced sandwiches) and Danish pastries</li>
+        <li>The renowned Danish fairy tales of Hans Christian Andersen</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Tourists visit Denmark for attractions such as the Tivoli Gardens, the Little Mermaid statue, and the scenic coastal towns. The country is also home to world-class museums and modern architecture.</p>
-        
-        <a href="../webpages/index.html" title="Denmark">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Must-visit places in Denmark include:</p>
+    <ul>
+        <li>Nyhavn and the Tivoli Gardens in Copenhagen</li>
+        <li>The majestic Kronborg Castle, the setting for Shakespeare’s Hamlet</li>
+        <li>The Viking Ship Museum in Roskilde</li>
+        <li>Legoland Billund, the birthplace of the LEGO toy</li>
+        <li>Skagen’s art galleries and beaches</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
