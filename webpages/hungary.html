@@ -3,83 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Hungary</title>
+    <title>Discover Hungary</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #CE2939, #436F4D);
+            background: linear-gradient(90deg, #C8102E, #FFFFFF, #006747);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        h1, h2 {
-            color: #CE2939;
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #C8102E;
+            border-bottom: 2px solid #006747;
+            padding-bottom: 8px;
+            margin-top: 30px;
             text-align: center;
         }
         p {
-            line-height: 1.6;
             text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #006747;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
         a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #CE2939;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #C8102E;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #436F4D;
+            background-color: #006747;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Hungary</h1>
+        <h1>Discover Hungary</h1>
     </header>
 
     <div class="container">
         <h2>About Hungary</h2>
-        <p>Hungary is a landlocked country in Central Europe known for its rich history, architectural wonders, and thermal spas. The capital, Budapest, is famous for its stunning Parliament building and vibrant nightlife.</p>
+        <p>Hungary, located in Central Europe, is a country with a rich cultural heritage, beautiful landscapes, and a fascinating history. The capital, Budapest, is often referred to as the "Paris of the East" for its stunning architecture, vibrant nightlife, and historical significance.</p>
+        <p>Did you know? Hungary is home to the oldest metro line in mainland Europe, and the famous Hungarian language, known for its unique structure, is unrelated to most other European languages!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Hungary features rolling plains, beautiful lakes such as Lake Balaton, and the iconic Danube River that flows through Budapest. It shares borders with Austria, Slovakia, Ukraine, Romania, Serbia, Croatia, and Slovenia.</p>
+    <h2>Geography</h2>
+    <p>Hungary features diverse and scenic landscapes:</p>
+    <ul>
+        <li>The Danube River, flowing through the heart of Budapest</li>
+        <li>The Great Hungarian Plain, a vast flatland offering a unique view of the countryside</li>
+        <li>The Buda Hills and the picturesque Tokaj wine region</li>
+        <li>Lake Balaton, Central Europe's largest freshwater lake</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Hungary has a deep cultural heritage, renowned for its folk music, traditional dance, and famous cuisine, including goulash and chimney cake. Hungarian literature and classical music also have a significant influence.</p>
+    <h2>Culture</h2>
+    <p>Hungarian culture is full of rich traditions and unique elements:</p>
+    <ul>
+        <li>Famous for its classical music, with composers like Franz Liszt and Béla Bartók</li>
+        <li>Hungarian cuisine, including goulash, lángos, and chimney cake</li>
+        <li>Rich tradition of folk art, including embroidery and pottery</li>
+        <li>The Hungarian language, one of the oldest and most unique in Europe</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Tourists visit Hungary to experience the breathtaking Buda Castle, the historic city of Eger, and the scenic beauty of Lake Balaton. The country is also known for its world-famous thermal baths and vibrant festivals.</p>
-        
-        <a href="../webpages/index.html" title="Hungary">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Must-see destinations in Hungary include:</p>
+    <ul>
+        <li>The stunning Buda Castle and Fisherman’s Bastion in Budapest</li>
+        <li>Thermal baths, such as the Széchenyi and Gellért Baths in Budapest</li>
+        <li>The historic town of Eger and its medieval castle</li>
+        <li>The vineyards and wineries of the Tokaj region (UNESCO World Heritage Site)</li>
+        <li>The beautiful shores of Lake Balaton and the surrounding towns</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
+

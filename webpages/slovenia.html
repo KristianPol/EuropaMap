@@ -3,83 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Slovenia</title>
+    <title>Discover Slovenia</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f3;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #007A33, #FFCC00);
+            background: linear-gradient(90deg, #008C45, #FFFFFF, #FF4F00);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        h1, h2 {
-            color: #007A33;
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #FF4F00;
+            border-bottom: 2px solid #008C45;
+            padding-bottom: 8px;
+            margin-top: 30px;
             text-align: center;
         }
         p {
-            line-height: 1.6;
             text-align: justify;
+            padding-left: 5%;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #008C45;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
         a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #007A33;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #FF4F00;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 20px;
         }
         a:hover {
-            background-color: #FFCC00;
+            background-color: #008C45;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        ul {
+            padding-left: 5%;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to Slovenia</h1>
+        <h1>Discover Slovenia</h1>
     </header>
 
     <div class="container">
         <h2>About Slovenia</h2>
-        <p>Slovenia is a picturesque country in Central Europe known for its stunning lakes, lush forests, and charming medieval towns. The capital, Ljubljana, is renowned for its vibrant culture and beautiful architecture.</p>
+        <p>Slovenia, located in Central Europe, is a small but beautiful country known for its stunning landscapes, medieval castles, and vibrant cultural scene. Its capital, Ljubljana, is a charming city with a rich history, surrounded by lush green nature.</p>
+        <p>Did you know? Slovenia is home to the world’s largest cave system, the Postojna Cave, and the breathtaking Lake Bled with its iconic island church!</p>
+    </div>
 
-        <h2>Geography</h2>
-        <p>Slovenia features diverse landscapes, including the majestic Julian Alps, the scenic Adriatic coastline, and the underground wonders of Postojna Cave. It shares borders with Italy, Austria, Hungary, and Croatia.</p>
+    <h2>Geography</h2>
+    <p>Slovenia features a remarkable variety of landscapes:</p>
+    <ul>
+        <li>The Julian Alps with stunning peaks like Triglav</li>
+        <li>The enchanting Lake Bled, known for its picturesque island and castle</li>
+        <li>The famous Škocjan Caves (UNESCO World Heritage Site)</li>
+        <li>The lush green forests of the Karst region and the Slovenian Riviera</li>
+    </ul>
 
-        <h2>Culture</h2>
-        <p>Slovenia has a rich cultural history, famous for its folk traditions, delicious cuisine, and love for music and poetry. Festivals and celebrations reflect the country's deep-rooted heritage.</p>
+    <h2>Culture</h2>
+    <p>Slovenia has a rich and diverse cultural heritage:</p>
+    <ul>
+        <li>Traditional folk music and the famous lipizzaner horses of the Lipica Stud Farm</li>
+        <li>Slovenian cuisine, including dishes like potica, jota, and idrijski žlikrofi</li>
+        <li>Vibrant festivals like the Ljubljana Summer Festival and the Kurentovanje Carnival</li>
+        <li>Beautiful architecture, including the Ljubljana Castle and the medieval town of Piran</li>
+    </ul>
 
-        <h2>Tourism</h2>
-        <p>Tourists visit Slovenia to explore the breathtaking Lake Bled, the historic town of Piran, and the lively streets of Ljubljana. The country is also known for its outdoor activities, including hiking, skiing, and wine tasting.</p>
-        
-        <a href="../webpages/index.html" title="Slovenia">Click to go back</a>
+    <h2>Tourism Highlights</h2>
+    <p>Top destinations in Slovenia include:</p>
+    <ul>
+        <li>Lake Bled and Bled Castle</li>
+        <li>The UNESCO-listed Škocjan Caves</li>
+        <li>The charming town of Ljubljana with its medieval old town</li>
+        <li>Postojna Cave and the Predjama Castle</li>
+        <li>The beautiful coastal town of Piran on the Adriatic Sea</li>
+    </ul>
+
+    <div style="text-align: center; padding-bottom: 5px;">
+        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
     </div>
 </body>
 </html>
