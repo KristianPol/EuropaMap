@@ -7,6 +7,46 @@ const user = "admin";
 
 const API_URL = "http://localhost:3000/tasks"; // json-server endpoint
 
+
+function initializeDarkMode() {
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const savedMode = localStorage.getItem('darkMode');
+  
+  if (savedMode === 'dark' || (savedMode === null && prefersDarkScheme)) {
+    document.body.classList.add('dark-mode');
+    updateDarkModeButton(true);
+  } else {
+    updateDarkModeButton(false);
+  }
+}
+
+function updateDarkModeButton(isDarkMode) {
+  const darkModeBtn = document.querySelector('.dark-mode-toggle');
+  if (isDarkMode) {
+    darkModeBtn.innerHTML = '<i class="bi bi-sun-fill"></i> Toggle Light Mode';
+    darkModeBtn.classList.remove('btn-dark');
+    darkModeBtn.classList.add('btn-light');
+  } else {
+    darkModeBtn.innerHTML = '<i class="bi bi-moon-fill"></i> Toggle Dark Mode';
+    darkModeBtn.classList.remove('btn-light');
+    darkModeBtn.classList.add('btn-dark');
+  }
+}
+
+function darkModeToggle() {
+  const body = document.body;
+  body.classList.toggle('dark-mode');
+  
+  const isDarkMode = body.classList.contains('dark-mode');
+  localStorage.setItem('darkMode', isDarkMode ? 'dark' : 'light');
+  
+  updateDarkModeButton(isDarkMode);
+}
+
+initializeDarkMode();
+
+
+
 form.addEventListener('submit', async function(event) {
   event.preventDefault();
 
@@ -64,7 +104,6 @@ function addTaskToUI(task) {
   }
 }
 
-// Load existing tasks on page load
 async function loadTasks() {
   try {
     const response = await fetch(API_URL);
