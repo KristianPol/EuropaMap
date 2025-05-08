@@ -13,6 +13,38 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #f8f9fa;
+    }
+
+    .dark-mode .matrix-box,
+    .dark-mode .form-box,
+    .dark-mode .pomodoro-box,
+    .dark-mode .card {
+      background-color: #1e1e1e;
+      color: #f8f9fa;
+    }
+
+    .dark-mode .card-header {
+      border-bottom-color: #333;
+    }
+
+    .dark-mode .list-group-item {
+      background-color: #1e1e1e;
+      color: #f8f9fa;
+      border-color: #333;
+    }
+
+    .dark-mode .text-muted {
+      color: #aaa !important;
+    }
+
+    .dark-mode .bg-light {
+      background-color: #2d2d2d !important;
     }
 
     .main-container {
@@ -29,6 +61,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 25px;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .form-box {
@@ -40,23 +73,27 @@
       height: fit-content;
       position: sticky;
       top: 20px;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .card {
       height: 100%;
       border: none;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .card-header {
       font-weight: 600;
       border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+      transition: border-bottom-color 0.3s;
     }
 
     .list-group-item {
       border-left: none;
       border-right: none;
       padding: 12px 20px;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
     }
 
     @media (max-width: 992px) {
@@ -76,7 +113,79 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 30px;
       text-align: center;
+      transition: background-color 0.3s, color 0.3s;
     }
+
+    .dark-mode-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .dark-mode {
+    background-color: #121212 !important;
+    color: #f8f9fa !important;
+  }
+
+  .dark-mode header {
+    background-color: #0d47a1 !important;
+    border-bottom: 1px solid #333;
+  }
+
+  .dark-mode .container.border-primary-subtle {
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+  }
+
+  .dark-mode .card-header {
+    background-color: #2d2d2d !important;
+  }
+
+  .dark-mode .bg-primary {
+    background-color: #0d47a1 !important;
+  }
+
+  .dark-mode .bg-success {
+    background-color: #1b5e20 !important;
+  }
+
+  .dark-mode .bg-warning {
+    background-color: #ff8f00 !important;
+  }
+
+  .dark-mode .bg-danger {
+    background-color: #c62828 !important;
+  }
+
+  .dark-mode .bg-secondary {
+    background-color: #424242 !important;
+  }
+
+  .dark-mode .border-primary {
+    border-color: #0d47a1 !important;
+  }
+
+  .dark-mode .border-success {
+    border-color: #1b5e20 !important;
+  }
+
+  .dark-mode .border-warning {
+    border-color: #ff8f00 !important;
+  }
+
+  .dark-mode .border-danger {
+    border-color: #c62828 !important;
+  }
+
+  .dark-mode .btn-outline-primary {
+    color: #90caf9;
+    border-color: #90caf9;
+  }
+
+  .dark-mode .btn-outline-primary:hover {
+    background-color: #0d47a1;
+    color: white;
+  }
   </style>
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
@@ -178,7 +287,12 @@
     </div>
   </div>
 
+  <button class="btn btn-dark dark-mode-toggle" onclick="darkModeToggle()">
+    <i class="bi bi-moon-fill"></i> Toggle Dark Mode
+  </button>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
   <script src="../scripts/brochacho.js"></script>
 </body>
 </html>
