@@ -202,45 +202,37 @@
 
   <div class="container align-items-center border border-primary-subtle rounded p-4 w-100" style="max-width: 1400px; margin-bottom: 30px;">
     <div class="main-container">
-      <div class="matrix-box">
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="card border-primary">
-              <div class="card-header bg-primary text-white">
-                Do (Urgent + Important)
-              </div>
-              <ul class="list-group list-group-flush" id="do"></ul>
-            </div>
+          <div class="matrix-box" style="height: 600px;">
+      <div class="row g-4" style="height: 100%;">
+        <div class="col-md-6 d-flex" style="height: 50%;">
+          <div class="card border-primary w-100 overflow-auto d-flex flex-column">
+            <div class="card-header bg-primary text-white">Do (Urgent + Important)</div>
+            <ul class="list-group list-group-flush flex-grow-1 overflow-auto" id="do" style="max-height: 100%;"></ul>
           </div>
+        </div>
 
-          <div class="col-md-6">
-            <div class="card border-success">
-              <div class="card-header bg-success text-white">
-                Decide (Not Urgent + Important)
-              </div>
-              <ul class="list-group list-group-flush" id="decide"></ul>
-            </div>
+        <div class="col-md-6 d-flex" style="height: 50%;">
+          <div class="card border-success w-100 overflow-auto d-flex flex-column">
+            <div class="card-header bg-success text-white">Decide (Not Urgent + Important)</div>
+            <ul class="list-group list-group-flush flex-grow-1 overflow-auto" id="decide" style="max-height: 100%;"></ul>
           </div>
+        </div>
 
-          <div class="col-md-6">
-            <div class="card border-warning">
-              <div class="card-header bg-warning text-dark">
-                Delegate (Urgent + Not Important)
-              </div>
-              <ul class="list-group list-group-flush" id="delegate"></ul>
-            </div>
+        <div class="col-md-6 d-flex" style="height: 50%;">
+          <div class="card border-warning w-100 overflow-auto d-flex flex-column">
+            <div class="card-header bg-warning text-dark">Delegate (Urgent + Not Important)</div>
+            <ul class="list-group list-group-flush flex-grow-1 overflow-auto" id="delegate" style="max-height: 100%;"></ul>
           </div>
+        </div>
 
-          <div class="col-md-6">
-            <div class="card border-danger">
-              <div class="card-header bg-danger text-white">
-                Delete (Not Urgent + Not Important)
-              </div>
-              <ul class="list-group list-group-flush" id="delete"></ul>
-            </div>
+        <div class="col-md-6 d-flex" style="height: 50%;">
+          <div class="card border-danger w-100 overflow-auto d-flex flex-column">
+            <div class="card-header bg-danger text-white">Delete (Not Urgent + Not Important)</div>
+            <ul class="list-group list-group-flush flex-grow-1 overflow-auto" id="delete" style="max-height: 100%;"></ul>
           </div>
         </div>
       </div>
+    </div>
 
       <div class="form-box">
         <div class="card">
