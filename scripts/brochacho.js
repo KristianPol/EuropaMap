@@ -83,6 +83,8 @@ form.addEventListener('submit', async function(event) {
   }
 });
 
+let taskToDelete = null;
+
 function addTaskToUI(task) {
   const taskItem = document.createElement('li');
   taskItem.className = 'list-group-item d-flex justify-content-between align-items-center';
@@ -100,7 +102,7 @@ function addTaskToUI(task) {
 
   taskItem.addEventListener('click', () => openEditModal(task));
 
-  // Append to correct list
+  // Append to the correct list based on task urgency and importance
   let targetListId;
   if (task.urgency === 'urgent' && task.importance === 'important') targetListId = 'do';
   else if (task.urgency === 'not-urgent' && task.importance === 'important') targetListId = 'decide';
@@ -114,18 +116,38 @@ function addTaskToUI(task) {
   taskItem.querySelector('.delete-task').addEventListener('click', async (e) => {
     e.stopPropagation(); // Prevent triggering the modal if you're also using click-to-edit
 
-    const confirmed = confirm("Are you sure you want to delete this task?");
-    if (!confirmed) return;
-
-    try {
-      await fetch(`${API_URL}/${task.id}`, { method: 'DELETE' });
-      taskItem.remove();
-    } catch (error) {
-      console.error("Error deleting task:", error);
-      alert("Failed to delete task.");
-    }
+    // Store the task to be deleted
+    taskToDelete = task;
+    
+    // Show the confirmation modal
+    const deleteConfirmationModal = new bootstrap.Modal(document.getElementById('deleteConfirmationModal'));
+    deleteConfirmationModal.show();
   });
 }
+
+// Handle the confirm delete action
+document.getElementById('confirmDeleteBtn').addEventListener('click', async () => {
+  if (!taskToDelete) return;
+
+  try {
+    // Delete the task from the backend (json-server)
+    await fetch(`${API_URL}/${taskToDelete.id}`, { method: 'DELETE' });
+
+    // Remove the task from the UI
+    const taskItem = document.querySelector(`[data-id="${taskToDelete.id}"]`);
+    if (taskItem) taskItem.remove();
+
+    // Close the confirmation modal
+    const deleteConfirmationModal = bootstrap.Modal.getInstance(document.getElementById('deleteConfirmationModal'));
+    deleteConfirmationModal.hide();
+  } catch (error) {
+    console.error("Error deleting task:", error);
+    alert("Failed to delete task.");
+  }
+
+  // Reset taskToDelete variable
+  taskToDelete = null;
+});
 
 async function loadTasks() {
   try {
