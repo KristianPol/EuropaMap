@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Brochacho Task Manager</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <style>
     body {
@@ -290,6 +291,45 @@
   <button class="btn btn-dark dark-mode-toggle" onclick="darkModeToggle()">
     <i class="bi bi-moon-fill"></i> Toggle Dark Mode
   </button>
+
+  <div class="modal fade" id="editTaskModal" tabindex="-1" aria-labelledby="editTaskModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form class="modal-content" id="editTaskForm">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editTaskModalLabel">Edit Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="editTaskId">
+        <div class="mb-3">
+          <label for="editDescription" class="form-label">Description</label>
+          <input type="text" class="form-control" id="editDescription" required>
+        </div>
+        <div class="mb-3">
+          <label for="editUrgency" class="form-label">Urgency</label>
+          <select class="form-select" id="editUrgency" required>
+            <option value="urgent">Urgent</option>
+            <option value="not-urgent">Not Urgent</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="editImportance" class="form-label">Importance</label>
+          <select class="form-select" id="editImportance" required>
+            <option value="important">Important</option>
+            <option value="not-important">Not Important</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="editDeadline" class="form-label">Deadline</label>
+          <input type="date" class="form-control" id="editDeadline" required>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">

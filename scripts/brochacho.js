@@ -93,6 +93,8 @@ function addTaskToUI(task) {
     </div>
   `;
 
+  taskItem.addEventListener('click', () => openEditModal(task));
+
   if (task.urgency === 'urgent' && task.importance === 'important') {
     document.getElementById('do').appendChild(taskItem);
   } else if (task.urgency === 'not-urgent' && task.importance === 'important') {
@@ -115,3 +117,42 @@ async function loadTasks() {
 }
 
 loadTasks();
+
+function openEditModal(task) {
+  document.getElementById('editTaskId').value = task.id;
+  document.getElementById('editDescription').value = task.description;
+  document.getElementById('editUrgency').value = task.urgency;
+  document.getElementById('editImportance').value = task.importance;
+  document.getElementById('editDeadline').value = task.deadline;
+
+  const modal = new bootstrap.Modal(document.getElementById('editTaskModal'));
+  modal.show();
+}
+
+document.getElementById('editTaskForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const id = document.getElementById('editTaskId').value;
+  const description = document.getElementById('editDescription').value.trim();
+  const urgency = document.getElementById('editUrgency').value;
+  const importance = document.getElementById('editImportance').value;
+  const deadline = document.getElementById('editDeadline').value;
+
+  const updatedTask = { description, urgency, importance, deadline };
+
+  try {
+    const response = await fetch(`${API_URL}/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedTask)
+    });
+
+    if (!response.ok) throw new Error('Failed to update task');
+
+    location.reload(); // reload to refresh UI
+
+  } catch (err) {
+    console.error(err);
+    alert('Error updating task.');
+  }
+});
