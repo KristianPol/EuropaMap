@@ -86,24 +86,45 @@ form.addEventListener('submit', async function(event) {
 function addTaskToUI(task) {
   const taskItem = document.createElement('li');
   taskItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+  taskItem.dataset.id = task.id;
+
   taskItem.innerHTML = `
-    <div>
+    <div class="flex-grow-1 me-3">
       <strong>${task.description}</strong> 
-      <small class="text-muted">(Deadline: ${task.deadline})</small>
+      <br><small class="text-muted">(Deadline: ${task.deadline})</small>
     </div>
+    <button class="btn btn-sm btn-outline-danger delete-task">
+      <i class="bi bi-trash"></i>
+    </button>
   `;
 
   taskItem.addEventListener('click', () => openEditModal(task));
 
-  if (task.urgency === 'urgent' && task.importance === 'important') {
-    document.getElementById('do').appendChild(taskItem);
-  } else if (task.urgency === 'not-urgent' && task.importance === 'important') {
-    document.getElementById('decide').appendChild(taskItem);
-  } else if (task.urgency === 'urgent' && task.importance === 'not-important') {
-    document.getElementById('delegate').appendChild(taskItem);
-  } else if (task.urgency === 'not-urgent' && task.importance === 'not-important') {
-    document.getElementById('delete').appendChild(taskItem);
-  }
+  // Append to correct list
+  let targetListId;
+  if (task.urgency === 'urgent' && task.importance === 'important') targetListId = 'do';
+  else if (task.urgency === 'not-urgent' && task.importance === 'important') targetListId = 'decide';
+  else if (task.urgency === 'urgent' && task.importance === 'not-important') targetListId = 'delegate';
+  else targetListId = 'delete';
+
+  const list = document.getElementById(targetListId);
+  list.appendChild(taskItem);
+
+  // Attach delete event
+  taskItem.querySelector('.delete-task').addEventListener('click', async (e) => {
+    e.stopPropagation(); // Prevent triggering the modal if you're also using click-to-edit
+
+    const confirmed = confirm("Are you sure you want to delete this task?");
+    if (!confirmed) return;
+
+    try {
+      await fetch(`${API_URL}/${task.id}`, { method: 'DELETE' });
+      taskItem.remove();
+    } catch (error) {
+      console.error("Error deleting task:", error);
+      alert("Failed to delete task.");
+    }
+  });
 }
 
 async function loadTasks() {
