@@ -116,7 +116,6 @@ button {
   white-space: nowrap;
   will-change: box-shadow,transform;
   font-size: 12px;
-  background-image: url("../images/scrollUp.png");
   background-size: 60px;
 }
 
@@ -180,4 +179,31 @@ nav a:hover {
     background-color: #074b87; 
     border-radius: 5px;
     transform: scale(1.1);
+}
+#main-nav.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#main-nav button {
+    background-color: #ffffff;
+    color: #1b5577;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#main-nav button:hover {
+    background-color: #e0e0e0;
 }
