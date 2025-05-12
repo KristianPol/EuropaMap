@@ -87,7 +87,7 @@ let taskToDelete = null;
 
 function addTaskToUI(task) {
   const taskItem = document.createElement('li');
-  taskItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+  taskItem.className = 'list-group-item d-flex justify-content-between align-items-center elem';
   taskItem.dataset.id = task.id;
 
   taskItem.innerHTML = `
