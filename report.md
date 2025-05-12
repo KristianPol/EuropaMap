@@ -3,7 +3,7 @@
 ## Done since last time
 
 - Added bootstrap to all websites
-- Added menu to most websites using javascript, that automatically appends it to a website when it's code is used
+- Added menu to most websites using a javascript app, that automatically appends it to a website when it's code is used
 - Created a web project: a time manager, that allows you to save tasks, which are stored in a json server
 - Added the ability to modify those tasks using bootstrap modals
 - Made a pomodoro timer: a timer that allows you to efficiently manage time alongside your tasks
