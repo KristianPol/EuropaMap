@@ -24,6 +24,6 @@
 
 ## Commits
 
-- Alex: 29
-- Kristian: 16
-- Ostap: 12
+- Alex: 30
+- Kristian: 17
+- Ostap: 16
