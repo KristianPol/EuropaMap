@@ -151,7 +151,9 @@ async function loadTasks() {
   try {
     const response = await fetch(API_URL);
     const tasks = await response.json();
-    tasks.forEach(addTaskToUI);
+    const array = Object.keys(tasks).map(key => tasks[key]);
+    array.sort( )
+    array.forEach(addTaskToUI);
   } catch (error) {
     console.error(error);
   }
