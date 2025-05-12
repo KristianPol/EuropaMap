@@ -512,9 +512,13 @@
       if (document.body.classList.contains('dark-mode')) {
         icon.classList.remove('bi-moon-fill');
         icon.classList.add('bi-sun-fill');
+        darkModeBtn.classList.remove('btn-dark');
+        darkModeBtn.classList.add('btn-light');
       } else {
         icon.classList.remove('bi-sun-fill');
         icon.classList.add('bi-moon-fill');
+        darkModeBtn.classList.remove('btn-light');
+        darkModeBtn.classList.add('btn-dark');
       }
     }
 

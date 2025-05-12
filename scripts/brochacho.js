@@ -23,11 +23,9 @@ function initializeDarkMode() {
 function updateDarkModeButton(isDarkMode) {
   const darkModeBtn = document.querySelector('.dark-mode-toggle');
   if (isDarkMode) {
-    darkModeBtn.innerHTML = '<i class="bi bi-sun-fill"></i> Toggle Light Mode';
     darkModeBtn.classList.remove('btn-dark');
     darkModeBtn.classList.add('btn-light');
   } else {
-    darkModeBtn.innerHTML = '<i class="bi bi-moon-fill"></i> Toggle Dark Mode';
     darkModeBtn.classList.remove('btn-light');
     darkModeBtn.classList.add('btn-dark');
   }

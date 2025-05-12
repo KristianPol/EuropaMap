@@ -20,6 +20,7 @@
 - Improve UI, give more options to tasks
 - Rework dark mode in a more optimised way
 - Give the user an option to take a break after finishing a task
+- Create a login/signup function and separate user data
 
 ## Commits
 
