@@ -4,140 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Belarus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        header {
-            background: linear-gradient(90deg, #D22730, #4AA657, #FFFFFF);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 30px;
-            background-color: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
-        h2 {
-            color: #D22730;
-            border-bottom: 2px solid #4AA657;
-            padding-bottom: 8px;
-            margin-top: 30px;
-            text-align: center;
-        }
-        p {
-            text-align: justify;
-            padding-left: 5%;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 25px auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            border: 1px solid #ddd;
-        }
-        .highlight {
-            background-color: #FFF8E1;
-            padding: 15px;
-            border-left: 4px solid #4AA657;
-            margin: 20px 0;
-            border-radius: 0 4px 4px 0;
-        }
-        a {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #D22730;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        a:hover {
-            background-color: #4AA657;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-                margin: 15px;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-        }
-        ul {
-            padding-left: 5%;
+        .section-title {
+            color: #0d6efd;
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Discover Belarus</h1>
-    </header>
 
-    <div class="container">
-        <h2>About Belarus</h2>
-        <p>Belarus, located in Eastern Europe, is a land of vast forests, scenic lakes, and deep cultural roots. Known for its unspoiled nature and Soviet-era architecture, Belarus offers a unique glimpse into both past and present Europe. The capital, Minsk, is a modern city with grand boulevards and vibrant cultural life.</p>
-        <p>Did you know? About 40% of Belarus is covered by forests, and it is home to Europe's largest remaining primeval forest — the Białowieża Forest, a UNESCO World Heritage Site!</p>
+<!-- Loading Screen -->
+<div id="loading-screen" class="position-fixed top-0 start-0 w-100 h-100 bg-white d-flex justify-content-center align-items-center" style="z-index: 9999;">
+    <div class="text-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <h3 class="mt-3">Discovering Belarus...</h3>
+    </div>
+</div>
+
+<!-- Hero Header -->
+<header class="bg-primary text-white py-5 mb-4">
+    <div class="container text-center">
+        <h1 class="mb-3 animate__animated animate__fadeInDown">Discover Belarus</h1>
+        <p class="lead animate__animated animate__fadeInUp animate__delay-1s">A Land of Forests and Fortresses</p>
+    </div>
+</header>
+
+<div class="container align-items-center border border-primary-subtle rounded p-4 w-100" style="max-width: 800px;">
+    <!-- About Belarus Section -->
+    <div class="mb-4 opacity-0" id="about-section">
+        <h2 class="text-center section-title">About Belarus</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Belarus is an Eastern European country known for its lush forests, grand castles, and Soviet-era architecture. It shares borders with Russia, Ukraine, Poland, Lithuania, and Latvia. The capital city, Minsk, is a modern hub with historical and cultural depth.</p>
+                <p>Belarus is often described as a hidden gem, with peaceful countryside, historic towns, and a rich folk culture that has been preserved over centuries.</p>
+            </div>
+        </div>
+        <div class="alert alert-primary mt-4 animate__animated animate__pulse animate__delay-2s">
+            <i class="fas fa-info-circle me-2"></i> <strong>Did you know?</strong> Around 40% of Belarus is covered by forests, making it one of Europe’s greenest countries!
+        </div>
     </div>
 
-    <h2>Geography</h2>
-    <p>Belarus features serene natural landscapes:</p>
-    <ul>
-        <li>The Białowieża Forest, home to the rare European bison</li>
-        <li>Numerous lakes and rivers, including Lake Narach, the largest in the country</li>
-        <li>Rolling hills and fertile plains perfect for agriculture</li>
-        <li>National parks like Pripyatsky and Braslav Lakes</li>
-    </ul>
-
-    <h2>Culture</h2>
-    <p>Belarusian culture is a blend of tradition, resilience, and creativity:</p>
-    <ul>
-        <li>Rich folklore with traditional music, dance, and embroidery</li>
-        <li>Historic castles such as Mir Castle and Nesvizh Palace</li>
-        <li>Traditional dishes like draniki (potato pancakes) and machanka (pork stew)</li>
-        <li>Major festivals like Kupalle (summer solstice celebration)</li>
-    </ul>
-
-    <h2>Tourism Highlights</h2>
-    <p>Top attractions in Belarus include:</p>
-    <ul>
-        <li>Minsk’s Independence Avenue and Victory Square</li>
-        <li>The medieval town of Polotsk, one of the oldest cities in Belarus</li>
-        <li>The Brest Hero-Fortress, commemorating WWII history</li>
-        <li>The open-air Museum of Folk Architecture and Rural Lifestyle near Minsk</li>
-        <li>Exploring the Braslav Lakes region for boating and nature watching</li>
-    </ul>
-
-    <div style="text-align: center; padding-bottom: 5px;">
-        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
+    <!-- Geography Section -->
+    <div class="mb-4 opacity-0" id="geography-section">
+        <h2 class="text-center section-title">Geography</h2>
+        <p>Belarus features expansive lowlands, marshes, and rivers:</p>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li class="mb-2 opacity-0"><i class="fas fa-tree text-primary me-2"></i> Vast woodlands like the Białowieża Forest, home to the European bison</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-water text-primary me-2"></i> Rivers such as the Dnieper and Neman flow through the country</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-seedling text-primary me-2"></i> Fertile soil and green fields dominate the rural areas</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-snowflake text-primary me-2"></i> Cold winters and warm summers create diverse natural beauty</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <script src="../scripts/navigation.js" defer></script>
+
+    <!-- Culture Section -->
+    <div class="mb-4 opacity-0" id="culture-section">
+        <h2 class="text-center section-title">Culture</h2>
+        <p>Belarusian culture is rooted in Slavic traditions with a strong sense of national pride:</p>
+        <div class="row">
+            <div class="col-md-6 order-md-2">
+                <ul class="list-unstyled">
+                    <li class="mb-2 opacity-0"><i class="fas fa-language text-primary me-2"></i> Belarusian and Russian are both official languages</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-mask text-primary me-2"></i> Traditional folk dances, embroidery, and music remain vibrant</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-utensils text-primary me-2"></i> Local cuisine includes dishes like draniki (potato pancakes) and machanka (meat stew)</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-landmark text-primary me-2"></i> Soviet monuments and Orthodox churches highlight the nation's mixed heritage</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tourism Section -->
+    <div class="mb-4 opacity-0" id="tourism-section">
+        <h2 class="text-center section-title">Tourism Highlights</h2>
+        <p>Discover Belarus through its iconic sites:</p>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm opacity-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Mir Castle</h5>
+                        <p class="card-text">A UNESCO World Heritage Site showcasing Gothic, Renaissance, and Baroque styles.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm opacity-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Białowieża Forest</h5>
+                        <p class="card-text">One of Europe’s last primeval forests and a haven for wildlife enthusiasts.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm opacity-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Minsk</h5>
+                        <p class="card-text">The capital blends Soviet architecture with green spaces, museums, and nightlife.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="text-center mb-3">
+        <a href="../webpages/index.html" class="btn btn-primary btn-lg">
+            <i class="fas fa-home me-2"></i>Explore More
+        </a>
+    </div>
+</div>
+
+<!-- Animation Script -->
+<script>
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            document.getElementById('loading-screen').classList.add('animate__animated', 'animate__fadeOut');
+            setTimeout(function () {
+                document.getElementById('loading-screen').style.display = 'none';
+
+                const cards = document.querySelectorAll('.card.shadow-sm, #about-section, #geography-section, #culture-section, #tourism-section');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animate__animated', 'animate__fadeIn');
+                        card.classList.remove('opacity-0');
+                    }, 200 * index);
+                });
+
+                const listItems = document.querySelectorAll('.list-unstyled li');
+                listItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('animate__animated', 'animate__fadeInUp');
+                        item.classList.remove('opacity-0');
+                    }, 100 * index);
+                });
+
+            }, 800);
+        }, 1000);
+    });
+</script>
+<script src="../scripts/navigation.js" defer></script>
 </body>
 </html>
