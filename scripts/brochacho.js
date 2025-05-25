@@ -5,9 +5,9 @@ const importanceSelect = document.getElementById('importance');
 const deadlineInput = document.getElementById('deadline');
 const user = "admin";
 
-const API_URL = "http://localhost:3000/tasks"; // json-server endpoint
+const API_URL = "http://localhost:3000/tasks";
 
-
+// Initialize dark mode
 function initializeDarkMode() {
   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const savedMode = localStorage.getItem('darkMode');
@@ -20,6 +20,7 @@ function initializeDarkMode() {
   }
 }
 
+// Update dark mode button style
 function updateDarkModeButton(isDarkMode) {
   const darkModeBtn = document.querySelector('.dark-mode-toggle');
   if (isDarkMode) {
@@ -31,20 +32,19 @@ function updateDarkModeButton(isDarkMode) {
   }
 }
 
+// Toggle dark mode
 function darkModeToggle() {
   const body = document.body;
   body.classList.toggle('dark-mode');
-  
   const isDarkMode = body.classList.contains('dark-mode');
   localStorage.setItem('darkMode', isDarkMode ? 'dark' : 'light');
-  
   updateDarkModeButton(isDarkMode);
 }
 
+// Initialize dark mode on load
 initializeDarkMode();
 
-
-
+// Handle form submission
 form.addEventListener('submit', async function(event) {
   event.preventDefault();
 
@@ -74,7 +74,6 @@ form.addEventListener('submit', async function(event) {
     const savedTask = await response.json();
     addTaskToUI(savedTask);
     form.reset();
-
   } catch (error) {
     console.error(error);
     alert('Error saving task.');
@@ -83,6 +82,7 @@ form.addEventListener('submit', async function(event) {
 
 let taskToDelete = null;
 
+// Add task to UI
 function addTaskToUI(task) {
   const taskItem = document.createElement('li');
   taskItem.className = 'list-group-item d-flex justify-content-between align-items-center elem';
@@ -100,88 +100,71 @@ function addTaskToUI(task) {
 
   taskItem.addEventListener('click', () => openEditModal(task));
 
-  // Append to the correct list based on task urgency and importance
+  // Append to the correct quadrant
   let targetListId;
   if (task.urgency === 'urgent' && task.importance === 'important') targetListId = 'do';
   else if (task.urgency === 'not-urgent' && task.importance === 'important') targetListId = 'decide';
   else if (task.urgency === 'urgent' && task.importance === 'not-important') targetListId = 'delegate';
   else targetListId = 'delete';
 
-  const list = document.getElementById(targetListId);
-  list.appendChild(taskItem);
+  document.getElementById(targetListId).appendChild(taskItem);
 
-  // Attach delete event
-  taskItem.querySelector('.delete-task').addEventListener('click', async (e) => {
-    e.stopPropagation(); // Prevent triggering the modal if you're also using click-to-edit
-
-    // Store the task to be deleted
+  // Attach delete handler
+  taskItem.querySelector('.delete-task').addEventListener('click', (e) => {
+    e.stopPropagation();
     taskToDelete = task;
-    
-    // Show the confirmation modal
-    const deleteConfirmationModal = new bootstrap.Modal(document.getElementById('deleteConfirmationModal'));
-    deleteConfirmationModal.show();
+    new bootstrap.Modal(document.getElementById('deleteConfirmationModal')).show();
   });
 }
 
-// Handle the confirm delete action
+// Delete task handler
 document.getElementById('confirmDeleteBtn').addEventListener('click', async () => {
   if (!taskToDelete) return;
 
   try {
-    // Delete the task from the backend (json-server)
     await fetch(`${API_URL}/${taskToDelete.id}`, { method: 'DELETE' });
-
-    // Remove the task from the UI
-    const taskItem = document.querySelector(`[data-id="${taskToDelete.id}"]`);
-    if (taskItem) taskItem.remove();
-
-    // Close the confirmation modal
-    const deleteConfirmationModal = bootstrap.Modal.getInstance(document.getElementById('deleteConfirmationModal'));
-    deleteConfirmationModal.hide();
+    document.querySelector(`[data-id="${taskToDelete.id}"]`).remove();
+    bootstrap.Modal.getInstance(document.getElementById('deleteConfirmationModal')).hide();
   } catch (error) {
     console.error("Error deleting task:", error);
     alert("Failed to delete task.");
   }
-
-  // Reset taskToDelete variable
   taskToDelete = null;
 });
 
+// Load tasks from db.json
 async function loadTasks() {
   try {
     const response = await fetch(API_URL);
     const tasks = await response.json();
-    const array = Object.keys(tasks).map(key => tasks[key]);
-    array.sort( )
-    array.forEach(addTaskToUI);
+    tasks.sort((a, b) => new Date(a.deadline) - new Date(b.deadline));
+    tasks.forEach(addTaskToUI);
   } catch (error) {
     console.error(error);
   }
 }
 
-loadTasks();
-
+// Open edit modal
 function openEditModal(task) {
   document.getElementById('editTaskId').value = task.id;
   document.getElementById('editDescription').value = task.description;
   document.getElementById('editUrgency').value = task.urgency;
   document.getElementById('editImportance').value = task.importance;
   document.getElementById('editDeadline').value = task.deadline;
-
-  const modal = new bootstrap.Modal(document.getElementById('editTaskModal'));
-  modal.show();
+  new bootstrap.Modal(document.getElementById('editTaskModal')).show();
 }
 
+// Handle edit form submission
 document.getElementById('editTaskForm').addEventListener('submit', async function (e) {
   e.preventDefault();
 
   const id = document.getElementById('editTaskId').value;
-  const description = document.getElementById('editDescription').value.trim();
-  const urgency = document.getElementById('editUrgency').value;
-  const importance = document.getElementById('editImportance').value;
-  const deadline = document.getElementById('editDeadline').value;
-
-  const updatedTask = { description, urgency, importance, deadline };
+  const updatedTask = {
+    description: document.getElementById('editDescription').value.trim(),
+    urgency: document.getElementById('editUrgency').value,
+    importance: document.getElementById('editImportance').value,
+    deadline: document.getElementById('editDeadline').value
+  };
 
   try {
     const response = await fetch(`${API_URL}/${id}`, {
@@ -191,11 +174,12 @@ document.getElementById('editTaskForm').addEventListener('submit', async functio
     });
 
     if (!response.ok) throw new Error('Failed to update task');
-
-    location.reload(); // reload to refresh UI
-
+    location.reload(); // Refresh to show changes
   } catch (err) {
     console.error(err);
     alert('Error updating task.');
   }
 });
+
+// Initialize the app
+loadTasks();
