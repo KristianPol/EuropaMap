@@ -1,33 +1,27 @@
 {
-  "tasks": [
-    {
-      "id": "3b27",
-      "description": "do wmc hw",
-      "urgency": "urgent",
-      "importance": "important",
-      "deadline": "2025-05-20",
-      "subtasks": [
-        "yello"
-      ]
-    },
+  "destinations": [
     {
       "id": "6a8d",
-      "description": "learn to do servers",
-      "urgency": "not-urgent",
-      "importance": "important",
-      "deadline": "2025-05-31",
+      "country": "Italy",
       "subtasks": [
-        "bye bye"
+        {
+          "text": "Find hotels",
+          "completed": false
+        },
+        {
+          "text": "Learn basic phrases",
+          "completed": false
+        }
       ]
     },
     {
-      "id": "ba78",
-      "description": "play dota 2",
-      "urgency": "not-urgent",
-      "importance": "not-important",
-      "deadline": "2025-05-25",
+      "id": "ce71",
+      "country": "Germany",
       "subtasks": [
-        "rank up"
+        {
+          "text": "Book tickets",
+          "completed": false
+        }
       ]
     }
   ]

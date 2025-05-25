@@ -3,314 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Brochacho Task Manager</title>
+  <title>Brochacho Travel Planner</title>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
   <style>
-    .subtask-list {
-      max-height: 200px;
-      overflow-y: auto;
-    }
-    .subtask-container {
-      transition: all 0.3s ease;
-    }
-
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      transition: background-color 0.3s, color 0.3s;
-    }
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
 
-    body.dark-mode {
-      background-color: #121212;
-      color: #f8f9fa;
-    }
+body.dark-mode {
+  background-color: #121212;
+  color: #f8f9fa;
+}
 
-    .dark-mode .matrix-box,
-    .dark-mode .form-box,
-    .dark-mode .card {
-      background-color: #1e1e1e;
-      color: #f8f9fa;
-    }
+.main-container {
+  max-width: 3000px;
+  margin: 30px;
+  padding: 0 20px;
+}
 
-    .dark-mode .card-header {
-      border-bottom-color: #333;
-    }
+.add-destination-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+  transition: background-color 0.3s, color 0.3s;
+}
 
-    .dark-mode .list-group-item {
-      background-color: #1e1e1e;
-      color: #f8f9fa;
-      border-color: #333;
-    }
+.dark-mode .add-destination-container {
+  background-color: #1e1e1e;
+}
 
-    .dark-mode .text-muted {
-      color: #aaa !important;
-    }
+.destination-list-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  transition: background-color 0.3s, color 0.3s;
+}
 
-    .dark-mode .bg-light {
-      background-color: #2d2d2d !important;
-    }
+.dark-mode .destination-list-container {
+  background-color: #1e1e1e;
+}
 
-    .main-container {
-      display: flex;
-      gap: 30px;
-      padding: 20px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
+.destination-item {
+  transition: all 0.3s ease;
+  padding: 15px;
+  border-radius: 8px;
+  width: 100%;
+}
 
-    .matrix-box {
-      flex: 2;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 25px;
-      transition: background-color 0.3s, color 0.3s;
-    }
+.destination-item:hover {
+  background-color: #f0f0f0;
+}
 
-    .form-box {
-      flex: 1;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 25px;
-      height: fit-content;
-      position: sticky;
-      top: 20px;
-      transition: background-color 0.3s, color 0.3s;
-    }
+body.dark-mode .destination-item:hover {
+  background-color: #2d2d2d;
+}
 
-    .card {
-      height: 100%;
-      border: none;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      transition: background-color 0.3s, color 0.3s;
-    }
+.preparation-container {
+  margin-top: 15px;
+  padding-left: 20px;
+  border-left: 3px solid #dee2e6;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-    .card-header {
-      font-weight: 600;
-      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-      transition: border-bottom-color 0.3s;
-    }
+.dark-mode .preparation-container {
+  border-left-color: #444;
+}
 
-    .list-group-item {
-      border-left: none;
-      border-right: none;
-      padding: 12px 20px;
-      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    }
+.preparation-item {
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    @media (max-width: 992px) {
-      .main-container {
-        flex-direction: column;
-      }
+.preparation-item.completed .preparation-text {
+  text-decoration: line-through;
+  color: #6c757d;
+  opacity: 0.7;
+}
 
-      .form-box {
-        position: static;
-      }
-    }
+.dark-mode .preparation-item.completed .preparation-text {
+  color: #aaa;
+}
 
-    .dark-mode-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-    .dark-mode {
-      background-color: #121212 !important;
-      color: #f8f9fa !important;
-    }
+.preparation-actions {
+  display: flex;
+  gap: 8px;
+}
 
-    .dark-mode header {
-      background-color: #0d47a1 !important;
-      border-bottom: 1px solid #333;
-    }
+.bi-check-circle-fill {
+  color: #28a745;
+}
 
-    .dark-mode .container.border-primary-subtle {
-      background-color: #1e1e1e !important;
-      border-color: #333 !important;
-    }
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
 
-    .dark-mode .card-header {
-      background-color: #2d2d2d !important;
-    }
+.horizontal-form {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+}
 
-    .dark-mode .bg-primary {
-      background-color: #0d47a1 !important;
-    }
+.horizontal-form .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
 
-    .dark-mode .bg-success {
-      background-color: #1b5e20 !important;
-    }
-
-    .dark-mode .bg-warning {
-      background-color: #ff8f00 !important;
-    }
-
-    .dark-mode .bg-danger {
-      background-color: #c62828 !important;
-    }
-
-    .dark-mode .bg-secondary {
-      background-color: #424242 !important;
-    }
-
-    .dark-mode .border-primary {
-      border-color: #0d47a1 !important;
-    }
-
-    .dark-mode .border-success {
-      border-color: #1b5e20 !important;
-    }
-
-    .dark-mode .border-warning {
-      border-color: #ff8f00 !important;
-    }
-
-    .dark-mode .border-danger {
-      border-color: #c62828 !important;
-    }
-
-    .dark-mode .btn-outline-primary {
-      color: #90caf9;
-      border-color: #90caf9;
-    }
-
-    .dark-mode .btn-outline-primary:hover {
-      background-color: #0d47a1;
-      color: white;
-    }
-
-    .elem:hover {
-      background-color: #d2d2d2;
-    }
-    body.dark-mode .elem:hover {
-      background-color: #2f2f2f;
-    }
+@media (max-width: 768px) {
+  .horizontal-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
   </style>
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
 
   <header class="bg-primary text-white py-4 mb-4">
     <div class="container text-center">
-      <h1 class="mb-3">Brochacho Task Manager</h1>
+      <h1 class="mb-3">Brochacho Travel Planner</h1>
       <div class="nav-buttons">
         <a href="startpage.html" class="btn btn-light btn-outline-primary">Back to Home</a>
       </div>
     </div>
   </header>
 
-  <div class="container align-items-center border border-primary-subtle rounded p-4 w-100" style="max-width: 1400px; margin-bottom: 30px;">
-    <div class="main-container">
-      <div class="matrix-box" style="height: 600px;">
-        <div class="row g-4" style="height: 100%;">
-          <div class="col-md-6 d-flex" style="height: 50%;">
-            <div class="card border-primary w-100 overflow-auto d-flex flex-column">
-              <div class="card-header bg-primary text-white">Do (Urgent + Important)</div>
-              <ul class="list-group list-group-flush flex-grow-1 overflow-auto" id="do" style="max-height: 100%;"></ul>
-            </div>
-          </div>
-
-          <div class="col-md-6 d-flex" style="height: 50%;">
-            <div class="card border-success w-100 overflow-auto d-flex flex-column">
-              <div class="card-header bg-success text-white">Decide (Not Urgent + Important)</div>
-              <ul class="list-group list-group-flush flex-grow-1 overflow-auto" id="decide" style="max-height: 100%;"></ul>
-            </div>
-          </div>
-
-          <div class="col-md-6 d-flex" style="height: 50%;">
-            <div class="card border-warning w-100 overflow-auto d-flex flex-column">
-              <div class="card-header bg-warning text-dark">Delegate (Urgent + Not Important)</div>
-              <ul class="list-group list-group-flush flex-grow-1 overflow-auto" id="delegate" style="max-height: 100%;"></ul>
-            </div>
-          </div>
-
-          <div class="col-md-6 d-flex" style="height: 50%;">
-            <div class="card border-danger w-100 overflow-auto d-flex flex-column">
-              <div class="card-header bg-danger text-white">Delete (Not Urgent + Not Important)</div>
-              <ul class="list-group list-group-flush flex-grow-1 overflow-auto" id="delete" style="max-height: 100%;"></ul>
-            </div>
-          </div>
+  <div class="main-container">
+    <!-- Horizontal Add Destination Form -->
+    <div class="add-destination-container">
+      <form id="destinationForm" class="horizontal-form">
+        <div class="form-group">
+          <label for="country" class="form-label">Country to Visit</label>
+          <input type="text" id="country" class="form-control" required>
         </div>
-      </div>
+        <button type="submit" class="btn btn-primary">Add Destination</button>
+      </form>
+    </div>
 
-      <div class="form-box">
-        <div class="card">
-          <div class="card-header bg-secondary text-white">
-            Add New Task
-          </div>
-          <div class="card-body">
-            <form id="taskForm">
-              <div class="mb-3">
-                <label for="description" class="form-label">Task description</label>
-                <input type="text" id="description" class="form-control" required>
-              </div>
-              <div class="mb-3">
-                <label for="urgency" class="form-label">Urgency</label>
-                <select id="urgency" class="form-select" required>
-                  <option value="">Select urgency</option>
-                  <option value="urgent">Urgent</option>
-                  <option value="not-urgent">Not Urgent</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="importance" class="form-label">Importance</label>
-                <select id="importance" class="form-select" required>
-                  <option value="">Select importance</option>
-                  <option value="important">Important</option>
-                  <option value="not-important">Not Important</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="deadline" class="form-label">Deadline</label>
-                <input type="date" id="deadline" class="form-control" required>
-              </div>
-              <button type="submit" class="btn btn-primary w-100">Add Task</button>
-            </form>
-          </div>
-        </div>
-      </div>
+    <!-- Destination List -->
+    <div class="destination-list-container">
+      <h3 class="mb-4">Your Travel Plans</h3>
+      <ul class="list-unstyled" id="destinationsList">
+        <!-- Destinations will be added here dynamically -->
+      </ul>
     </div>
   </div>
 
   <button class="btn btn-dark dark-mode-toggle" onclick="darkModeToggle()">
-    <i class="bi bi-moon-fill"></i> Toggle Dark Mode
+    <i class="bi bi-moon-fill"></i>
   </button>
 
-  <div class="modal fade" id="editTaskModal" tabindex="-1" aria-labelledby="editTaskModalLabel" aria-hidden="true">
+  <!-- Edit Destination Modal -->
+  <div class="modal fade" id="editDestinationModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
-      <form class="modal-content" id="editTaskForm">
+      <form class="modal-content" id="editDestinationForm">
         <div class="modal-header">
-          <h5 class="modal-title" id="editTaskModalLabel">Edit Task</h5>
+          <h5 class="modal-title">Edit Destination</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <input type="hidden" id="editTaskId">
+          <input type="hidden" id="editDestinationId">
           <div class="mb-3">
-            <label for="editDescription" class="form-label">Description</label>
-            <input type="text" class="form-control" id="editDescription" required>
-          </div>
-          <div class="mb-3">
-            <label for="editUrgency" class="form-label">Urgency</label>
-            <select class="form-select" id="editUrgency" required>
-              <option value="urgent">Urgent</option>
-              <option value="not-urgent">Not Urgent</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="editImportance" class="form-label">Importance</label>
-            <select class="form-select" id="editImportance" required>
-              <option value="important">Important</option>
-              <option value="not-important">Not Important</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="editDeadline" class="form-label">Deadline</label>
-            <input type="date" class="form-control" id="editDeadline" required>
+            <label for="editCountry" class="form-label">Country</label>
+            <input type="text" class="form-control" id="editCountry" required>
           </div>
         </div>
         <div class="modal-footer">
@@ -320,15 +191,16 @@
     </div>
   </div>
 
-  <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+  <!-- Delete Confirmation Modal -->
+  <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="deleteConfirmationModalLabel">Confirm Deletion</h5>
+          <h5 class="modal-title">Confirm Deletion</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Are you sure you want to delete this task? This action cannot be undone.
+          Are you sure you want to delete this destination? This action cannot be undone.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -338,36 +210,7 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../scripts/brochacho.js"></script>
-  <script src="../scripts/navigation.js" defer></script>
-  <script>
-    // Dark mode toggle function (moved from JS file for consistency)
-    function darkModeToggle() {
-      document.body.classList.toggle('dark-mode');
-      const isDarkMode = document.body.classList.contains('dark-mode');
-      localStorage.setItem('darkMode', isDarkMode ? 'dark' : 'light');
-      
-      const darkModeBtn = document.querySelector('.dark-mode-toggle');
-      const icon = darkModeBtn.querySelector('i');
-      if (isDarkMode) {
-        icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
-        darkModeBtn.classList.replace('btn-dark', 'btn-light');
-      } else {
-        icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
-        darkModeBtn.classList.replace('btn-light', 'btn-dark');
-      }
-    }
-
-    // Initialize dark mode button icon
-    document.addEventListener('DOMContentLoaded', () => {
-      const darkModeBtn = document.querySelector('.dark-mode-toggle');
-      const icon = document.createElement('i');
-      icon.className = 'bi bi-moon-fill';
-      darkModeBtn.innerHTML = '';
-      darkModeBtn.appendChild(icon);
-    });
-  </script>
 </body>
 </html>
