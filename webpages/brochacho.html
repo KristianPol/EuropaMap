@@ -2,532 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Brochacho Task Manager</title>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <title>European Country Bucket List Manager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <script src="../scripts/brochacho.js"></script>
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    body.dark-mode {
-      background-color: #121212;
-      color: #f8f9fa;
-    }
-
-    .dark-mode .matrix-box,
-    .dark-mode .form-box,
-    .dark-mode .pomodoro-box,
-    .dark-mode .card {
-      background-color: #1e1e1e;
-      color: #f8f9fa;
-    }
-
-    .dark-mode .card-header {
-      border-bottom-color: #333;
-    }
-
-    .dark-mode .list-group-item {
-      background-color: #1e1e1e;
-      color: #f8f9fa;
-      border-color: #333;
-    }
-
-    .dark-mode .text-muted {
-      color: #aaa !important;
-    }
-
-    .dark-mode .bg-light {
-      background-color: #2d2d2d !important;
-    }
-
-    .main-container {
-      display: flex;
-      gap: 30px;
-      padding: 20px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .matrix-box {
-      flex: 2;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 25px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .form-box {
-      flex: 1;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 25px;
-      height: fit-content;
-      position: sticky;
-      top: 20px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .card {
-      height: 100%;
-      border: none;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .card-header {
-      font-weight: 600;
-      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-      transition: border-bottom-color 0.3s;
-    }
-
-    .list-group-item {
-      border-left: none;
-      border-right: none;
-      padding: 12px 20px;
-      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    }
-
-    @media (max-width: 992px) {
-      .main-container {
-        flex-direction: column;
-      }
-
-      .form-box {
-        position: static;
-      }
-    }
-
-    .pomodoro-box {
-      margin-top: 30px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 30px;
-      text-align: center;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .dark-mode-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-    .dark-mode {
-    background-color: #121212 !important;
-    color: #f8f9fa !important;
-  }
-
-  .dark-mode header {
-    background-color: #0d47a1 !important;
-    border-bottom: 1px solid #333;
-  }
-
-  .dark-mode .container.border-primary-subtle {
-    background-color: #1e1e1e !important;
-    border-color: #333 !important;
-  }
-
-  .dark-mode .card-header {
-    background-color: #2d2d2d !important;
-  }
-
-  .dark-mode .bg-primary {
-    background-color: #0d47a1 !important;
-  }
-
-  .dark-mode .bg-success {
-    background-color: #1b5e20 !important;
-  }
-
-  .dark-mode .bg-warning {
-    background-color: #ff8f00 !important;
-  }
-
-  .dark-mode .bg-danger {
-    background-color: #c62828 !important;
-  }
-
-  .dark-mode .bg-secondary {
-    background-color: #424242 !important;
-  }
-
-  .dark-mode .border-primary {
-    border-color: #0d47a1 !important;
-  }
-
-  .dark-mode .border-success {
-    border-color: #1b5e20 !important;
-  }
-
-  .dark-mode .border-warning {
-    border-color: #ff8f00 !important;
-  }
-
-  .dark-mode .border-danger {
-    border-color: #c62828 !important;
-  }
-
-  .dark-mode .btn-outline-primary {
-    color: #90caf9;
-    border-color: #90caf9;
-  }
-
-  .dark-mode .btn-outline-primary:hover {
-    background-color: #0d47a1;
-    color: white;
-  }
-
-  .elem:hover {
-    background-color: #d2d2d2;
-  }
-  body.dark-mode .elem:hover {
-    background-color: #2f2f2f;
-  }
-
-  /* Pomodoro Timer Styles */
-  .pomodoro-timer {
-    font-size: 5rem;
-    font-weight: bold;
-    margin: 20px 0;
-  }
-
-  .pomodoro-btn-group {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-
-  .pomodoro-controls {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .pomodoro-mode {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  </style>
+    body { background: #f8f9fa; }
+    .dark-mode { background: #121212 !important; color: #f8f9fa !important; }
+    .dark-mode .card { background: #232323; color: #f8f9fa; }
+    .dark-mode .btn-dark { background: #333 !important; }
+    .dark-mode-toggle { position: fixed; bottom: 20px; right: 20px; }
+    .dark-mode input[type="text"] {
+  background: #232323;
+  color: #f8f9fa;
+  border-color: #444;
+}
+</style>
 </head>
-<body class="bg-light d-flex flex-column min-vh-100">
-
-  <header class="bg-primary text-white py-4 mb-4">
-    <div class="container text-center">
-      <h1 class="mb-3">Brochacho Task Manager</h1>
-      <div class="nav-buttons">
-        <a href="startpage.html" class="btn btn-light btn-outline-primary">Back to Home</a>
-      </div>
-    </div>
+<body>
+  <header class="bg-primary text-white py-4 mb-4 text-center">
+    <h1>European Country Bucket List Manager</h1>
   </header>
 
-  <div class="container align-items-center border border-primary-subtle rounded p-4 w-100" style="max-width: 1400px; margin-bottom: 30px;">
-    <div class="main-container">
-          <div class="matrix-box" style="height: 600px;">
-      <div class="row g-4" style="height: 100%;">
-        <div class="col-md-6 d-flex" style="height: 50%;">
-          <div class="card border-primary w-100 overflow-auto d-flex flex-column">
-            <div class="card-header bg-primary text-white">Do (Urgent + Important)</div>
-            <ul class="list-group list-group-flush flex-grow-1 overflow-auto" id="do" style="max-height: 100%;"></ul>
-          </div>
-        </div>
-
-        <div class="col-md-6 d-flex" style="height: 50%;">
-          <div class="card border-success w-100 overflow-auto d-flex flex-column">
-            <div class="card-header bg-success text-white">Decide (Not Urgent + Important)</div>
-            <ul class="list-group list-group-flush flex-grow-1 overflow-auto" id="decide" style="max-height: 100%;"></ul>
-          </div>
-        </div>
-
-        <div class="col-md-6 d-flex" style="height: 50%;">
-          <div class="card border-warning w-100 overflow-auto d-flex flex-column">
-            <div class="card-header bg-warning text-dark">Delegate (Urgent + Not Important)</div>
-            <ul class="list-group list-group-flush flex-grow-1 overflow-auto" id="delegate" style="max-height: 100%;"></ul>
-          </div>
-        </div>
-
-        <div class="col-md-6 d-flex" style="height: 50%;">
-          <div class="card border-danger w-100 overflow-auto d-flex flex-column">
-            <div class="card-header bg-danger text-white">Delete (Not Urgent + Not Important)</div>
-            <ul class="list-group list-group-flush flex-grow-1 overflow-auto" id="delete" style="max-height: 100%;"></ul>
-          </div>
-        </div>
+  <div class="container mb-4">
+    <div class="row">
+      <div class="col-md-4">
+        <label for="countrySelect" class="form-label">Select a Country</label>
+        <select id="countrySelect" class="form-select">
+            <option value="albania">Albania</option>
+            <option value="andorra">Andorra</option>
+            <option value="armenia">Armenia</option>
+            <option value="austria">Austria</option>
+            <option value="azerbaijan">Azerbaijan</option>
+            <option value="belarus">Belarus</option>
+            <option value="belgium">Belgium</option>
+            <option value="bosnia_and_herzegovina">Bosnia and Herzegovina</option>
+            <option value="bulgaria">Bulgaria</option>
+            <option value="croatia">Croatia</option>
+            <option value="cyprus">Cyprus</option>
+            <option value="czechia">Czechia</option>
+            <option value="denmark">Denmark</option>
+            <option value="estonia">Estonia</option>
+            <option value="finland">Finland</option>
+            <option value="france">France</option>
+            <option value="georgia">Georgia</option>
+            <option value="germany">Germany</option>
+            <option value="greece">Greece</option>
+            <option value="hungary">Hungary</option>
+            <option value="iceland">Iceland</option>
+            <option value="ireland">Ireland</option>
+            <option value="italy">Italy</option>
+            <option value="kazakhstan">Kazakhstan</option>
+            <option value="kosovo">Kosovo</option>
+            <option value="latvia">Latvia</option>
+            <option value="liechtenstein">Liechtenstein</option>
+            <option value="lithuania">Lithuania</option>
+            <option value="luxembourg">Luxembourg</option>
+            <option value="malta">Malta</option>
+            <option value="moldova">Moldova</option>
+            <option value="monaco">Monaco</option>
+            <option value="montenegro">Montenegro</option>
+            <option value="netherlands">Netherlands</option>
+            <option value="north_macedonia">North Macedonia</option>
+            <option value="norway">Norway</option>
+            <option value="poland">Poland</option>
+            <option value="portugal">Portugal</option>
+            <option value="romania">Romania</option>
+            <option value="russia">Russia</option>
+            <option value="san_marino">San Marino</option>
+            <option value="serbia">Serbia</option>
+            <option value="slovakia">Slovakia</option>
+            <option value="slovenia">Slovenia</option>
+            <option value="spain">Spain</option>
+            <option value="sweden">Sweden</option>
+            <option value="switzerland">Switzerland</option>
+            <option value="turkey">Turkey</option>
+            <option value="ukraine">Ukraine</option>
+            <option value="united_kingdom">United Kingdom</option>
+            <option value="vatican_city">Vatican City</option>
+        </select>
       </div>
-    </div>
-
-      <div class="form-box">
+      <div class="col-md-8">
         <div class="card">
           <div class="card-header bg-secondary text-white">
-            Add New Task
+            <span id="countryTitle">France</span> Bucket List
           </div>
+          <ul class="list-group list-group-flush" id="bucketList"></ul>
           <div class="card-body">
-            <form id="taskForm">
-              <div class="mb-3">
-                <label for="description" class="form-label">Task description</label>
-                <input type="text" id="description" class="form-control" required>
-              </div>
-              <div class="mb-3">
-                <label for="urgency" class="form-label">Urgency</label>
-                <select id="urgency" class="form-select" required>
-                  <option value="">Select urgency</option>
-                  <option value="urgent">Urgent</option>
-                  <option value="not-urgent">Not Urgent</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="importance" class="form-label">Importance</label>
-                <select id="importance" class="form-select" required>
-                  <option value="">Select importance</option>
-                  <option value="important">Important</option>
-                  <option value="not-important">Not Important</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="deadline" class="form-label">Deadline</label>
-                <input type="date" id="deadline" class="form-control" required>
-              </div>
-              <button type="submit" class="btn btn-primary w-100">Add Task</button>
+            <form id="addItemForm" class="d-flex gap-2" autocomplete="off">
+              <input type="text" id="newItem" class="form-control" placeholder="Add new activity..." required>
+              <button class="btn btn-primary" type="submit">Add</button>
             </form>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="pomodoro-box">
-      <h2 class="text-center mb-4">Pomodoro Timer</h2>
-      <div class="pomodoro-mode text-primary" id="pomodoroMode">Work Time</div>
-      <div class="pomodoro-timer" id="pomodoroTimer">25:00</div>
-      
-      <div class="pomodoro-btn-group">
-        <button class="btn btn-primary" id="workBtn">Work (25m)</button>
-        <button class="btn btn-info" id="shortBreakBtn">Short Break (5m)</button>
-        <button class="btn btn-info" id="longBreakBtn">Long Break (15m)</button>
-      </div>
-      
-      <div class="pomodoro-controls">
-        <button class="btn btn-success" id="startBtn">Start</button>
-        <button class="btn btn-warning" id="pauseBtn" disabled>Pause</button>
-        <button class="btn btn-danger" id="resetBtn">Reset</button>
-      </div>
-    </div>
   </div>
 
   <button class="btn btn-dark dark-mode-toggle" onclick="darkModeToggle()">
-    <i class="bi bi-moon-fill"></i> Toggle Dark Mode
+    <i class="bi bi-moon-fill"></i>
   </button>
-
-  <div class="modal fade" id="editTaskModal" tabindex="-1" aria-labelledby="editTaskModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <form class="modal-content" id="editTaskForm">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editTaskModalLabel">Edit Task</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <input type="hidden" id="editTaskId">
-        <div class="mb-3">
-          <label for="editDescription" class="form-label">Description</label>
-          <input type="text" class="form-control" id="editDescription" required>
-        </div>
-        <div class="mb-3">
-          <label for="editUrgency" class="form-label">Urgency</label>
-          <select class="form-select" id="editUrgency" required>
-            <option value="urgent">Urgent</option>
-            <option value="not-urgent">Not Urgent</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="editImportance" class="form-label">Importance</label>
-          <select class="form-select" id="editImportance" required>
-            <option value="important">Important</option>
-            <option value="not-important">Not Important</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="editDeadline" class="form-label">Deadline</label>
-          <input type="date" class="form-control" id="editDeadline" required>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Save Changes</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="deleteConfirmationModalLabel">Confirm Deletion</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to delete this task? This action cannot be undone.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-  <script src="../scripts/brochacho.js"></script>
-  <script src="../scripts/navigation.js" defer></script>
-  <script>
-    let timer;
-    let timeLeft = 1500;
-    let isRunning = false;
-    let currentMode = 'work'; 
-
-    // DOM Elements
-    const pomodoroTimer = document.getElementById('pomodoroTimer');
-    const pomodoroMode = document.getElementById('pomodoroMode');
-    const startBtn = document.getElementById('startBtn');
-    const pauseBtn = document.getElementById('pauseBtn');
-    const resetBtn = document.getElementById('resetBtn');
-    const workBtn = document.getElementById('workBtn');
-    const shortBreakBtn = document.getElementById('shortBreakBtn');
-    const longBreakBtn = document.getElementById('longBreakBtn');
-
-    // Event Listeners
-    startBtn.addEventListener('click', startTimer);
-    pauseBtn.addEventListener('click', pauseTimer);
-    resetBtn.addEventListener('click', resetTimer);
-    workBtn.addEventListener('click', () => setTimer(25, 'work'));
-    shortBreakBtn.addEventListener('click', () => setTimer(5, 'shortBreak'));
-    longBreakBtn.addEventListener('click', () => setTimer(15, 'longBreak'));
-
-    // Timer functions
-    function setTimer(minutes, mode) {
-      clearInterval(timer);
-      timeLeft = minutes * 60;
-      currentMode = mode;
-      updateDisplay();
-      isRunning = false;
-      startBtn.disabled = false;
-      pauseBtn.disabled = true;
-      
-      // Update mode display
-      if (mode === 'work') {
-        pomodoroMode.textContent = 'Work Time';
-        pomodoroMode.className = 'pomodoro-mode text-primary';
-      } else if (mode === 'shortBreak') {
-        pomodoroMode.textContent = 'Short Break';
-        pomodoroMode.className = 'pomodoro-mode text-info';
-      } else {
-        pomodoroMode.textContent = 'Long Break';
-        pomodoroMode.className = 'pomodoro-mode text-info';
-      }
-    }
-
-    function startTimer() {
-      if (!isRunning) {
-        isRunning = true;
-        timer = setInterval(updateTimer, 1000);
-        startBtn.disabled = true;
-        pauseBtn.disabled = false;
-      }
-    }
-
-    function pauseTimer() {
-      if (isRunning) {
-        clearInterval(timer);
-        isRunning = false;
-        startBtn.disabled = false;
-        pauseBtn.disabled = true;
-      }
-    }
-
-    function resetTimer() {
-      clearInterval(timer);
-      isRunning = false;
-      if (currentMode === 'work') {
-        setTimer(25, 'work');
-      } else if (currentMode === 'shortBreak') {
-        setTimer(5, 'shortBreak');
-      } else {
-        setTimer(15, 'longBreak');
-      }
-      startBtn.disabled = false;
-      pauseBtn.disabled = true;
-    }
-
-    function updateTimer() {
-      timeLeft--;
-      updateDisplay();
-      
-      if (timeLeft <= 0) {
-        clearInterval(timer);
-        isRunning = false;
-        startBtn.disabled = true;
-        pauseBtn.disabled = true;
-        
-        // Play a sound when timer completes
-        const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3');
-        audio.play();
-        
-        // Auto-switch to next mode
-        if (currentMode === 'work') {
-          setTimeout(() => {
-            setTimer(5, 'shortBreak');
-            startBtn.disabled = false;
-          }, 1000);
-        } else {
-          setTimeout(() => {
-            setTimer(25, 'work');
-            startBtn.disabled = false;
-          }, 1000);
-        }
-      }
-    }
-
-    function updateDisplay() {
-      const minutes = Math.floor(timeLeft / 60);
-      const seconds = timeLeft % 60;
-      pomodoroTimer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    }
-
-    // Initialize with work timer
-    setTimer(25, 'work');
-
-    // Dark mode toggle function
-    function darkModeToggle() {
-      document.body.classList.toggle('dark-mode');
-      const icon = document.querySelector('.dark-mode-toggle i');
-      if (document.body.classList.contains('dark-mode')) {
-        icon.classList.remove('bi-moon-fill');
-        icon.classList.add('bi-sun-fill');
-        darkModeBtn.classList.remove('btn-dark');
-        darkModeBtn.classList.add('btn-light');
-      } else {
-        icon.classList.remove('bi-sun-fill');
-        icon.classList.add('bi-moon-fill');
-        darkModeBtn.classList.remove('btn-light');
-        darkModeBtn.classList.add('btn-dark');
-      }
-    }
-
-    // Add icon to dark mode button
-    const darkModeBtn = document.querySelector('.dark-mode-toggle');
-    const icon = document.createElement('i');
-    icon.className = 'bi bi-moon-fill';
-    darkModeBtn.innerHTML = '';
-    darkModeBtn.appendChild(icon);
-  </script>
 </body>
 </html>
