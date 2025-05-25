@@ -27,7 +27,7 @@ function appendNavbar() {
     <div class="container-fluid d-flex justify-content-between">
         <div class="d-flex">
             <a class="nav-link" href="../webpages/index.html">Europe Map</a>
-            <a class="nav-link" href="../webpages/brochacho.html">Brochacho Task Manager</a>
+            <a class="nav-link" href="../webpages/brochacho.html">Brochacho Travel Planner</a>
         </div>
         <a class="nav-link" href="../webpages/about.html">About</a> <!-- This one will be on the opposite side -->
     </div>
