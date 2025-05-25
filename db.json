@@ -5,35 +5,30 @@
       "description": "do wmc hw",
       "urgency": "urgent",
       "importance": "important",
-      "deadline": "2025-05-20"
+      "deadline": "2025-05-20",
+      "subtasks": [
+        "yello"
+      ]
     },
     {
       "id": "6a8d",
       "description": "learn to do servers",
       "urgency": "not-urgent",
       "importance": "important",
-      "deadline": "2025-05-31"
+      "deadline": "2025-05-31",
+      "subtasks": [
+        "bye bye"
+      ]
     },
     {
-      "id": "9574",
-      "description": "do math hw",
-      "urgency": "urgent",
-      "importance": "important",
-      "deadline": "2025-05-22"
-    },
-    {
-      "id": "928d",
+      "id": "ba78",
       "description": "play dota 2",
       "urgency": "not-urgent",
       "importance": "not-important",
-      "deadline": "2025-05-12"
-    },
-    {
-      "id": "eee4",
-      "description": "call mom",
-      "urgency": "urgent",
-      "importance": "not-important",
-      "deadline": "2025-05-12"
+      "deadline": "2025-05-25",
+      "subtasks": [
+        "rank up"
+      ]
     }
   ]
 }
