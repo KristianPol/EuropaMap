@@ -4,140 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Andorra</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        header {
-            background: linear-gradient(90deg, #0061B2, #F3C10A, #D7A000);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 30px;
-            background-color: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
-        h2 {
-            color: #0061B2;
-            border-bottom: 2px solid #F3C10A;
-            padding-bottom: 8px;
-            margin-top: 30px;
-            text-align: center;
-        }
-        p {
-            text-align: justify;
-            padding-left: 5%;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 25px auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            border: 1px solid #ddd;
-        }
-        .highlight {
-            background-color: #FFF8E1;
-            padding: 15px;
-            border-left: 4px solid #F3C10A;
-            margin: 20px 0;
-            border-radius: 0 4px 4px 0;
-        }
-        a {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #0061B2;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        a:hover {
-            background-color: #F3C10A;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-                margin: 15px;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-        }
-        ul {
-            padding-left: 5%;
+        .section-title {
+            color: #0d6efd;
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Discover Andorra</h1>
-    </header>
 
-    <div class="container">
-        <h2>About Andorra</h2>
-        <p>Andorra, a small principality nestled in the Pyrenees mountains between France and Spain, is famous for its stunning alpine scenery, charming medieval towns, and tax-free shopping. Despite its small size, Andorra is a vibrant country with a rich history and a unique blend of Catalan and French influences. Its capital, Andorra la Vella, is the highest capital city in Europe.</p>
-        <p>Did you know? Andorra is known for having one of the lowest unemployment rates in Europe, and it’s a top destination for ski enthusiasts in the winter months!</p>
+<!-- Loading Screen -->
+<div id="loading-screen" class="position-fixed top-0 start-0 w-100 h-100 bg-white d-flex justify-content-center align-items-center" style="z-index: 9999;">
+    <div class="text-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <h3 class="mt-3">Discovering Andorra...</h3>
+    </div>
+</div>
+
+<!-- Hero Header -->
+<header class="bg-primary text-white py-5 mb-4">
+    <div class="container text-center">
+        <h1 class="mb-3 animate__animated animate__fadeInDown">Discover Andorra</h1>
+        <p class="lead animate__animated animate__fadeInUp animate__delay-1s">The Hidden Jewel of the Pyrenees</p>
+    </div>
+</header>
+
+<div class="container align-items-center border border-primary-subtle rounded p-4 w-100" style="max-width: 800px;">
+    <!-- About Section -->
+    <div class="mb-4 opacity-0" id="about-section">
+        <h2 class="text-center section-title">About Andorra</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Andorra is a small, landlocked country nestled between France and Spain in the Pyrenees mountains. Known for its picturesque landscapes, ski resorts, and duty-free shopping, Andorra offers a peaceful and scenic retreat for travelers.</p>
+                <p>Despite its small size, Andorra boasts a rich cultural heritage, beautiful Romanesque architecture, and a unique political system with two co-princes as heads of state.</p>
+            </div>
+        </div>
+        <div class="alert alert-primary mt-4 animate__animated animate__pulse animate__delay-2s">
+            <i class="fas fa-info-circle me-2"></i> <strong>Did you know?</strong> Andorra is one of the few countries in the world with Catalan as its official language!
+        </div>
     </div>
 
-    <h2>Geography</h2>
-    <p>Andorra’s geography is characterized by steep mountains, valleys, and scenic vistas:</p>
-    <ul>
-        <li>The Pyrenees Mountains offer fantastic skiing opportunities in the winter and hiking trails in the summer</li>
-        <li>The Madriu-Perafita-Claror Valley, a UNESCO World Heritage site, is a protected natural area with scenic landscapes</li>
-        <li>The Vallnord and Grandvalira ski resorts, known for their world-class slopes and views</li>
-        <li>The Ordino Arcalís Valley, a popular area for outdoor sports throughout the year</li>
-    </ul>
-
-    <h2>Culture</h2>
-    <p>Andorran culture is a mix of Catalan, Spanish, and French influences, reflected in its language, food, and traditions:</p>
-    <ul>
-        <li>The official language is Catalan, although Spanish, French, and Portuguese are widely spoken</li>
-        <li>Famous for its music festivals, such as the Andorra la Vella International Music Festival</li>
-        <li>Andorran cuisine includes traditional Catalan dishes like trinxat (potato and cabbage dish) and escudella (meat and vegetable stew)</li>
-        <li>The country celebrates unique cultural events, like the traditional Andorran folk dances during festivals</li>
-    </ul>
-
-    <h2>Tourism Highlights</h2>
-    <p>Andorra offers a wide range of activities and attractions:</p>
-    <ul>
-        <li>The ski resorts of Grandvalira and Vallnord, perfect for skiing and snowboarding</li>
-        <li>The Romanesque churches, including Sant Joan de Caselles and Santa Coloma, showcasing the country’s medieval heritage</li>
-        <li>The Caldea Spa, a large spa complex offering thermal baths and wellness treatments</li>
-        <li>The charming village of Ordino, with its picturesque streets and traditional alpine architecture</li>
-        <li>Shopping in Andorra la Vella, known for its duty-free stores</li>
-    </ul>
-
-    <div style="text-align: center; padding-bottom: 5px;">
-        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
+    <!-- Geography Section -->
+    <div class="mb-4 opacity-0" id="geography-section">
+        <h2 class="text-center section-title">Geography</h2>
+        <p>Andorra’s stunning geography is shaped by the Pyrenees:</p>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li class="mb-2 opacity-0"><i class="fas fa-mountain text-primary me-2"></i> Surrounded by dramatic mountain ranges and valleys</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-snowflake text-primary me-2"></i> Famous for ski resorts like Grandvalira and Vallnord</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-leaf text-primary me-2"></i> Home to lush forests, alpine meadows, and clear mountain streams</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-hiking text-primary me-2"></i> Popular destination for hiking and mountain biking in the summer</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <script src="../scripts/navigation.js" defer></script>
+
+    <!-- Culture Section -->
+    <div class="mb-4 opacity-0" id="culture-section">
+        <h2 class="text-center section-title">Culture</h2>
+        <p>Andorran culture is a blend of Catalan roots and Pyrenean tradition:</p>
+        <div class="row">
+            <div class="col-md-6 order-md-2">
+                <ul class="list-unstyled">
+                    <li class="mb-2 opacity-0"><i class="fas fa-language text-primary me-2"></i> Catalan is the official language, with French and Spanish widely spoken</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-guitar text-primary me-2"></i> Traditional music and folk dances are celebrated in local festivals</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-church text-primary me-2"></i> Many Romanesque churches dot the landscape, reflecting Andorra’s deep Christian heritage</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-utensils text-primary me-2"></i> Cuisine blends French, Catalan, and Spanish influences</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tourism Highlights Section -->
+    <div class="mb-4 opacity-0" id="tourism-section">
+        <h2 class="text-center section-title">Tourism Highlights</h2>
+        <p>Top attractions and experiences in Andorra include:</p>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm opacity-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Vall de Núria</h5>
+                        <p class="card-text">A beautiful valley perfect for skiing in winter and hiking in summer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm opacity-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Sant Joan de Caselles</h5>
+                        <p class="card-text">One of Andorra’s finest Romanesque churches, dating back to the 11th century.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm opacity-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Caldea Spa</h5>
+                        <p class="card-text">One of Europe's largest spas, known for thermal waters and stunning architecture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="text-center mb-3">
+        <a href="../webpages/index.html" class="btn btn-primary btn-lg">
+            <i class="fas fa-home me-2"></i>Explore More
+        </a>
+    </div>
+</div>
+
+<!-- Animation Script -->
+<script>
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            document.getElementById('loading-screen').classList.add('animate__animated', 'animate__fadeOut');
+            setTimeout(function () {
+                document.getElementById('loading-screen').style.display = 'none';
+
+                const cards = document.querySelectorAll('.card.shadow-sm, #about-section, #geography-section, #culture-section, #tourism-section');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animate__animated', 'animate__fadeIn');
+                        card.classList.remove('opacity-0');
+                    }, 200 * index);
+                });
+
+                const listItems = document.querySelectorAll('.list-unstyled li');
+                listItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('animate__animated', 'animate__fadeInUp');
+                        item.classList.remove('opacity-0');
+                    }, 100 * index);
+                });
+
+            }, 800);
+        }, 1000);
+    });
+</script>
+<script src="../scripts/navigation.js" defer></script>
 </body>
 </html>
+A
