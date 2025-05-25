@@ -1,142 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discover Croatia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        header {
-            background: linear-gradient(90deg, #E30B5C, #FFFFFF, #003B5C);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 30px;
-            background-color: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
-        h2 {
-            color: #003B5C;
-            border-bottom: 2px solid #E30B5C;
-            padding-bottom: 8px;
-            margin-top: 30px;
-            text-align: center;
-        }
-        p {
-            text-align: justify;
-            padding-left: 5%;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 25px auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            border: 1px solid #ddd;
-        }
-        .highlight {
-            background-color: #FFF8E1;
-            padding: 15px;
-            border-left: 4px solid #003B5C;
-            margin: 20px 0;
-            border-radius: 0 4px 4px 0;
-        }
-        a {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #E30B5C;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        a:hover {
-            background-color: #003B5C;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-                margin: 15px;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-        }
-        ul {
-            padding-left: 5%;
+        .section-title {
+            color: #0d6efd;
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Discover Croatia</h1>
-    </header>
 
-    <div class="container">
-        <h2>About Croatia</h2>
-        <p>Croatia, located along the Adriatic Sea in Southeast Europe, is a country known for its stunning coastline, medieval cities, and rich cultural heritage. The capital city, Zagreb, is a vibrant urban center, while the coastline is dotted with beautiful islands and ancient towns like Dubrovnik, often referred to as the "Pearl of the Adriatic."</p>
-        <p>Did you know? Croatia is home to eight UNESCO World Heritage Sites, including the historic town of Dubrovnik and the stunning Plitvice Lakes National Park!</p>
+<!-- Loading Screen -->
+<div id="loading-screen" class="position-fixed top-0 start-0 w-100 h-100 bg-white d-flex justify-content-center align-items-center" style="z-index: 9999;">
+    <div class="text-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <h3 class="mt-3">Discovering Croatia...</h3>
+    </div>
+</div>
+
+<!-- Hero Header -->
+<header class="bg-primary text-white py-5 mb-4">
+    <div class="container text-center">
+        <h1 class="mb-3 animate__animated animate__fadeInDown">Discover Croatia</h1>
+        <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Where the Adriatic Meets Medieval Splendor</p>
+    </div>
+</header>
+
+<div class="container align-items-center border border-primary-subtle rounded p-4 w-100" style="max-width: 800px;">
+    <!-- About Croatia Section -->
+    <div class="mb-4 opacity-0" id="about-section">
+        <h2 class="text-center section-title">About Croatia</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Croatia, located in Southeast Europe along the Adriatic Sea, is renowned for its historic cities, stunning coastline, and over 1,000 islands. With a rich blend of Roman, Venetian, and Slavic heritage, Croatia offers a unique cultural and historical experience.</p>
+                <p>The capital, Zagreb, is known for its charming old town, vibrant cafés, and Austro-Hungarian architecture.</p>
+            </div>
+        </div>
+        <div class="alert alert-primary mt-4 animate__animated animate__pulse animate__delay-2s">
+            <i class="fas fa-info-circle me-2"></i> <strong>Did you know?</strong> Dubrovnik served as a major filming location for King's Landing in *Game of Thrones*!
+        </div>
     </div>
 
-    <h2>Geography</h2>
-    <p>Croatia offers diverse and scenic landscapes:</p>
-    <ul>
-        <li>The breathtaking Dalmatian coast, with its crystal-clear waters and beautiful islands</li>
-        <li>The UNESCO-listed Plitvice Lakes National Park, known for its stunning waterfalls and turquoise lakes</li>
-        <li>The Istrian Peninsula, famous for its ancient Roman ruins and charming hilltop towns</li>
-        <li>The picturesque city of Split, with its historic Diocletian’s Palace</li>
-    </ul>
-
-    <h2>Culture</h2>
-    <p>Croatian culture is steeped in traditions and history:</p>
-    <ul>
-        <li>Rich folk music, including the traditional klapa singing style from Dalmatia</li>
-        <li>Croatian cuisine, including dishes like peka, ćevapi, and seafood from the Adriatic coast</li>
-        <li>The famous Dubrovnik Summer Festival, celebrating arts, music, and theater</li>
-        <li>Historical landmarks, such as the Roman amphitheater in Pula and the Diocletian’s Palace in Split</li>
-    </ul>
-
-    <h2>Tourism Highlights</h2>
-    <p>Top destinations in Croatia include:</p>
-    <ul>
-        <li>Dubrovnik’s Old Town and City Walls (UNESCO World Heritage Site)</li>
-        <li>The stunning Plitvice Lakes National Park</li>
-        <li>The ancient town of Split and Diocletian’s Palace</li>
-        <li>The beautiful island of Hvar, known for its beaches and nightlife</li>
-        <li>The historic city of Pula, home to a Roman amphitheater</li>
-    </ul>
-
-    <div style="text-align: center; padding-bottom: 5px;">
-        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
+    <!-- Geography Section -->
+    <div class="mb-4 opacity-0" id="geography-section">
+        <h2 class="text-center section-title">Geography</h2>
+        <p>Croatia offers diverse landscapes from the coast to the mountains:</p>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li class="mb-2 opacity-0"><i class="fas fa-water text-primary me-2"></i> The Adriatic Sea with crystal-clear waters and beautiful islands</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-mountain text-primary me-2"></i> Dinaric Alps offering hiking and adventure</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-tree text-primary me-2"></i> Plitvice Lakes National Park, famous for waterfalls and turquoise lakes</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-city text-primary me-2"></i> Coastal cities like Split and Rijeka blending nature and history</li>
+                </ul>
+            </div>
+        </div>
     </div>
+
+    <!-- Culture Section -->
+    <div class="mb-4 opacity-0" id="culture-section">
+        <h2 class="text-center section-title">Culture</h2>
+        <p>Croatia has a vibrant cultural scene that merges ancient traditions with modern life:</p>
+        <div class="row">
+            <div class="col-md-6 order-md-2">
+                <ul class="list-unstyled">
+                    <li class="mb-2 opacity-0"><i class="fas fa-university text-primary me-2"></i> Roman architecture, including Diocletian’s Palace in Split</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-palette text-primary me-2"></i> A rich arts scene with film festivals, folk music, and dance</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-utensils text-primary me-2"></i> Mediterranean-influenced cuisine with dishes like black risotto and pasticada</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-music text-primary me-2"></i> Klapa singing—traditional a cappella harmonies protected by UNESCO</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tourism Section -->
+    <div class="mb-4 opacity-0" id="tourism-section">
+        <h2 class="text-center section-title">Tourism Highlights</h2>
+        <p>Top attractions in Croatia include:</p>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm opacity-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Dubrovnik</h5>
+                        <p class="card-text">A walled medieval city with baroque buildings and sea views.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm opacity-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Plitvice Lakes</h5>
+                        <p class="card-text">UNESCO-listed park with breathtaking waterfalls and walking trails.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm opacity-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Hvar</h5>
+                        <p class="card-text">A sunny island famous for beaches, vineyards, and historic towns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="text-center mb-3">
+        <a href="../webpages/index.html" class="btn btn-primary btn-lg">
+            <i class="fas fa-home me-2"></i>Explore More
+        </a>
+    </div>
+</div>
+
+<!-- Animation Script -->
+<script>
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            document.getElementById('loading-screen').classList.add('animate__animated', 'animate__fadeOut');
+            setTimeout(function () {
+                document.getElementById('loading-screen').style.display = 'none';
+
+                const cards = document.querySelectorAll('.card.shadow-sm, #about-section, #geography-section, #culture-section, #tourism-section');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animate__animated', 'animate__fadeIn');
+                        card.classList.remove('opacity-0');
+                    }, 200 * index);
+                });
+
+                const listItems = document.querySelectorAll('.list-unstyled li');
+                listItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('animate__animated', 'animate__fadeInUp');
+                        item.classList.remove('opacity-0');
+                    }, 100 * index);
+                });
+
+            }, 800);
+        }, 1000);
+    });
+</script>
+<script src="../scripts/navigation.js" defer></script>
 </body>
 </html>
+
