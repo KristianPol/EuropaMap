@@ -1,142 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discover Bulgaria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        header {
-            background: linear-gradient(90deg, #009639, #D20A32, #FFFFFF);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 30px;
-            background-color: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
-        h2 {
-            color: #009639;
-            border-bottom: 2px solid #D20A32;
-            padding-bottom: 8px;
-            margin-top: 30px;
-            text-align: center;
-        }
-        p {
-            text-align: justify;
-            padding-left: 5%;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 25px auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            border: 1px solid #ddd;
-        }
-        .highlight {
-            background-color: #FFF8E1;
-            padding: 15px;
-            border-left: 4px solid #D20A32;
-            margin: 20px 0;
-            border-radius: 0 4px 4px 0;
-        }
-        a {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #009639;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        a:hover {
-            background-color: #D20A32;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-                margin: 15px;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-        }
-        ul {
-            padding-left: 5%;
+        .section-title {
+            color: #0d6efd;
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Discover Bulgaria</h1>
-    </header>
 
-    <div class="container">
-        <h2>About Bulgaria</h2>
-        <p>Bulgaria, located in the southeastern part of Europe, is a country steeped in history, culture, and natural beauty. From its ancient Thracian heritage to its iconic Black Sea coastline, Bulgaria is a diverse country with rich traditions. Its capital, Sofia, is one of Europe’s oldest cities, blending Roman ruins, Orthodox churches, and a modern cosmopolitan atmosphere.</p>
-        <p>Did you know? Bulgaria is the birthplace of the Cyrillic alphabet, and it has over 3,000 years of history, including the famous Thracian tombs, which are UNESCO World Heritage sites!</p>
+<!-- Loading Screen -->
+<div id="loading-screen" class="position-fixed top-0 start-0 w-100 h-100 bg-white d-flex justify-content-center align-items-center" style="z-index: 9999;">
+    <div class="text-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <h3 class="mt-3">Discovering Bulgaria...</h3>
+    </div>
+</div>
+
+<!-- Hero Header -->
+<header class="bg-primary text-white py-5 mb-4">
+    <div class="container text-center">
+        <h1 class="mb-3 animate__animated animate__fadeInDown">Discover Bulgaria</h1>
+        <p class="lead animate__animated animate__fadeInUp animate__delay-1s">A Land of Mountains, Monasteries, and the Black Sea</p>
+    </div>
+</header>
+
+<div class="container align-items-center border border-primary-subtle rounded p-4 w-100" style="max-width: 800px;">
+    <!-- About Bulgaria Section -->
+    <div class="mb-4 opacity-0" id="about-section">
+        <h2 class="text-center section-title">About Bulgaria</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Bulgaria is located in Southeast Europe, bordered by the Black Sea to the east. With a history dating back to ancient Thracian times, Bulgaria is one of Europe's oldest countries and has a rich cultural and historical heritage.</p>
+                <p>The capital, Sofia, is one of the oldest cities in Europe, blending Roman, Ottoman, and Soviet architecture and influences.</p>
+            </div>
+        </div>
+        <div class="alert alert-primary mt-4 animate__animated animate__pulse animate__delay-2s">
+            <i class="fas fa-info-circle me-2"></i> <strong>Did you know?</strong> The Cyrillic alphabet originated in Bulgaria in the 9th century!
+        </div>
     </div>
 
-    <h2>Geography</h2>
-    <p>Bulgaria's geography is incredibly diverse, ranging from mountains to plains and coastlines:</p>
-    <ul>
-        <li>The Balkan Mountains, which divide the country into northern and southern regions</li>
-        <li>The Black Sea coast, offering beautiful beaches and resorts like Varna and Burgas</li>
-        <li>The Rila and Pirin mountains, home to breathtaking landscapes and skiing resorts</li>
-        <li>The Danube River, which forms part of Bulgaria’s northern border</li>
-    </ul>
-
-    <h2>Culture</h2>
-    <p>Bulgaria has a deep cultural heritage influenced by ancient traditions and modern European life:</p>
-    <ul>
-        <li>The famous Rose Festival in Kazanlak, celebrating the country’s centuries-old tradition of rose oil production</li>
-        <li>The traditional Bulgarian folk music and dances, such as the "horo" dance</li>
-        <li>Delicious Bulgarian cuisine, with dishes like banitsa (pastry), shopska salad, and moussaka</li>
-        <li>Fascinating religious traditions, especially the celebrations surrounding Easter and Christmas</li>
-    </ul>
-
-    <h2>Tourism Highlights</h2>
-    <p>Bulgaria offers a variety of attractions for travelers to explore:</p>
-    <ul>
-        <li>The ancient city of Plovdiv, with its Roman theatre and cobblestone streets</li>
-        <li>The Rila Monastery, a UNESCO World Heritage site and an important cultural landmark</li>
-        <li>Varna and the Black Sea coast, with its stunning beaches and vibrant nightlife</li>
-        <li>The Thracian Tomb of Kazanlak, famous for its frescoes and history</li>
-        <li>The Seven Rila Lakes, a stunning natural wonder in the Rila Mountains</li>
-    </ul>
-
-    <div style="text-align: center; padding-bottom: 5px;">
-        <a href="../webpages/index.html" title="Back to Home">Explore More</a>
+    <!-- Geography Section -->
+    <div class="mb-4 opacity-0" id="geography-section">
+        <h2 class="text-center section-title">Geography</h2>
+        <p>Bulgaria offers a mix of mountains, plains, and seaside landscapes:</p>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li class="mb-2 opacity-0"><i class="fas fa-mountain text-primary me-2"></i> The Balkan and Rhodope mountain ranges offer great hiking and skiing</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-water text-primary me-2"></i> The Danube River forms the northern border with Romania</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-umbrella-beach text-primary me-2"></i> The Black Sea coast features resorts like Varna and Burgas</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-leaf text-primary me-2"></i> Rich biodiversity in national parks such as Rila and Pirin</li>
+                </ul>
+            </div>
+        </div>
     </div>
+
+    <!-- Culture Section -->
+    <div class="mb-4 opacity-0" id="culture-section">
+        <h2 class="text-center section-title">Culture</h2>
+        <p>Bulgaria's culture is shaped by centuries of Eastern Orthodox tradition, folk heritage, and classical influences:</p>
+        <div class="row">
+            <div class="col-md-6 order-md-2">
+                <ul class="list-unstyled">
+                    <li class="mb-2 opacity-0"><i class="fas fa-church text-primary me-2"></i> The Bulgarian Orthodox Church and ancient monasteries</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-drum text-primary me-2"></i> Colorful folk festivals with music, dance, and costumes</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-bread-slice text-primary me-2"></i> Traditional food like banitsa, shopska salad, and yogurt</li>
+                    <li class="mb-2 opacity-0"><i class="fas fa-language text-primary me-2"></i> The Cyrillic alphabet is an essential part of national identity</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tourism Section -->
+    <div class="mb-4 opacity-0" id="tourism-section">
+        <h2 class="text-center section-title">Tourism Highlights</h2>
+        <p>Top destinations in Bulgaria include:</p>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm opacity-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Rila Monastery</h5>
+                        <p class="card-text">A stunning UNESCO site nestled in the Rila Mountains, rich in frescoes and history.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm opacity-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Plovdiv</h5>
+                        <p class="card-text">One of Europe’s oldest cities with Roman ruins and a vibrant arts district.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm opacity-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Sunny Beach</h5>
+                        <p class="card-text">A popular resort on the Black Sea known for its nightlife and sandy shores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="text-center mb-3">
+        <a href="../webpages/index.html" class="btn btn-primary btn-lg">
+            <i class="fas fa-home me-2"></i>Explore More
+        </a>
+    </div>
+</div>
+
+<!-- Animation Script -->
+<script>
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            document.getElementById('loading-screen').classList.add('animate__animated', 'animate__fadeOut');
+            setTimeout(function () {
+                document.getElementById('loading-screen').style.display = 'none';
+
+                const cards = document.querySelectorAll('.card.shadow-sm, #about-section, #geography-section, #culture-section, #tourism-section');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animate__animated', 'animate__fadeIn');
+                        card.classList.remove('opacity-0');
+                    }, 200 * index);
+                });
+
+                const listItems = document.querySelectorAll('.list-unstyled li');
+                listItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('animate__animated', 'animate__fadeInUp');
+                        item.classList.remove('opacity-0');
+                    }, 100 * index);
+                });
+
+            }, 800);
+        }, 1000);
+    });
+</script>
+<script src="../scripts/navigation.js" defer></script>
 </body>
 </html>
