@@ -82,7 +82,6 @@ form.addEventListener('submit', async function(event) {
 
 let taskToDelete = null;
 
-// Add task to UI
 function addTaskToUI(task) {
   const taskItem = document.createElement('li');
   taskItem.className = 'list-group-item d-flex justify-content-between align-items-center elem';
@@ -93,12 +92,27 @@ function addTaskToUI(task) {
       <strong>${task.description}</strong> 
       <br><small class="text-muted">(Deadline: ${task.deadline})</small>
     </div>
-    <button class="btn btn-sm btn-outline-danger delete-task">
-      <i class="bi bi-trash"></i>
-    </button>
+    <div>
+      <button class="btn btn-sm btn-outline-primary edit-task me-2">
+        <i class="bi bi-pencil"></i>
+      </button>
+      <button class="btn btn-sm btn-outline-danger delete-task">
+        <i class="bi bi-trash"></i>
+      </button>
+    </div>
   `;
 
-  taskItem.addEventListener('click', () => openEditModal(task));
+  // Remove the taskItem click handler and add edit button handler
+  taskItem.querySelector('.edit-task').addEventListener('click', (e) => {
+    e.stopPropagation();
+    openEditModal(task);
+  });
+
+  taskItem.querySelector('.delete-task').addEventListener('click', (e) => {
+    e.stopPropagation();
+    taskToDelete = task;
+    new bootstrap.Modal(document.getElementById('deleteConfirmationModal')).show();
+  });
 
   // Append to the correct quadrant
   let targetListId;
