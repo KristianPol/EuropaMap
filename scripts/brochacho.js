@@ -8,25 +8,48 @@ const API_URL = "http://localhost:3000/destinations";
 function initializeDarkMode() {
   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const savedMode = localStorage.getItem('darkMode');
-  
-  if (savedMode === 'dark' || (savedMode === null && prefersDarkScheme)) {
+  const isDark = savedMode === 'dark' || (savedMode === null && prefersDarkScheme);
+
+  // Toggle dark mode on the body only (remove document.documentElement)
+  if (isDark) {
     document.body.classList.add('dark-mode');
     updateDarkModeButton(true);
   } else {
+    document.body.classList.remove('dark-mode');
     updateDarkModeButton(false);
   }
 }
 
 function updateDarkModeButton(isDarkMode) {
   const darkModeBtn = document.querySelector('.dark-mode-toggle');
+  if (!darkModeBtn) return;
+  
+  // Update button appearance
   if (isDarkMode) {
+    darkModeBtn.innerHTML = '<i class="bi bi-sun-fill"></i>'; // Sun icon for dark mode
     darkModeBtn.classList.remove('btn-dark');
     darkModeBtn.classList.add('btn-light');
   } else {
+    darkModeBtn.innerHTML = '<i class="bi bi-moon-fill"></i>'; // Moon icon for light mode
     darkModeBtn.classList.remove('btn-light');
     darkModeBtn.classList.add('btn-dark');
   }
 }
+
+// Add this function to toggle dark mode
+function darkModeToggle() {
+  const isDark = document.body.classList.contains('dark-mode');
+  document.body.classList.toggle('dark-mode');
+  
+  // Save preference to localStorage
+  localStorage.setItem('darkMode', isDark ? 'light' : 'dark');
+  
+  // Update button
+  updateDarkModeButton(!isDark);
+}
+
+// Initialize dark mode when page loads
+document.addEventListener('DOMContentLoaded', initializeDarkMode);
 
 function darkModeToggle() {
   const body = document.body;
