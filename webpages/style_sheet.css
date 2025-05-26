@@ -74,7 +74,7 @@ html{
     padding: 10px;
 }
 .map-container{
-    background-color: #1b5577;
+    background-color: #0d6efd;
 }
 .StarterInfo{
     color: white;
@@ -83,7 +83,7 @@ html{
     font-weight:bold;
     font-family: Calibri;
     font-size: 15px;
-    background: #1b5577;
+    background: #0d6efd;
     padding: 15px;
 }
 
@@ -154,12 +154,12 @@ button:active {
 
 
 .side-button:hover {
-    background-color: #0056b3; 
+    background-color: #0d6efd; 
     transform: scale(1.1);
 }
 
 nav {
-    background-color: #1b5577;
+    background-color: #0d6efd;
     padding: 10px;
     text-align: center;
     font-family: var(--bs-body-font-family);
@@ -176,7 +176,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #074b87; 
+    background-color: #0d6efd; 
     border-radius: 5px;
     transform: scale(1.1);
 }
