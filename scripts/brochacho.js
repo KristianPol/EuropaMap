@@ -190,7 +190,7 @@ function addDestinationToUI(destination) {
       <div class="flex-grow-1">
         <h5 class="mb-1">${destination.country}</h5>
       </div>
-      <div>
+      <div style="margin-left: 30px">
         <button class="btn btn-sm btn-outline-info expand-preparation me-2">
           <i class="bi bi-chevron-down"></i>
         </button>
