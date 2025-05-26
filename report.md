@@ -1,29 +1,27 @@
-# Report - Europa Map and Brochacho task manager
+# Report - Europa Map and Brochacho travel planner
 
 ## Done since last time
 
-- Added bootstrap to all websites
-- Added menu to most websites using a javascript app, that automatically appends it to a website when it's code is used
-- Created a web project: a time manager, that allows you to save tasks, which are stored in a json server
-- Added the ability to modify those tasks using bootstrap modals
-- Made a pomodoro timer: a timer that allows you to efficiently manage time alongside your tasks
-- Added dark mode option for the Brochacho time manager
+- Remade the Task manager into a travel planner
+- Used json to store all the destinations and all the plans for each country
+- Instead of clicking on a country to modify it, added a bootstrap widget
+- You can mark tassk to be done once you've done them
 
 ## Open problems
 
 - The design is still lacking, and has to be improved
-- Tasks are not sorted by the deadline, so it's a bit confusing for now
-- There is no user login, so everyone can change the whole server, not just their own part
+- Travel plans don't have a lot of details, they have to be still added
+- Dark mode is somewhat broken and not avaliable to all webpages
 
-## To do until nest time
+## To do until next time
 
 - Improve UI, give more options to tasks
-- Rework dark mode in a more optimised way
-- Give the user an option to take a break after finishing a task
+- Fix dark mode
+- Give the user an option to add locations to tasks and subtasks if needed
 - Create a login/signup function and separate user data
 
 ## Commits
 
-- Alex: 30
-- Kristian: 17
+- Alex: 8
+- Kristian: 10
 - Ostap: 16
