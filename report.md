@@ -5,7 +5,7 @@
 - Remade the Task manager into a travel planner
 - Used json to store all the destinations and all the plans for each country
 - Instead of clicking on a country to modify it, added a bootstrap widget
-- You can mark tassk to be done once you've done them
+- You can mark plans to be done once you've done them
 
 ## Open problems
 
@@ -22,6 +22,6 @@
 
 ## Commits
 
-- Alex: 8
+- Alex: 10
 - Kristian: 10
-- Ostap: 16
+- Ostap: 18

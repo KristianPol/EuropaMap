@@ -21,15 +21,18 @@ function appendNavbar() {
     }
 </style>
 
-    <div style="padding: 30px"></div>
+    <div style="padding: 29px"></div>
 
-    <nav class="navbar navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-light bg-dark fixed-top">
     <div class="container-fluid d-flex justify-content-between">
         <div class="d-flex">
             <a class="nav-link" href="../webpages/index.html">Europe Map</a>
             <a class="nav-link" href="../webpages/brochacho.html">Brochacho Travel Planner</a>
         </div>
-        <a class="nav-link" href="../webpages/about.html">About</a> <!-- This one will be on the opposite side -->
+        <div class="d-flex">
+            <a class="nav-link" href="../webpages/about.html">About</a>
+            <a class="nav-link" href="../webpages/startpage.html">Home</a>
+        </div>
     </div>
 </nav>
 

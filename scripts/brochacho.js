@@ -186,15 +186,13 @@ function addDestinationToUI(destination) {
   destinationItem.dataset.id = destination.id;
 
   destinationItem.innerHTML = `
-    <div class="d-flex justify-content-between align-items-center">
-      <div class="flex-grow-1">
-        <h5 class="mb-1">${destination.country}</h5>
-      </div>
-      <div style="margin-left: 30px">
-        <button class="btn btn-sm btn-outline-info expand-preparation me-2">
+    <div class="destination-header">
+      <h5 class="mb-0">${destination.country}</h5>
+      <div class="destination-actions">
+        <button class="btn btn-sm btn-outline-info expand-preparation">
           <i class="bi bi-chevron-down"></i>
         </button>
-        <button class="btn btn-sm btn-outline-primary edit-destination me-2">
+        <button class="btn btn-sm btn-outline-primary edit-destination">
           <i class="bi bi-pencil"></i>
         </button>
         <button class="btn btn-sm btn-outline-danger delete-destination">
@@ -205,7 +203,7 @@ function addDestinationToUI(destination) {
     <div class="preparation-container" style="display: none;">
       <ul class="list-unstyled preparation-list mt-2"></ul>
       <div class="input-group mt-2">
-        <input type="text" class="form-control preparation-input" placeholder="Add plans">
+        <input type="text" class="form-control preparation-input" placeholder="Add preparation step">
         <button class="btn btn-outline-secondary add-preparation">Add</button>
       </div>
     </div>
