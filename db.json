@@ -3,26 +3,23 @@
     {
       "id": "6a8d",
       "country": "Italy",
+      "budget": 2000,
       "subtasks": [
         {
           "text": "Find hotels",
           "completed": false
         },
         {
-          "text": "Learn basic phrases",
+          "text": "Book flights",
           "completed": false
         }
       ]
     },
     {
-      "id": "ce71",
+      "id": "4534",
       "country": "Germany",
-      "subtasks": [
-        {
-          "text": "Book tickets",
-          "completed": false
-        }
-      ]
+      "budget": 120,
+      "subtasks": []
     }
   ]
 }

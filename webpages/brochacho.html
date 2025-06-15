@@ -187,11 +187,15 @@
     <!-- Horizontal Add Destination Form -->
     <div class="add-destination-container shadow-sm">
       <form id="destinationForm" class="horizontal-form">
-        <div class="form-group">
-          <label for="country" class="form-label fw-semibold">Country to Visit</label>
-          <input type="text" id="country" class="form-control form-control-lg" placeholder="e.g. Italy" required>
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg px-4"><i class="bi bi-plus-circle me-1"></i>Add Destination</button>
+          <div class="form-group">
+            <label for="country" class="form-label fw-semibold">Country to Visit</label>
+            <input type="text" id="country" class="form-control form-control-lg" placeholder="e.g. Italy" required>
+          </div>
+          <div class="form-group">
+            <label for="budget" class="form-label fw-semibold">Budget (€)</label>
+            <input type="number" id="budget" class="form-control form-control-lg" placeholder="e.g. 1500" min="0" step="50" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg px-4"><i class="bi bi-plus-circle me-1"></i>Add Destination</button>
       </form>
     </div>
 
@@ -209,26 +213,30 @@
   </button>
 
   <!-- Edit Destination Modal -->
-  <div class="modal fade" id="editDestinationModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-      <form class="modal-content" id="editDestinationForm">
-        <div class="modal-header">
-          <h5 class="modal-title"><i class="bi bi-pencil-square me-2"></i>Edit Destination</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="modal fade" id="editDestinationModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <form class="modal-content" id="editDestinationForm">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-pencil-square me-2"></i>Edit Destination</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="editDestinationId">
+        <div class="mb-3">
+          <label for="editCountry" class="form-label">Country</label>
+          <input type="text" class="form-control" id="editCountry" required>
         </div>
-        <div class="modal-body">
-          <input type="hidden" id="editDestinationId">
-          <div class="mb-3">
-            <label for="editCountry" class="form-label">Country</label>
-            <input type="text" class="form-control" id="editCountry" required>
-          </div>
+        <div class="mb-3">
+          <label for="editBudget" class="form-label">Budget (€)</label>
+          <input type="number" class="form-control" id="editBudget" min="0" step="50" required>
         </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary"><i class="bi bi-save me-1"></i>Save Changes</button>
-        </div>
-      </form>
-    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary"><i class="bi bi-save me-1"></i>Save Changes</button>
+      </div>
+    </form>
   </div>
+</div>
 
   <!-- Delete Confirmation Modal -->
   <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-hidden="true">

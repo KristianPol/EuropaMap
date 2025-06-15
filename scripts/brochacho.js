@@ -66,13 +66,18 @@ form.addEventListener('submit', async function(event) {
   event.preventDefault();
 
   const country = countryInput.value.trim();
+  const budget = document.getElementById('budget').value.trim();
 
-  if (!country) {
-    alert('Please enter a country!');
+  if (!country || !budget) {
+    alert('Please enter both country and budget!');
     return;
   }
 
-  const destination = { country, subtasks: [] };
+  const destination = { 
+    country, 
+    budget: parseFloat(budget), // Convert to number
+    subtasks: [] 
+  };
 
   try {
     const response = await fetch(API_URL, {
@@ -187,7 +192,10 @@ function addDestinationToUI(destination) {
 
   destinationItem.innerHTML = `
     <div class="destination-header">
-      <h5 class="mb-0">${destination.country}</h5>
+      <div>
+        <h5 class="mb-0">${destination.country}</h5>
+        <p class="mb-0 text-muted">Budget: €${destination.budget.toLocaleString()}</p>
+      </div>
       <div class="destination-actions">
         <button class="btn btn-sm btn-outline-info expand-preparation">
           <i class="bi bi-chevron-down"></i>
@@ -295,6 +303,7 @@ async function loadDestinations() {
 function openEditModal(destination) {
   document.getElementById('editDestinationId').value = destination.id;
   document.getElementById('editCountry').value = destination.country;
+  document.getElementById('editBudget').value = destination.budget;
   new bootstrap.Modal(document.getElementById('editDestinationModal')).show();
 }
 
@@ -304,7 +313,8 @@ document.getElementById('editDestinationForm').addEventListener('submit', async 
 
   const id = document.getElementById('editDestinationId').value;
   const updatedDestination = {
-    country: document.getElementById('editCountry').value.trim()
+    country: document.getElementById('editCountry').value.trim(),
+    budget: parseFloat(document.getElementById('editBudget').value.trim())
   };
 
   try {
