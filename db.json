@@ -1,25 +1,21 @@
 {
   "destinations": [
     {
-      "id": "6a8d",
-      "country": "Italy",
+      "id": "ed54",
+      "country": "Germany",
       "budget": 2000,
-      "subtasks": [
+      "preparations": [
         {
-          "text": "Find hotels",
-          "completed": false
+          "text": "Buy tickets",
+          "cost": 50,
+          "completed": true
         },
         {
-          "text": "Book flights",
-          "completed": false
+          "text": "Buy Hotel rooms",
+          "cost": 500,
+          "completed": true
         }
       ]
-    },
-    {
-      "id": "4534",
-      "country": "Germany",
-      "budget": 120,
-      "subtasks": []
     }
   ]
 }

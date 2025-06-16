@@ -76,7 +76,7 @@ form.addEventListener('submit', async function(event) {
   const destination = { 
     country, 
     budget: parseFloat(budget), // Convert to number
-    subtasks: [] 
+    preparations: [] 
   };
 
   try {
@@ -100,50 +100,47 @@ let destinationToDelete = null;
 
 // Create preparation element
 function createPreparationElement(prep, destinationId) {
-  const preparationItem = document.createElement('li');
-  preparationItem.className = 'preparation-item';
-  if (prep.completed) {
-    preparationItem.classList.add('completed');
-  }
-
-  preparationItem.innerHTML = `
-    <span class="preparation-text">${prep.text}</span>
-    <div class="preparation-actions">
-      <button class="btn btn-sm btn-outline-success toggle-complete">
-        <i class="bi ${prep.completed ? 'bi-check-circle-fill' : 'bi-check-circle'}"></i>
-      </button>
-      <button class="btn btn-sm btn-outline-danger delete-preparation">
-        <i class="bi bi-x"></i>
-      </button>
+  const item = document.createElement('li');
+  item.className = `preparation-item ${prep.completed ? 'completed' : ''}`;
+  
+  item.innerHTML = `
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <div>
+        <span class="preparation-text">${prep.text}</span>
+        <span class="badge bg-primary ms-2">€${prep.cost?.toFixed(2) || '0.00'}</span>
+      </div>
+      <div class="preparation-actions d-flex">
+        <button class="btn btn-sm btn-outline-success toggle-complete">
+          <i class="bi ${prep.completed ? 'bi-check-circle-fill' : 'bi-check-circle'}"></i>
+        </button>
+        <button class="btn btn-sm btn-outline-danger delete-preparation">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
     </div>
   `;
 
   // Toggle completion
-  preparationItem.querySelector('.toggle-complete').addEventListener('click', async (e) => {
+  item.querySelector('.toggle-complete').addEventListener('click', async function(e) {
     e.stopPropagation();
-    const item = e.target.closest('li');
-    const prepText = item.querySelector('.preparation-text').textContent;
+    const prepItem = e.target.closest('.preparation-item');
     
     try {
-      // Get current destination data
-      const destinationResponse = await fetch(`${API_URL}/${destinationId}`);
-      const destination = await destinationResponse.json();
+      const response = await fetch(`${API_URL}/${destinationId}`);
+      const destination = await response.json();
       
-      // Update preparation status
-      const prepIndex = destination.subtasks.findIndex(s => s.text === prepText);
-      if (prepIndex !== -1) {
-        destination.subtasks[prepIndex].completed = !destination.subtasks[prepIndex].completed;
+      const prepIndex = destination.preparations.findIndex(p => p.text === prep.text);
+      if (prepIndex >= 0) {
+        destination.preparations[prepIndex].completed = !destination.preparations[prepIndex].completed;
         
-        // Save to database
         await fetch(`${API_URL}/${destinationId}`, {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ subtasks: destination.subtasks })
+          body: JSON.stringify({ preparations: destination.preparations })
         });
-        
-        // Update UI
-        item.classList.toggle('completed');
-        const icon = item.querySelector('.toggle-complete i');
+
+        prepItem.classList.toggle('completed');
+        const icon = this.querySelector('i');
         icon.classList.toggle('bi-check-circle');
         icon.classList.toggle('bi-check-circle-fill');
       }
@@ -153,48 +150,110 @@ function createPreparationElement(prep, destinationId) {
   });
 
   // Delete preparation
-  preparationItem.querySelector('.delete-preparation').addEventListener('click', async (e) => {
+  item.querySelector('.delete-preparation').addEventListener('click', async function(e) {
     e.stopPropagation();
-    const item = e.target.closest('li');
-    const prepText = item.querySelector('.preparation-text').textContent;
     
     try {
-      // Get current destination data
-      const destinationResponse = await fetch(`${API_URL}/${destinationId}`);
-      const destination = await destinationResponse.json();
+      const response = await fetch(`${API_URL}/${destinationId}`);
+      const destination = await response.json();
       
-      // Update preparations array
-      destination.subtasks = destination.subtasks.filter(s => s.text !== prepText);
+      destination.preparations = destination.preparations.filter(p => p.text !== prep.text);
       
-      // Save to database
       await fetch(`${API_URL}/${destinationId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ subtasks: destination.subtasks })
+        body: JSON.stringify({ preparations: destination.preparations })
       });
-      
-      // Remove from UI
+
+      console.log(item.parentElement.parentElement.parentElement);
+      item.querySelector(".badge").innerHTML=0;
+      updateCostTotal(item.parentElement.parentElement.parentElement);
       item.remove();
+
+      //item.remove();
     } catch (error) {
       console.error("Error deleting preparation:", error);
-      alert("Failed to delete preparation. Please try again.");
     }
   });
 
-  return preparationItem;
+  return item;
+}
+
+function updateCostTotal(destinationItem) {
+  const preparations = destinationItem.querySelectorAll('.preparation-item');
+  let totalSpent = 0;
+  
+  preparations.forEach(prep => {
+    const costBadge = prep.querySelector('.badge');
+    if (costBadge) {
+      const cost = parseFloat(costBadge.textContent.replace('€', '')) || 0;
+      totalSpent += cost;
+    }
+  });
+
+  const budgetText = destinationItem.querySelector('small.text-muted')?.textContent;
+  const totalBudget = budgetText ? parseFloat(budgetText.match(/[\d,.]+/)[0]) : 0;
+  const remaining = totalBudget - totalSpent;
+
+  const remainingElement = destinationItem.querySelector('.remaining-budget');
+  if (remainingElement) {
+    remainingElement.textContent = remaining.toFixed(2);
+    
+    // Update styling based on remaining amount
+    remainingElement.classList.toggle('text-danger', remaining < 0);
+    remainingElement.classList.toggle('text-success', remaining >= 0);
+    
+    // Optional: Add warning icon when over budget
+    if (remaining < 0) {
+      remainingElement.innerHTML = `${remaining.toFixed(2)} <i class="bi bi-exclamation-triangle-fill ms-1"></i>`;
+    }
+  }
+}
+
+function calculateBudgetStats(destination) {
+  // Safely extract values with defaults
+  const budget = Number(destination?.budget) || 0;
+  const preparations = destination?.preparations || destination?.subtasks || [];
+  
+  // Calculate totals
+  const totalSpent = preparations.reduce((sum, prep) => {
+    return sum + (Number(prep?.cost) || (Number(prep?.amount) || 0));
+  }, 0);
+  
+  const remaining = budget - totalSpent;
+  const percentageUsed = budget > 0 ? (totalSpent / budget) * 100 : 0;
+
+  return remaining;
 }
 
 // Add destination to UI
 function addDestinationToUI(destination) {
+  // Validate destination object
+  if (!destination || typeof destination !== 'object') {
+    console.error('Invalid destination data:', destination);
+    return;
+  }
+
   const destinationItem = document.createElement('li');
   destinationItem.className = 'destination-item mb-3';
   destinationItem.dataset.id = destination.id;
 
+  // Safely handle missing budget
+  const budget = destination.budget || 0;
+  const budgetDisplay = typeof budget.toLocaleString === 'function' 
+    ? budget.toLocaleString() 
+    : budget.toString();
+
   destinationItem.innerHTML = `
     <div class="destination-header">
       <div>
-        <h5 class="mb-0">${destination.country}</h5>
-        <p class="mb-0 text-muted">Budget: €${destination.budget.toLocaleString()}</p>
+        <h5 class="mb-0">${destination.country || 'Unnamed Destination'}</h5>
+        <div class="d-flex gap-3 align-items-center">
+          <small class="text-muted">Budget: €${destination.budget.toFixed(2)}</small>
+          <small class="text-muted">Remaining: €${calculateBudgetStats(destination)>=0 
+            ? `<span class="remaining-budget text-success">${calculateBudgetStats(destination).toFixed(2)} </span></small>`
+            : `<span class="remaining-budget text-danger">${calculateBudgetStats(destination).toFixed(2)} <i class="bi bi-exclamation-triangle-fill ms-1"></i></span></small>` }
+        </div>
       </div>
       <div class="destination-actions">
         <button class="btn btn-sm btn-outline-info expand-preparation">
@@ -211,15 +270,19 @@ function addDestinationToUI(destination) {
     <div class="preparation-container" style="display: none;">
       <ul class="list-unstyled preparation-list mt-2"></ul>
       <div class="input-group mt-2">
-        <input type="text" class="form-control preparation-input" placeholder="Add preparation step">
+        <input type="text" class="form-control preparation-input" placeholder="Enter plans">
+        <input type="number" class="form-control cost-input" placeholder="Cost (€)" min="0" step="10">
         <button class="btn btn-outline-secondary add-preparation">Add</button>
+      </div>
+      <div class="mt-2">
+        <small>Total spent: €<span class="total-cost">0</span></small>
       </div>
     </div>
   `;
 
   // Initialize preparations
   const preparationList = destinationItem.querySelector('.preparation-list');
-  (destination.subtasks || []).forEach(prep => {
+  (destination.preparations || []).forEach(prep => {
     preparationList.appendChild(createPreparationElement(prep, destination.id));
   });
 
@@ -228,29 +291,60 @@ function addDestinationToUI(destination) {
     e.stopPropagation();
     const container = destinationItem.querySelector('.preparation-container');
     container.style.display = container.style.display === 'none' ? 'block' : 'none';
-    const icon = destinationItem.querySelector('.expand-preparation i');
+    
+    // Update costs whenever the container is opened
+    if (container.style.display === 'block') {
+      updateCostTotal(destinationItem);
+    }
+    
+    const icon = e.currentTarget.querySelector('i');
     icon.classList.toggle('bi-chevron-up');
     icon.classList.toggle('bi-chevron-down');
   });
 
   // Add preparation
   destinationItem.querySelector('.add-preparation').addEventListener('click', async () => {
-    const input = destinationItem.querySelector('.preparation-input');
-    const text = input.value.trim();
-    if (!text) return;
+  const input = destinationItem.querySelector('.preparation-input');
+  const costInput = destinationItem.querySelector('.cost-input');
+  const text = input.value.trim();
+  const cost = parseFloat(costInput.value) || 0;
 
-    const newPrep = { text, completed: false };
-    preparationList.appendChild(createPreparationElement(newPrep, destination.id));
-    input.value = '';
+  if (!text) {
+    alert('Please enter a preparation description!');
+    return;
+  }
+
+  const newPreparation = { 
+    text, 
+    cost,
+    completed: false 
+  };
+
+  try {
+    // Add to UI
+    const prepElement = createPreparationElement(newPreparation, destination.id);
+    destinationItem.querySelector('.preparation-list').appendChild(prepElement);
     
-    if (!destination.subtasks) destination.subtasks = [];
-    destination.subtasks.push(newPrep);
+    // Add to database
+    const destinationResponse = await fetch(`${API_URL}/${destination.id}`);
+    const destinationData = await destinationResponse.json();
+    destinationData.preparations = destinationData.preparations || [];
+    destinationData.preparations.push(newPreparation);
+    
     await fetch(`${API_URL}/${destination.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ subtasks: destination.subtasks })
+      body: JSON.stringify({ preparations: destinationData.preparations })
     });
-  });
+    
+    // Reset inputs and update totals
+    input.value = '';
+    costInput.value = '';
+    updateCostTotal(destinationItem);
+  } catch (error) {
+    console.error("Error adding preparation:", error);
+  }
+});
 
   // Edit destination
   destinationItem.querySelector('.edit-destination').addEventListener('click', (e) => {
@@ -292,10 +386,40 @@ document.getElementById('confirmDeleteBtn').addEventListener('click', async () =
 async function loadDestinations() {
   try {
     const response = await fetch(API_URL);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
     const destinations = await response.json();
-    destinations.forEach(addDestinationToUI);
+    
+    // Clear existing list
+    destinationsList.innerHTML = '';
+    
+    // Validate and load each destination
+    if (Array.isArray(destinations)) {
+      destinations.forEach(destination => {
+        try {
+          if (destination && destination.id) {
+            addDestinationToUI(destination);
+          } else {
+            console.warn('Skipping invalid destination:', destination);
+          }
+        } catch (error) {
+          console.error('Error rendering destination:', error);
+        }
+      });
+    } else {
+      console.error('Received invalid destinations data:', destinations);
+    }
   } catch (error) {
-    console.error(error);
+    console.error('Failed to load destinations:', error);
+    // Optional: Show user-friendly error message
+    destinationsList.innerHTML = `
+      <li class="text-danger p-3">
+        Failed to load destinations. Please try again later.
+      </li>
+    `;
   }
 }
 
