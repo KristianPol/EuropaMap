@@ -3,11 +3,10 @@
 ## Done since last time
 
 - Remade the Task manager into a travel planner
-- Used json to store all the destinations and all the plans for each country
+- Used json to store all the destinations and all the plans/expenses for each country
 - Instead of clicking on a country to modify it, added a bootstrap widget
 - You can mark plans to be done once you've done them
 - Give budget to trips and how much you think specific plans will cost to see how much money tou have left
-- Mark plans as done
 
 ## Open problems
 

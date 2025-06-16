@@ -270,7 +270,7 @@ function addDestinationToUI(destination) {
     <div class="preparation-container" style="display: none;">
       <ul class="list-unstyled preparation-list mt-2"></ul>
       <div class="input-group mt-2">
-        <input type="text" class="form-control preparation-input" placeholder="Enter plans">
+        <input type="text" class="form-control preparation-input" placeholder="Enter plans/expenses">
         <input type="number" class="form-control cost-input" placeholder="Cost (€)" min="0" step="10">
         <button class="btn btn-outline-secondary add-preparation">Add</button>
       </div>
