@@ -274,9 +274,6 @@ function addDestinationToUI(destination) {
         <input type="number" class="form-control cost-input" placeholder="Cost (€)" min="0" step="10">
         <button class="btn btn-outline-secondary add-preparation">Add</button>
       </div>
-      <div class="mt-2">
-        <small>Total spent: €<span class="total-cost">0</span></small>
-      </div>
     </div>
   `;
 

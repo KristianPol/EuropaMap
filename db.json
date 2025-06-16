@@ -13,7 +13,7 @@
         {
           "text": "Buy Hotel rooms",
           "cost": 500,
-          "completed": true
+          "completed": false
         }
       ]
     }
